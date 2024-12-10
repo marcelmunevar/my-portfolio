@@ -14,8 +14,8 @@ export default function Home() {
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <Heading1 text="About" id="about" />
           <p className="mb-4">
-            Hi! I'm a full-stack developer and computer science graduate (Summa
-            Cum Laude!) with over a decade of experience building web
+            Hi! I&apos;m a full-stack developer and computer science graduate
+            (Summa Cum Laude!) with over a decade of experience building web
             applications and dynamic CMS solutions. Currently, as a Full-Stack
             Marketing Developer at Fujifilm, I deliver web services for
             businesses across the Americas, managing Drupal and WordPress sites.
