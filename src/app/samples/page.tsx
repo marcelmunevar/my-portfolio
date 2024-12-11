@@ -11,50 +11,38 @@ export default function Home() {
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
             <CodeSample
               title="My Github"
-              description=""
               href="https://github.com/marcelmunevar?tab=repositories"
               imgsrc="/github-logo.png"
-              alt=""
               tech="Next.js, jQuery, Bootstrap, PHP"
             />
             <CodeSample
               title="Rensonaccounting.com"
-              description=""
               href="https://www.rensonaccounting.com/"
               imgsrc="/rensonaccounting.png"
-              alt=""
               tech="React, Next.js, Tailwind CSS, Typescript"
             />
             <CodeSample
               title="jQuery Slider Plugin"
-              description=""
               href="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
               imgsrc="/jquery-plugin.png"
-              alt=""
               tech="HTML, CSS, jQuery, Bootstrap"
             />
             <CodeSample
               title="Old Portfolio Website"
-              description=""
               href="https://marcelmunevar.github.io/portfolio/"
               imgsrc="/old-resume.png"
-              alt=""
               tech="HTML, CSS, jQuery, Bootstrap"
             />
             <CodeSample
               title="Responsive Ecommerce Page"
-              description=""
               href="http://marcelmunevar.github.io/responsive-sample/"
               imgsrc="/blue.png"
-              alt=""
               tech="HTML, CSS, jQuery"
             />
             <CodeSample
               title="Chewy Landing Page"
-              description=""
               href="https://marcelmunevar.github.io/Chewy-Test-Page/"
               imgsrc="/chewy.png"
-              alt=""
               tech="HTML, CSS"
             />
           </div>

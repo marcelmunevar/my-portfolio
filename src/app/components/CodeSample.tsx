@@ -6,18 +6,14 @@ import Image from "next/image";
 interface CodeSampleProps {
   title: string;
   href: string;
-  description: string;
   imgsrc: string;
-  alt: string;
   tech: string;
 }
 
 const CodeSample: React.FC<CodeSampleProps> = ({
   title,
   href,
-  description,
   imgsrc,
-  alt,
   tech,
 }) => {
   return (
@@ -29,9 +25,8 @@ const CodeSample: React.FC<CodeSampleProps> = ({
             src={imgsrc}
             width={796}
             height={540}
-            alt={alt}
+            alt=""
           />
-          {/*<p className="text-zinc-400">{description}</p>*/}
           <p className="text-lg">{title}</p>
           <p className="text-zinc-400 text-xs">{tech}</p>
         </div>
