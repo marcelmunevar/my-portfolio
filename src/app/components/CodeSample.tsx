@@ -9,6 +9,7 @@ interface CodeSampleProps {
   description: string;
   imgsrc: string;
   alt: string;
+  tech: string;
 }
 
 const CodeSample: React.FC<CodeSampleProps> = ({
@@ -17,6 +18,7 @@ const CodeSample: React.FC<CodeSampleProps> = ({
   description,
   imgsrc,
   alt,
+  tech,
 }) => {
   return (
     <Link href={href} target="_blank">
@@ -29,8 +31,9 @@ const CodeSample: React.FC<CodeSampleProps> = ({
             height={540}
             alt={alt}
           />
-          <p className="text-zinc-400">{description}</p>
-          <p>{title}</p>
+          {/*<p className="text-zinc-400">{description}</p>*/}
+          <p className="text-lg">{title}</p>
+          <p className="text-zinc-400 text-xs">{tech}</p>
         </div>
       </div>
     </Link>
