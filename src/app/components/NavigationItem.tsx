@@ -15,7 +15,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({ text, icon, url }) => {
   return (
     <Link href={url}>
       <div
-        className={`flex flex-col items-center justify-center border-2 border-zinc-800 rounded ${
+        className={`flex flex-col items-center justify-center border-2 border-zinc-800 rounded-lg ${
           currentPath === url ? "bg-red-600" : "bg-zinc-900"
         } hover:bg-red-600 w-20 h-20 `}
       >

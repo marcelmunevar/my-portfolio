@@ -11,7 +11,7 @@ interface ProficiencyProps {
 
 const Proficiency: React.FC<ProficiencyProps> = ({ text, heading, icon }) => {
   return (
-    <div className=" border-2  border-zinc-800 rounded p-4">
+    <div className=" border-2  border-zinc-800 rounded-lg p-4">
       <div className="flex flex-col lg:flex-row gap-8">
         <div>
           <FontAwesomeIcon icon={icon} className="text-6xl text-cyan-400" />

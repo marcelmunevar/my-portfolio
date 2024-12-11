@@ -14,7 +14,7 @@ const ResumeItem: React.FC<ResumeItemProps> = ({
   distinction,
 }) => {
   return (
-    <div className=" border-2  border-zinc-800 rounded p-4 mb-4">
+    <div className=" border-2  border-zinc-800 rounded-lg p-4 mb-4">
       <div className="flex flex-col gap-1">
         <p className="text-gray-400">{date}</p>
         <p className="">{title} </p>
