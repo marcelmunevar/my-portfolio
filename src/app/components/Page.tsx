@@ -3,19 +3,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface CodeSampleProps {
+interface PageProps {
   title: string;
   href: string;
   imgsrc: string;
   tech: string;
 }
 
-const CodeSample: React.FC<CodeSampleProps> = ({
-  title,
-  href,
-  imgsrc,
-  tech,
-}) => {
+const Page: React.FC<PageProps> = ({ title, href, imgsrc, tech }) => {
   return (
     <Link href={href} target="_blank">
       <div className=" border-2  border-zinc-800 rounded-lg p-4 mb-4 bg-gray-950 hover:bg-gray-900">
@@ -35,4 +30,4 @@ const CodeSample: React.FC<CodeSampleProps> = ({
   );
 };
 
-export default CodeSample;
+export default Page;
