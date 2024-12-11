@@ -10,40 +10,34 @@ export default function Home() {
           <Heading1 text="Code Samples" />
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
             <CodeSample
-              title="My Github"
-              href="https://github.com/marcelmunevar?tab=repositories"
-              imgsrc="/github-logo.png"
-              tech="Next.js, jQuery, Bootstrap, PHP"
-            />
-            <CodeSample
-              title="Rensonaccounting.com"
+              title="Rensonaccounting.com (2024)"
               href="https://www.rensonaccounting.com/"
               imgsrc="/rensonaccounting.png"
               tech="React, Next.js, Tailwind CSS, Typescript"
             />
             <CodeSample
-              title="jQuery Slider Plugin"
-              href="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
-              imgsrc="/jquery-plugin.png"
-              tech="HTML, CSS, jQuery, Bootstrap"
-            />
-            <CodeSample
-              title="Old Portfolio Website"
+              title="Old Portfolio Website (2015)"
               href="https://marcelmunevar.github.io/portfolio/"
               imgsrc="/old-resume.png"
               tech="HTML, CSS, jQuery, Bootstrap"
             />
             <CodeSample
-              title="Responsive Ecommerce Page"
+              title="Responsive Ecommerce Page (2015)"
               href="http://marcelmunevar.github.io/responsive-sample/"
               imgsrc="/blue.png"
               tech="HTML, CSS, jQuery"
             />
             <CodeSample
-              title="Chewy Landing Page"
+              title="Chewy Landing Page (2015)"
               href="https://marcelmunevar.github.io/Chewy-Test-Page/"
               imgsrc="/chewy.png"
               tech="HTML, CSS"
+            />
+            <CodeSample
+              title="jQuery Slider Plugin (2013)"
+              href="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
+              imgsrc="/jquery-plugin.png"
+              tech="HTML, CSS, jQuery, Bootstrap"
             />
           </div>
         </div>
