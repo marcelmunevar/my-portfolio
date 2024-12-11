@@ -16,13 +16,13 @@ export default function Home() {
               tech="React, Next.js, Tailwind CSS, Typescript"
             />
             <Page
-              title="Old Portfolio Website (2015)"
+              title="Old Portfolio (2015)"
               href="https://marcelmunevar.github.io/portfolio/"
               imgsrc="/old-resume.png"
               tech="HTML, CSS, jQuery, Bootstrap"
             />
             <Page
-              title="Responsive Ecommerce Page (2015)"
+              title="Responsive Ecommerce Sample (2015)"
               href="http://marcelmunevar.github.io/responsive-sample/"
               imgsrc="/blue.png"
               tech="HTML, CSS, jQuery"
