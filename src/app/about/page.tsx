@@ -12,7 +12,7 @@ export default function Home() {
     <div className="">
       <main className="my-4 ">
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
-          <Heading1 text="About" id="about" />
+          <Heading1 text="About" />
           <p className="mb-4">
             Hi! I&apos;m a full-stack developer and computer science graduate
             (Summa Cum Laude!) with over a decade of experience building web
