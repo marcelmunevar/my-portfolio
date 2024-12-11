@@ -3,7 +3,7 @@ import Heading2 from "../components/Heading-2";
 import Proficiency from "../components/Proficiency";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
-import { faGit } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -49,7 +49,7 @@ export default function Home() {
             <Proficiency
               heading="Github Repositories"
               text="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
-              icon={faGit}
+              icon={faGithub}
             />
             <Proficiency
               heading="Databases"
