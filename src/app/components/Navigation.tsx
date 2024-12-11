@@ -4,6 +4,7 @@ import NavigationItem from "./NavigationItem";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Navigation: React.FC = ({}) => {
   return (
@@ -11,6 +12,7 @@ const Navigation: React.FC = ({}) => {
       <NavigationItem icon={faUser} text="About" url="/about" />
       <NavigationItem icon={faFile} text="Resume" url="/resume" />
       <NavigationItem icon={faCode} text="Samples" url="/samples" />
+      <NavigationItem icon={faGithub} text="Repos" url="/repos" />
     </div>
   );
 };
