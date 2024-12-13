@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "./components/Navigation";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Marcel's React Portfolio",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
+        <GoogleAnalytics gaId="G-EV253K0KMF" />
         <Navigation />
         {children}
       </body>
