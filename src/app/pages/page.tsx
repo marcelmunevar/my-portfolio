@@ -16,6 +16,12 @@ export default function Home() {
               tech="React, Next.js, Tailwind CSS, Typescript"
             />
             <Page
+              title="Fujinon.com (2020)"
+              href="https://www.fujinon.com/"
+              imgsrc="/fujinon.png"
+              tech="WordPress, PHP, jQuery, Sass, ACF"
+            />
+            <Page
               title="Old Portfolio (2015)"
               href="https://marcelmunevar.github.io/portfolio/"
               imgsrc="/old-resume.png"
