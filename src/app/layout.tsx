@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Roboto } from "next/font/google";
+import { Providers } from "./providers";
 
 const roboto = Roboto({
   weight: "400",
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className}>
       <body className="">
-        <GoogleAnalytics gaId="G-EV253K0KMF" />
-        <Navigation />
-        {children}
+        <Providers>
+          <GoogleAnalytics gaId="G-EV253K0KMF" />
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   );

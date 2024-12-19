@@ -1,3 +1,4 @@
+import {nextui} from '@nextui-org/theme';
 import type { Config } from "tailwindcss";
 
 export default {
@@ -5,14 +6,25 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/components/(button|ripple|spinner).js"
   ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+  plugins: [
+    nextui({
+      prefix: "nextui", // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultTheme: "dark", // default theme from the themes object
+      defaultExtendTheme: "dark", // default theme to extend on custom themes
+      layout: {}, // common layout tokens (applied to all themes)
+      themes: {
+        dark: {
+          layout: {}, // dark theme layout tokens
+          colors: {
+            background: "var(--background)",
+            foreground: "var(--foreground)",
+          }, // dark theme colors
+        },
+        // ... custom themes
       },
-    },
-  },
-  plugins: [],
+    }),
+  ],
 } satisfies Config;
