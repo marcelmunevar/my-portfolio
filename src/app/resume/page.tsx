@@ -45,14 +45,14 @@ export default function Home() {
               <Heading3 icon={faGraduationCap} text="Education" />
               <ResumeItem
                 date="2024"
-                title="B.A. in Computer Science"
+                title="BA in Computer Science"
                 distinction="Summa Cum Laude"
                 institution="Florida International University"
               />
               <ResumeItem
                 date="2007"
-                title="Associate of Arts (A.A.)"
-                institution="Florida International University"
+                title="Associate of Arts (AA)"
+                institution="College Academy at Broward College"
               />
               <Heading3 icon={faUsers} text="Conferences" />
               <ResumeItem date="2024" title="React Summit" institution="NYC" />
