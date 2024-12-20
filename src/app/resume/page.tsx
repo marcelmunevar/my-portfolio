@@ -22,17 +22,17 @@ export default function Home() {
               />
               <ResumeItem
                 date="2016 - 2018"
-                title="Full-Stack Web Developer"
+                title="Full-Stack Developer"
                 institution="BMG Creative & Brandstar"
               />
               <ResumeItem
                 date="2015 - 2016"
-                title="Front-End Web Developer"
+                title="Front-End Developer"
                 institution="Nova Southeastern University"
               />
               <ResumeItem
                 date="2013 - 2015"
-                title="Ecommerce Front-End Web Developer"
+                title="Front-End Developer"
                 institution="Morris4x4Center"
               />
               <ResumeItem
