@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.className}>
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
       <body className="">
         <Providers>
           <GoogleAnalytics gaId="G-EV253K0KMF" />
