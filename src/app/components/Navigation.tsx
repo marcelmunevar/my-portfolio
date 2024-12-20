@@ -44,7 +44,7 @@ export default function App() {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">Marcel's Portfolio</p>
+          <p className="font-bold text-inherit">Marcel&apos;s Portfolio</p>
         </NavbarBrand>
       </NavbarContent>
 
