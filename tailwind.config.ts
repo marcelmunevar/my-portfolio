@@ -19,8 +19,8 @@ export default {
         dark: {
           layout: {}, // dark theme layout tokens
           colors: {
-            background: "var(--background)",
-            foreground: "var(--foreground)",
+            background: "#111111",
+            foreground: "#ffffff",
           }, // dark theme colors
         },
         // ... custom themes
