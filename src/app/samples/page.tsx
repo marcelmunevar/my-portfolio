@@ -10,38 +10,49 @@ export default function Home() {
           <Heading1 text="Code Samples" />
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Page
+              title="Portfolio (2024)"
+              repoHref="https://github.com/marcelmunevar/MY-PORTFOLIO"
+              imgsrc="/portfolio.png"
+              tech="React, Next.js, NextUI, Tailwind CSS, Typescript"
+            />
+            <Page
               title="Rensonaccounting.com (2024)"
-              href="https://www.rensonaccounting.com/"
+              pageHref="https://www.rensonaccounting.com/"
+              repoHref="https://github.com/marcelmunevar/renson-accounting"
               imgsrc="/rensonaccounting.png"
               tech="React, Next.js, Tailwind CSS, Typescript"
             />
             <Page
               title="Fujinon.com (2020)"
-              href="https://www.fujinon.com/"
+              pageHref="https://www.fujinon.com/"
               imgsrc="/fujinon.png"
               tech="WordPress, PHP, jQuery, Sass, ACF"
             />
             <Page
               title="Old Portfolio (2015)"
-              href="https://marcelmunevar.github.io/portfolio/"
+              pageHref="https://marcelmunevar.github.io/portfolio/"
+              repoHref="https://github.com/marcelmunevar/portfolio"
               imgsrc="/old-resume.png"
               tech="HTML, CSS, jQuery, Bootstrap"
             />
             <Page
               title="Responsive Ecommerce Sample (2015)"
-              href="http://marcelmunevar.github.io/responsive-sample/"
+              pageHref="http://marcelmunevar.github.io/responsive-sample/"
+              repoHref="https://github.com/marcelmunevar/responsive-sample"
               imgsrc="/blue.png"
               tech="HTML, CSS, jQuery"
             />
             <Page
               title="Chewy Landing Page (2015)"
-              href="https://marcelmunevar.github.io/Chewy-Test-Page/"
+              pageHref="https://marcelmunevar.github.io/Chewy-Test-Page/"
+              repoHref="https://github.com/marcelmunevar/Chewy-Test-Page"
               imgsrc="/chewy.png"
               tech="HTML, CSS"
             />
             <Page
               title="jQuery Slider Plugin (2013)"
-              href="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
+              pageHref="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
+              repoHref="https://github.com/marcelmunevar/jquery-slider-plugin-landing-page"
               imgsrc="/jquery-plugin.png"
               tech="HTML, CSS, jQuery, Bootstrap"
             />
