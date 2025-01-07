@@ -6,7 +6,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|card|divider|image|link|navbar|toggle|ripple|spinner).js"
+    "./node_modules/@nextui-org/theme/dist/components/(button|card|divider|drawer|image|link|navbar|toggle|ripple|spinner|modal).js"
   ],
   plugins: [
     nextui({
