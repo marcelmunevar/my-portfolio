@@ -13,9 +13,9 @@ const Heading3: React.FC<HeadingProps> = ({ text, icon }) => {
       {icon && (
         <FontAwesomeIcon icon={icon} className="text-xl text-cyan-400 mr-4" />
       )}
-      <h2 className="text-xl lg:text-2xl leading-none tracking-tight mr-16 mb-4 lg:mb-0">
+      <h3 className="text-xl lg:text-2xl leading-none tracking-tight mr-16 mb-4 lg:mb-0">
         {text}
-      </h2>
+      </h3>
     </div>
   );
 };

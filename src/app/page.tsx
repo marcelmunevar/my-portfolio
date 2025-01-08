@@ -20,7 +20,7 @@ import { Button } from "@nextui-org/button";
 import { useDisclosure } from "@nextui-org/use-disclosure";
 import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
-import { Card, CardBody, CardHeader, CardFooter } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
 
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -120,7 +120,7 @@ export default function Home() {
             />
             <Card>
               <CardBody>
-                <Heading2 text="Additional Skills" />
+                <Heading3 text="Additional Skills" />
                 <div className="flex gap-2 flex-wrap">
                   <Chip color="primary">PHP</Chip>
                   <Chip color="primary">APIs</Chip>
