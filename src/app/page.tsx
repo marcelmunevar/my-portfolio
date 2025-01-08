@@ -65,8 +65,8 @@ export default function Home() {
                       architecture. I also have an affinity for{" "}
                       <span className="text-secondary">WordPress websites</span>{" "}
                       with extensive knowledge of{" "}
-                      <span className="text-secondary">LAMP stack</span>. I'm
-                      comfortable with{" "}
+                      <span className="text-secondary">LAMP stack</span>.
+                      I&apos;m comfortable with{" "}
                       <span className="text-secondary">Github</span> for version
                       control.
                     </p>
