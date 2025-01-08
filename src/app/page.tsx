@@ -37,7 +37,7 @@ export default function Home() {
                   <div className="max-w-52 text-center">
                     <Image
                       alt="Portrait of Marcel"
-                      className="w-100"
+                      className="w-100 mb-1"
                       src="./marcel.png"
                     />
                     <p> Marcel Munevar </p>
@@ -148,6 +148,7 @@ export default function Home() {
                 <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./FUJIFILM.jpg"
+                    alt="Fujifilm logo"
                     className="h-12 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -156,6 +157,7 @@ export default function Home() {
                 <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./instax.svg"
+                    alt="Instax logo"
                     className="h-12 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -164,6 +166,7 @@ export default function Home() {
                 <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./fujifilm-X-GFX.png"
+                    alt="Fujifilm X GFX logo"
                     className="h-12 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -172,6 +175,7 @@ export default function Home() {
                 <div className="p-4 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./fujinon_logo.png"
+                    alt="Fujinon logo"
                     className="h-16 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -179,16 +183,26 @@ export default function Home() {
                 </div>
               </div>
             </CardBody>
+            <hr />
+            <CardFooter>
+              <p>
+                I'm currently serving Fujifilm Holdings America Corporation
+                which oversees over two dozen businesses in the Americas. These
+                are just a few of the businesses I support. We also support
+                businesses in healthcare, manufacturing, printing, and more.
+              </p>
+            </CardFooter>
           </Card>
         </div>
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-24">
-          <Heading2 text="Tech" />
+          <Heading2 text="Tech Stack" />
           <Card>
             <CardBody>
               <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center ">
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./html.jpg"
+                    alt="HTML5"
                     className="h-18 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -197,6 +211,7 @@ export default function Home() {
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./css.jpg"
+                    alt="CSS3"
                     className="h-18 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -205,6 +220,7 @@ export default function Home() {
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
                   <Image
                     src="./js.jpg"
+                    alt="JS5+"
                     className="h-18 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -213,6 +229,7 @@ export default function Home() {
                 <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./jquery.jpg"
+                    alt="jQuery"
                     className="h-28 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -221,6 +238,7 @@ export default function Home() {
                 <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./php.jpg"
+                    alt="PHP"
                     className="h-28 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -229,14 +247,7 @@ export default function Home() {
                 <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
                     src="./mysql.jpg"
-                    className="h-28 m-auto"
-                    radius="none"
-                    removeWrapper={true}
-                  />
-                </div>
-                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
-                  <Image
-                    src="./bootstrap.png"
+                    alt="MySQL"
                     className="h-28 m-auto"
                     radius="none"
                     removeWrapper={true}
@@ -244,6 +255,13 @@ export default function Home() {
                 </div>
               </div>
             </CardBody>
+            <hr />
+            <CardFooter>
+              <p>
+                These components are foundational to the tech stacks which I
+                support.
+              </p>
+            </CardFooter>
           </Card>
         </div>
         <Drawer isOpen={isOpen} onOpenChange={onOpenChange}>
