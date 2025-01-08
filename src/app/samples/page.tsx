@@ -25,6 +25,7 @@ export default function Home() {
             <MyCard
               title="Fujinon.com (2020)"
               pageHref="https://www.fujinon.com/"
+              repoHref="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
               imgsrc="/fujinon.png"
               tech="WordPress, PHP, jQuery, Sass, ACF"
             />
