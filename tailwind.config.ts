@@ -1,5 +1,6 @@
 import {nextui} from '@nextui-org/theme';
 import type { Config } from "tailwindcss";
+const colors = require("tailwindcss/colors");
 
 export default {
   content: [
@@ -19,6 +20,7 @@ export default {
           colors: {
             background: "#111111",
             foreground: "#ffffff",
+            secondary: colors.red[700],
           }, 
         },
         light: {
