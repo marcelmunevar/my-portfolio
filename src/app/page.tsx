@@ -33,7 +33,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 items-center mb-4">
             <Card isFooterBlurred>
               <CardBody>
-                <div className="grid grid-cols-4 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-items-center">
                   <div className="max-w-52 text-center">
                     <Image
                       removeWrapper
@@ -44,31 +44,31 @@ export default function Home() {
                     <p> Marcel Munevar </p>
                     <p className="text-default-500"> Full-Stack Developer </p>
                   </div>
-                  <div className="col-span-3">
+                  <div className="md:col-span-3">
                     <p className="mb-4">
                       I have{" "}
-                      <span className="text-secondary">
+                      <span className="text-success">
                         over a decade of experience
                       </span>{" "}
                       building web applications. During my time at{" "}
-                      <span className="text-secondary">Fujifilm</span>, where I
+                      <span className="text-success">Fujifilm</span>, where I
                       currently work, I pursued and completed a{" "}
-                      <span className="text-secondary">
+                      <span className="text-success">
                         BA in Computer Science
                       </span>
                       , graduating{" "}
-                      <span className="text-secondary">Summa Cum Laude</span>.
+                      <span className="text-success">Summa Cum Laude</span>.
                       Recently, I attended a{" "}
-                      <span className="text-secondary">React conference</span>{" "}
-                      on behalf of Fujifilm and I&apos;ve been diving into{" "}
-                      <span className="text-secondary">React and Next.js</span>.
+                      <span className="text-success">React conference</span> on
+                      behalf of Fujifilm and I&apos;ve been diving into{" "}
+                      <span className="text-success">React and Next.js</span>.
                       I&apos;m particularly excited about the component-based
                       architecture. I also have an affinity for{" "}
-                      <span className="text-secondary">WordPress websites</span>{" "}
+                      <span className="text-success">WordPress websites</span>{" "}
                       with extensive knowledge of{" "}
-                      <span className="text-secondary">LAMP stack</span>.
-                      I&apos;m comfortable with{" "}
-                      <span className="text-secondary">Github</span> for version
+                      <span className="text-success">LAMP stack</span>. I&apos;m
+                      comfortable with{" "}
+                      <span className="text-success">Github</span> for version
                       control.
                     </p>
                   </div>
@@ -110,14 +110,14 @@ export default function Home() {
               icon={faWordpress}
             />
             <Proficiency
+              heading="MySQL Databases"
+              text="Skilled in designing and managing relational databases with MySQL and other SQL-based systems. Focused on optimizing queries, ensuring data integrity, and managing migrations."
+              icon={faDatabase}
+            />
+            <Proficiency
               heading="Github Repositories"
               text="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
               icon={faGithub}
-            />
-            <Proficiency
-              heading="Databases"
-              text="Skilled in designing and managing relational databases with MySQL and other SQL-based systems. Focused on optimizing queries, ensuring data integrity, and managing migrations."
-              icon={faDatabase}
             />
             <Card>
               <CardBody>

@@ -28,6 +28,7 @@ export default {
           colors: {
             background: "#f1f1f1",
             foreground: "#111111",
+            secondary: colors.red[700],
           },
         },
       },
