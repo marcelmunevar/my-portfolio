@@ -186,7 +186,7 @@ export default function Home() {
             <hr />
             <CardFooter>
               <p>
-                I'm currently serving Fujifilm Holdings America Corporation
+                I&apos;m currently serving Fujifilm Holdings America Corporation
                 which oversees over two dozen businesses in the Americas. These
                 are just a few of the businesses I support. We also support
                 businesses in healthcare, manufacturing, printing, and more.
