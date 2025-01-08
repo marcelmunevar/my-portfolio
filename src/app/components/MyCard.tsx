@@ -30,7 +30,7 @@ const Page: React.FC<PageProps> = ({
         </div>
       </CardHeader>
       <Divider />
-      <CardBody>
+      <CardBody className="justify-center">
         <Image
           className="object-cover rounded-xl"
           src={imgsrc}
