@@ -33,17 +33,18 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 items-center mb-4">
             <Card isFooterBlurred>
               <CardBody>
-                <div className="grid grid-cols-4 gap-8 items">
-                  <div className="max-w-52">
+                <div className="grid grid-cols-4 gap-8 items-center">
+                  <div className="max-w-52 text-center">
                     <Image
                       removeWrapper
                       alt="Portrait of Marcel"
                       className="w-100"
                       src="./marcel.png"
                     />
+                    <p> Marcel Munevar </p>
+                    <p className="text-default-500"> Full-Stack Developer </p>
                   </div>
                   <div className="col-span-3">
-                    <Heading3 text="Full-Stack Developer" />
                     <p className="mb-4">
                       I have{" "}
                       <span className="text-secondary">
