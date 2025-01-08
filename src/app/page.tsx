@@ -49,24 +49,21 @@ export default function Home() {
                       <span className="text-success">
                         over a decade of experience
                       </span>{" "}
-                      building web applications. During my time at{" "}
-                      <span className="text-success">Fujifilm</span>, where I
-                      currently work, I pursued and completed a{" "}
+                      building web applications. I pursued and completed a{" "}
                       <span className="text-success">
                         BA in Computer Science
                       </span>
                       , graduating{" "}
-                      <span className="text-success">Summa Cum Laude</span>.
-                      Recently, I attended a{" "}
-                      <span className="text-success">React conference</span> on
-                      behalf of Fujifilm and I&apos;ve been diving into{" "}
-                      <span className="text-success">React and Next.js</span>.
-                      I&apos;m particularly excited about the component-based
-                      architecture. I also have an affinity for{" "}
+                      <span className="text-success">Summa Cum Laude</span> in
+                      2024. Recently, I attended a{" "}
+                      <span className="text-success">React conference</span> and
+                      I&apos;ve been diving into{" "}
+                      <span className="text-success">React and Next.js</span>. I
+                      also have an affinity for{" "}
                       <span className="text-success">WordPress websites</span>{" "}
                       with extensive knowledge of{" "}
                       <span className="text-success">LAMP stack</span>. I&apos;m
-                      comfortable with{" "}
+                      comfortable using{" "}
                       <span className="text-success">Github</span> for version
                       control.
                     </p>
@@ -262,7 +259,8 @@ export default function Home() {
                     At Fujifilm, I manage web services for businesses across the
                     Americas. My role involves processing website management
                     updates and other stakeholder requests. Specifically, I
-                    oversee 4 Drupal sites and around 18 WordPress sites.
+                    oversee 4 regional Drupal sites and around 18 WordPress
+                    subsidiary sites.
                   </p>
                   <Heading3 text="Website Management Updates" />
                   <p className="mb-4">
@@ -270,26 +268,25 @@ export default function Home() {
                     spanning four regional sites that utilize a headless Drupal
                     CMS. These updates involve managing content for dozens of
                     consumer, business, and healthcare products. My
-                    responsibilities include collaborating with stakeholders and
-                    our contractor to draft, approve, and translate the updates.
+                    responsibilities include collaborating with stakeholders to
+                    draft, approve, and translate the updates and other
+                    stakeholder requests.
                   </p>
                   <Heading3 text="Subsidiary Sites" />
                   <p className="mb-4">
                     I also process stakeholder requests from 18 subsidiary sites
-                    built in WordPress. I delegate content management tasks to
-                    our contractor. Most of the subsidiary sites are managed by
-                    external agencies whom I work with to maintain and improve
-                    the sites.
+                    built in WordPress. Most of them are managed by external
+                    agencies whom I work with to maintain and improve the sites.
                   </p>
                   <Heading3 text="Project Management" />
                   <p className="mb-4">
-                    After taking a Software Engineering course, I began to
-                    employ <strong>Kanban methodologies</strong> to track
-                    projects and assign tasks to our contractor. Each project
-                    progresses through defined phases: intake, in progress,
-                    review, translation, and scheduling. This approach optimizes
-                    efficiency, transparency, and allows us to quickly respond
-                    to emerging projects.
+                    I employ{" "}
+                    <span className="text-success">Kanban methodologies</span>{" "}
+                    to track projects and assign content management tasks to our
+                    contractor. Each project progresses through defined phases:
+                    intake, in progress, review, translation, and scheduling.
+                    This approach optimizes efficiency, transparency, and allows
+                    us to quickly respond to emerging projects.
                   </p>
 
                   <Heading3 text="Cross Functional Collaboration" />
@@ -299,21 +296,21 @@ export default function Home() {
                   </p>
                   <ul className="mb-4 list-disc pl-5 flex flex-col gap-2">
                     <li>
-                      <strong>Marketing:</strong> to handle product updates and
-                      create landing pages.
+                      Marketing: to handle product updates and create landing
+                      pages.
                     </li>
                     <li>
-                      <strong>IT:</strong> for server management tasks related
-                      to our in-house WordPress server (such as migrating
-                      websites, setting up redirects, and relaying DNS updates).
+                      IT: for server management tasks related to our in-house
+                      WordPress server (such as migrating websites, setting up
+                      redirects, and relaying DNS updates).
                     </li>
                     <li>
-                      <strong>Legal:</strong> to implement cookie consent
-                      solutions and update legal documents.
+                      Legal: to implement cookie consent solutions and update
+                      legal documents.
                     </li>
                     <li>
-                      <strong>Press Teams:</strong> to draft, review, and
-                      schedule press releases.
+                      Press Teams: to draft, review, and schedule press
+                      releases.
                     </li>
                   </ul>
                 </DrawerBody>
