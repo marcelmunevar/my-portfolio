@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div className="">
       <main className="my-4 ">
-        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
+        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-12">
           <Heading1 text="Code Samples" />
-          <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard
               title="Portfolio 2024"
               repoHref="https://github.com/marcelmunevar/MY-PORTFOLIO"
