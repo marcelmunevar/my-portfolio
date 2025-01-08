@@ -2,15 +2,24 @@ import React from "react";
 import Heading3 from "./Heading-3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Card, CardBody } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import { Link } from "@nextui-org/link";
 
 interface ProficiencyProps {
   heading: string;
   text: string;
   icon: IconDefinition;
+  footerText?: string;
+  footerLink?: string;
 }
 
-const Proficiency: React.FC<ProficiencyProps> = ({ text, heading, icon }) => {
+const Proficiency: React.FC<ProficiencyProps> = ({
+  text,
+  heading,
+  icon,
+  footerText,
+  footerLink,
+}) => {
   return (
     <Card className="mb-4">
       <CardBody>
@@ -24,6 +33,24 @@ const Proficiency: React.FC<ProficiencyProps> = ({ text, heading, icon }) => {
           </div>
         </div>
       </CardBody>
+      {footerText || footerLink ? (
+        <>
+          <hr />
+          <CardFooter>
+            <Link
+              className="cursor-pointer"
+              showAnchorIcon
+              color="primary"
+              href={footerLink}
+              target="_blank"
+            >
+              {footerText}{" "}
+            </Link>
+          </CardFooter>
+        </>
+      ) : (
+        false
+      )}
     </Card>
   );
 };

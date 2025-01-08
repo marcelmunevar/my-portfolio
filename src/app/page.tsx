@@ -36,7 +36,6 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-items-center">
                   <div className="max-w-52 text-center">
                     <Image
-                      removeWrapper
                       alt="Portrait of Marcel"
                       className="w-100"
                       src="./marcel.png"
@@ -76,18 +75,14 @@ export default function Home() {
               </CardBody>
               <hr />
               <CardFooter>
-                <div>
-                  <p>
-                    <Link
-                      className="cursor-pointer"
-                      onPress={onOpen}
-                      showAnchorIcon
-                      color="primary"
-                    >
-                      Learn more about my current role at Fujifilm{" "}
-                    </Link>
-                  </p>
-                </div>
+                <Link
+                  className="cursor-pointer"
+                  onPress={onOpen}
+                  showAnchorIcon
+                  color="primary"
+                >
+                  Learn more about my current role at Fujifilm{" "}
+                </Link>
               </CardFooter>
             </Card>
           </div>
@@ -102,22 +97,30 @@ export default function Home() {
             CSS for responsive, efficient styling and TypeScript for enhanced
             code quality and scalability."
               icon={faReact}
+              footerText="See a code sample on Github."
+              footerLink="https://github.com/marcelmunevar/MY-PORTFOLIO"
             />
             <Proficiency
               heading="WordPress Sites"
               text="Experienced in building and maintaining custom WordPress websites. I focus on theme development, performance 
               optimization, and SEO best practices."
               icon={faWordpress}
+              footerText="See a code sample on Github."
+              footerLink="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
             />
             <Proficiency
               heading="MySQL Databases"
               text="Skilled in designing and managing relational databases with MySQL and other SQL-based systems. Focused on optimizing queries, ensuring data integrity, and managing migrations."
               icon={faDatabase}
+              footerText="See a code sample on Github."
+              footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
             />
             <Proficiency
               heading="Github Repositories"
               text="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
               icon={faGithub}
+              footerText="Visit my Github."
+              footerLink="https://github.com/marcelmunevar"
             />
             <Card>
               <CardBody>
@@ -140,7 +143,112 @@ export default function Home() {
             </Card>
           </div>
         </div>
-        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-24"></div>
+        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
+          <Heading2 text="Clients" />
+          <Card>
+            <CardBody>
+              <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center">
+                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./FUJIFILM.jpg"
+                    className="h-12 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./instax.svg"
+                    className="h-12 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./fujifilm-X-GFX.png"
+                    className="h-12 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-4 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./fujinon_logo.png"
+                    className="h-16 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-24">
+          <Heading2 text="Tech" />
+          <Card>
+            <CardBody>
+              <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center ">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./html.jpg"
+                    className="h-18 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./css.jpg"
+                    className="h-18 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
+                  <Image
+                    src="./js.jpg"
+                    className="h-18 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./jquery.jpg"
+                    className="h-28 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./php.jpg"
+                    className="h-28 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./mysql.jpg"
+                    className="h-28 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                  <Image
+                    src="./bootstrap.png"
+                    className="h-28 m-auto"
+                    radius="none"
+                    removeWrapper={true}
+                  />
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
         <Drawer isOpen={isOpen} onOpenChange={onOpenChange}>
           <DrawerContent>
             {(onClose) => (
