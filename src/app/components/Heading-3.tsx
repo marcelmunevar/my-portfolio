@@ -11,7 +11,10 @@ const Heading3: React.FC<HeadingProps> = ({ text, icon }) => {
   return (
     <div className="flex flex-row mb-4 items-center">
       {icon && (
-        <FontAwesomeIcon icon={icon} className="text-xl text-secondary mr-4" />
+        <FontAwesomeIcon
+          icon={icon}
+          className="text-xl text-secondary ml-2 mr-4"
+        />
       )}
       <h3 className="text-xl lg:text-2xl leading-none tracking-tight">
         {text}
