@@ -65,7 +65,7 @@ export default function Home() {
                       <span className="text-success">LAMP stack</span>. I&apos;m
                       comfortable using{" "}
                       <span className="text-success">Github</span> for version
-                      control.
+                      control and cloud-based deployment.
                     </p>
                   </div>
                 </div>
@@ -121,20 +121,48 @@ export default function Home() {
             />
             <Card>
               <CardBody>
-                <Heading3 text="Additional Skills" />
+                <Heading3 text="Hard Skills" />
                 <div className="flex gap-2 flex-wrap">
+                  <Chip color="primary">Node</Chip>
+                  <Chip color="primary">Express</Chip>
                   <Chip color="primary">PHP</Chip>
+                  <Chip color="primary">PostgreSQL</Chip>
                   <Chip color="primary">APIs</Chip>
                   <Chip color="primary">Integrations</Chip>
-
-                  <Chip color="primary">Express JS</Chip>
-                  <Chip color="primary">SASS</Chip>
+                  <Chip color="primary">Sass</Chip>
                   <Chip color="primary">Less</Chip>
                   <Chip color="primary">Bootstrap</Chip>
                   <Chip color="primary">Page Speed</Chip>
                   <Chip color="primary">SEO</Chip>
-                  <Chip color="primary">Responsive</Chip>
                   <Chip color="primary">Tag Manager</Chip>
+                  <Chip color="primary">Analytics</Chip>
+                </div>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardBody>
+                <Heading3 text="Soft Skills" />
+                <div className="flex gap-2 flex-wrap">
+                  <Chip color="primary">Agile</Chip>
+                  <Chip color="primary">Kanban</Chip>
+                  <Chip color="primary">Adaptable</Chip>
+                  <Chip color="primary">Communication</Chip>
+                  <Chip color="primary">Attention to Detail</Chip>
+                  <Chip color="primary">Problem Solving</Chip>
+                </div>
+              </CardBody>
+            </Card>
+            <Card>
+              <CardBody>
+                <Heading3 text="More" />
+                <div className="flex gap-2 flex-wrap">
+                  <ul className="list-disc pl-6">
+                    <li>Responsive web applications.</li>
+                    <li>Object Oriented Programming concepts.</li>
+                    <li>Event-based software design.</li>
+                    <li>Software Engineering Principles</li>
+                    <li>Human Computer Interaction</li>
+                  </ul>
                 </div>
               </CardBody>
             </Card>
@@ -277,8 +305,9 @@ export default function Home() {
                     At Fujifilm, I manage web services for businesses across the
                     Americas. My role involves processing website management
                     updates and other stakeholder requests. Specifically, I
-                    oversee 4 regional Drupal sites and around 18 WordPress
-                    subsidiary sites.
+                    oversee 4 regional Drupal sites, around 18 WordPress
+                    subsidiary sites, more than 300 domains, and a WordPress
+                    server.
                   </p>
                   <Heading3 text="Website Management Updates" />
                   <p className="mb-4">
@@ -331,6 +360,11 @@ export default function Home() {
                       releases.
                     </li>
                   </ul>
+                  <p className="mb-4">
+                    I also play a key role in facilitating application processes
+                    for domain and web application registrations for
+                    stakeholders.
+                  </p>
                 </DrawerBody>
                 <DrawerFooter>
                   <Button color="primary" onPress={onClose}>
