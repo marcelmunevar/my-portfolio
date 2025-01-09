@@ -21,7 +21,7 @@ const Proficiency: React.FC<ProficiencyProps> = ({
   footerLink,
 }) => {
   return (
-    <Card className="mb-4">
+    <Card>
       <CardBody>
         <div className="flex flex-col lg:flex-row gap-8">
           <div>
