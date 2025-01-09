@@ -26,12 +26,12 @@ export default function Home() {
                 institution="BMG Creative & Brandstar"
               />
               <ResumeItem
-                date="2015 - 2016"
+                date="2015"
                 title="Front-End Developer"
                 institution="Nova Southeastern University"
               />
               <ResumeItem
-                date="2013 - 2015"
+                date="2013 - 2014"
                 title="Front-End Developer"
                 institution="Morris4x4Center"
               />
