@@ -39,7 +39,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className=""></footer>
     </div>
   );
 }

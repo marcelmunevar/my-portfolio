@@ -376,9 +376,6 @@ export default function Home() {
           </DrawerContent>
         </Drawer>
       </main>
-      <footer className="text-center bg-content1 p-5">
-        Marcel M &copy; 2025
-      </footer>
     </div>
   );
 }

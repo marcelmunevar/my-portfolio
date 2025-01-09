@@ -27,6 +27,9 @@ export default function RootLayout({
           <GoogleAnalytics gaId="G-EV253K0KMF" />
           <Navigation />
           {children}
+          <footer className="text-center bg-content1 p-5">
+            <p>Marcel M &copy; 2025</p>
+          </footer>
         </Providers>
       </body>
     </html>
