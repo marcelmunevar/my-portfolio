@@ -4,6 +4,10 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Roboto } from "next/font/google";
 import { Providers } from "./providers";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "@nextui-org/link";
 
 const roboto = Roboto({
   weight: "400",
@@ -28,7 +32,33 @@ export default function RootLayout({
           <Navigation />
           {children}
           <footer className="text-center bg-content1 p-5">
-            <p>Marcel M &copy; 2025</p>
+            <div className="container max-w-4xl m-auto flex flex-row justify-between items-center">
+              <div>
+                <p>Marcel M &copy; 2025</p>
+              </div>
+              <div className="">
+                <Link
+                  isExternal
+                  href="https://www.linkedin.com/in/marcelmunevar/"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="text-4xl text-secondary mx-2"
+                  />
+                </Link>
+                <Link
+                  isExternal
+                  href="https://github.com/marcelmunevar?tab=repositories"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="text-4xl text-secondary mx-2"
+                  />
+                </Link>
+              </div>
+            </div>
           </footer>
         </Providers>
       </body>
