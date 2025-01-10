@@ -55,11 +55,12 @@ export default function Home() {
                       </span>
                       , graduating{" "}
                       <span className="text-success">Summa Cum Laude</span> in
-                      2024. Recently, I attended a{" "}
-                      <span className="text-success">React conference</span> and
-                      I&apos;ve been diving into{" "}
-                      <span className="text-success">React and Next.js</span>. I
-                      also have an affinity for{" "}
+                      2024. I have hands-on experience working with{" "}
+                      <span className="text-success">React and Next.js</span>{" "}
+                      and recently attended a{" "}
+                      <span className="text-success">React conference</span> to
+                      stay current with the latest advancements. I also have an
+                      affinity for{" "}
                       <span className="text-success">WordPress websites</span>{" "}
                       with extensive knowledge of{" "}
                       <span className="text-success">LAMP stack</span>. I&apos;m

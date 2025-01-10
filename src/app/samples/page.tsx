@@ -15,18 +15,19 @@ export default function Home() {
               imgsrc="/portfolio.png"
               tech="React, Next.js, NextUI, Tailwind CSS, Typescript"
             />
-            <MyCard
-              title="Rensonaccounting.com"
-              pageHref="https://www.rensonaccounting.com/"
-              repoHref="https://github.com/marcelmunevar/renson-accounting"
-              imgsrc="/rensonaccounting.png"
-              tech="React, Next.js, Tailwind CSS, Typescript"
-            />
+
             <MyCard
               title="Fujinon.com"
               pageHref="https://www.fujinon.com/"
               repoHref="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
               imgsrc="/fujinon.png"
+              tech="WordPress, PHP, jQuery, Sass, ACF"
+            />
+            <MyCard
+              title="Fujifilm-x.com homepage"
+              pageHref="https://fujifilm-x.com/en-us/"
+              repoHref="https://github.com/Fujifilm-By-Marcel/fujifilm-x_theme/blob/master/page-home.php"
+              imgsrc="/x-home.jpg"
               tech="WordPress, PHP, jQuery, Sass, ACF"
             />
             <MyCard
