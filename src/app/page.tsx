@@ -95,7 +95,7 @@ export default function Home() {
             CSS for responsive, efficient styling and TypeScript for enhanced
             code quality and scalability."
               icon={faReact}
-              footerText="See a code sample on Github."
+              footerText="Visit a code sample on Github."
               footerLink="https://github.com/marcelmunevar/MY-PORTFOLIO"
             />
             <Proficiency
@@ -103,14 +103,14 @@ export default function Home() {
               text="Experienced in building and maintaining custom WordPress websites. I focus on theme development, performance 
               optimization, and SEO best practices."
               icon={faWordpress}
-              footerText="See a code sample on Github."
+              footerText="Visit a code sample on Github."
               footerLink="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
             />
             <Proficiency
               heading="MySQL Databases"
               text="Skilled in designing and managing relational databases with MySQL and other SQL-based systems. Focused on optimizing queries, ensuring data integrity, and managing migrations."
               icon={faDatabase}
-              footerText="See a code sample on Github."
+              footerText="Visit a code sample on Github."
               footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
             />
             <Proficiency
