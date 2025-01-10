@@ -42,6 +42,7 @@ export default function Home() {
                     />
                     <p> Marcel Munevar </p>
                     <p className="text-default-500"> Full-Stack Developer </p>
+                    <p className="text-default-500"> Stamford, CT </p>
                   </div>
                   <div className="md:col-span-3">
                     <p className="mb-4">
