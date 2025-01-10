@@ -36,7 +36,11 @@ export default function App() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-content1">
+    <Navbar
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-content1"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -74,6 +78,7 @@ export default function App() {
             isActive={currentPath === item.href}
           >
             <Link
+              onPress={() => setIsMenuOpen(!isMenuOpen)}
               color={currentPath === item.href ? "primary" : "foreground"}
               className="w-full"
               href={item.href}
