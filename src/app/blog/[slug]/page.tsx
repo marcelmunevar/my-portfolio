@@ -51,7 +51,7 @@ function getImage(posts: PostsResponse, post: Post) {
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }) {
   // Get the slug from the dynamic route parameter
   const { slug } = await Promise.resolve(params);
