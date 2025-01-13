@@ -57,7 +57,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   // Get the slug from the dynamic route parameter
   const { slug } = await params;
   const data = await fetch(
