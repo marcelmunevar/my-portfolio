@@ -5,7 +5,7 @@ import { Card, CardBody } from "@nextui-org/card";
 import Heading1 from "../components/Heading-1";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
-import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/avatar";
+import { Avatar } from "@nextui-org/avatar";
 
 export const metadata: Metadata = {
   title: "Blog | Marcel's Portfolio",
