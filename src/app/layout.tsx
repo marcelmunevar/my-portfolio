@@ -16,7 +16,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Marcel's React Portfolio",
-  description: "My React portfolio. Built with Next.js.",
+  description:
+    "Explore my React portfolio showcasing innovative projects built with Next.js. Discover responsive designs, cutting-edge web development techniques, and seamless user experiences.",
 };
 
 export default function RootLayout({
