@@ -6,6 +6,7 @@ import { Image } from "@nextui-org/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
+import ClientBreadcrumbs from "@/app/components/ClientBreadcrumbs";
 
 // Define the types for your data
 interface Post {
@@ -96,6 +97,17 @@ export default async function BlogPost({
             {children}
           </a>
         ),
+        [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
+          <ul className="list-disc pl-4">{children}</ul>
+        ),
+        [BLOCKS.HEADING_3]: (
+          node: Block | Inline,
+          children: React.ReactNode
+        ) => (
+          <h3 className="text-xl lg:text-2xl leading-none tracking-tight mb-4">
+            {children}
+          </h3>
+        ),
       },
     };
     renderedContent = documentToReactComponents(content as Document, options);
@@ -106,6 +118,13 @@ export default async function BlogPost({
 
   return (
     <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
+      <ClientBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.fields.title, href: `/blog/${post.fields.slug}` },
+        ]}
+      />
       <Card className="h-full">
         <CardHeader>
           <Heading1 text={post.fields.title} />
