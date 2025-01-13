@@ -51,10 +51,10 @@ function getImage(posts: PostsResponse, post: Post) {
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;
 }) {
   // Get the slug from the dynamic route parameter
-  const { slug } = await Promise.resolve(params);
+  const { slug } = await params;
 
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
