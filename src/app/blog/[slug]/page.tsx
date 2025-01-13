@@ -133,7 +133,7 @@ export default async function BlogPost({
           <Image
             src={getImage(posts, post)}
             width={800}
-            height={400}
+            height={0}
             alt={post.fields.title}
             className="mb-4"
           />
