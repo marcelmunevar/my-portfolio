@@ -72,9 +72,9 @@ export default async function BlogHome() {
             <Link key={post.fields.slug} href={`/blog/${post.fields.slug}`}>
               <Card className="h-full">
                 <CardBody className="h-full justify-between">
-                  <h4 className="text-primary mb-4 text-xl font-bold">
+                  <h3 className="text-xl lg:text-2xl leading-none tracking-tight text-primary mb-4">
                     {post.fields.title}
-                  </h4>
+                  </h3>
                   <Image
                     src={getImage(posts, post)}
                     width={500}
