@@ -3,8 +3,8 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../../components/Heading-1";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
+import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
 
 // Define the types for your data
 interface Post {
@@ -106,7 +106,14 @@ export default async function BlogPost({
 
   // Check if the content is a rich text Document (it should have nodeType)
   if (content && content.nodeType) {
-    renderedContent = documentToReactComponents(content);
+    const options = {
+      renderNode: {
+        [BLOCKS.PARAGRAPH]: (node, children) => (
+          <p className="mb-4">{children}</p>
+        ),
+      },
+    };
+    renderedContent = documentToReactComponents(content, options);
   } else if (typeof content === "string") {
     // If it's a string (HTML content), render it directly
     renderedContent = <div dangerouslySetInnerHTML={{ __html: content }} />;
