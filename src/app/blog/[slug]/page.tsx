@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../../components/Heading-1";
+import Heading2 from "../../components/Heading-2";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -15,6 +16,7 @@ interface Post {
     title: string;
     content: Document;
     publishedDate: string;
+    shortDescription: string;
     featuredImage: {
       sys: {
         id: string;
@@ -126,7 +128,7 @@ export default async function BlogPost({
         ]}
       />
       <Card className="h-full">
-        <CardHeader>
+        <CardHeader className="flex flex-col items-start">
           <Heading1 text={post.fields.title} />
         </CardHeader>
         <CardBody className="h-full">
@@ -137,9 +139,11 @@ export default async function BlogPost({
             alt={post.fields.title}
             className="mb-4"
           />
+
           <p className="text-default-500 mb-4">
             {Date(post.fields.publishedDate)}
           </p>
+          <Heading2 text={post.fields.shortDescription} />
           {renderedContent}
         </CardBody>
       </Card>
