@@ -5,7 +5,7 @@ import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
-import { BLOCKS, Block, Inline } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
 
 // Define the types for your data
 interface Post {
@@ -88,6 +88,14 @@ export default async function BlogPost({
           node: Block | Inline,
           children: React.ReactNode
         ) => <p className="mb-4">{children}</p>,
+        [INLINES.HYPERLINK]: (
+          node: Block | Inline,
+          children: React.ReactNode
+        ) => (
+          <a href={node.data.uri} target="_blank" className="text-primary">
+            {children}
+          </a>
+        ),
       },
     };
     renderedContent = documentToReactComponents(content as Document, options);
