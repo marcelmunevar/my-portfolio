@@ -68,8 +68,8 @@ export default async function BlogHome() {
         <Heading1 text="Blog" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {posts.items.map((post: Post) => (
-            <Link href={`/blog/${post.fields.slug}`} className="">
-              <Card key={post.fields.slug} className="h-full">
+            <Link key={post.fields.slug} href={`/blog/${post.fields.slug}`}>
+              <Card className="h-full">
                 <CardBody className="h-full justify-between">
                   <h4 className="text-primary mb-4 text-xl font-bold">
                     {post.fields.title}

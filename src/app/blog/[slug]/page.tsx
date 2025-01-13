@@ -3,15 +3,16 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../../components/Heading-1";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
-import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
+import { BLOCKS, Block, Inline } from "@contentful/rich-text-types";
 
 // Define the types for your data
 interface Post {
   fields: {
     slug: string;
     title: string;
-    content: any;
+    content: Document;
     publishedDate: string;
     featuredImage: {
       sys: {
@@ -44,7 +45,7 @@ function Date(dateString: string) {
 
 function getImage(posts: PostsResponse, post: Post) {
   const assetId = post.fields.featuredImage.sys.id;
-  const asset = posts.includes.Asset.find((a: any) => a.sys.id === assetId);
+  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
   return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
 export default async function BlogPost({
@@ -53,7 +54,7 @@ export default async function BlogPost({
   params: { slug: string };
 }) {
   // Get the slug from the dynamic route parameter
-  const { slug } = params;
+  const { slug } = await Promise.resolve(params);
 
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
@@ -76,39 +77,19 @@ export default async function BlogPost({
 
   const content = post.fields.content;
 
-  // Define the custom renderer for the rich text content
-  const options = {
-    renderNode: {
-      paragraph: (node: any) => {
-        return (
-          <p className="mb-4">
-            {node.content.map((item: any) => item.value).join(" ")}
-          </p>
-        );
-      },
-      hyperlink: (node: any) => {
-        const { uri } = node.data; // Get the URL from the hyperlink node
-        return (
-          <a href={uri} target="_blank" rel="noopener noreferrer">
-            {node.content[0].value}
-          </a>
-        );
-      },
-    },
-  };
-
   let renderedContent;
 
   // Check if the content is a rich text Document (it should have nodeType)
   if (content && content.nodeType) {
     const options = {
       renderNode: {
-        [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
-          <p className="mb-4">{children}</p>
-        ),
+        [BLOCKS.PARAGRAPH]: (
+          node: Block | Inline,
+          children: React.ReactNode
+        ) => <p className="mb-4">{children}</p>,
       },
     };
-    renderedContent = documentToReactComponents(content, options);
+    renderedContent = documentToReactComponents(content as Document, options);
   } else if (typeof content === "string") {
     // If it's a string (HTML content), render it directly
     renderedContent = <div dangerouslySetInnerHTML={{ __html: content }} />;
