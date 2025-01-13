@@ -5,6 +5,7 @@ import { Card, CardBody } from "@nextui-org/card";
 import Heading1 from "../components/Heading-1";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
+import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/avatar";
 
 export const metadata: Metadata = {
   title: "Blog | Marcel's Portfolio",
@@ -90,10 +91,12 @@ export default async function BlogHome() {
                     className="mb-4"
                   />
                   <p className="mb-4">{post.fields.shortDescription}</p>
-
-                  <p className="text-default-500">
-                    {Date(post.fields.publishedDate)}
-                  </p>
+                  <div className="flex flex-row items-center justify-between">
+                    <p className="text-default-500">
+                      {Date(post.fields.publishedDate)}
+                    </p>
+                    <Avatar name="Marcel" size="md" src="/marcel.png" />
+                  </div>
                 </CardBody>
               </Card>
             </Link>
