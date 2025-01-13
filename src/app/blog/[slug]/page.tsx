@@ -5,10 +5,17 @@ import Heading2 from "../../components/Heading-2";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Document } from "@contentful/rich-text-types";
-import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
+import {
+  Document,
+  BLOCKS,
+  INLINES,
+  MARKS,
+  Block,
+  Inline,
+} from "@contentful/rich-text-types";
 import ClientBreadcrumbs from "@/app/components/ClientBreadcrumbs";
 import type { Metadata } from "next";
+import { Code } from "@nextui-org/code";
 
 // Define the types for your data
 interface Post {
@@ -146,6 +153,9 @@ export default async function BlogPost({
             {children}
           </h3>
         ),
+      },
+      renderMark: {
+        [MARKS.CODE]: (text: React.ReactNode) => <Code>{text}</Code>,
       },
     };
     renderedContent = documentToReactComponents(content as Document, options);
