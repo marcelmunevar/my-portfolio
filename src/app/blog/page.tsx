@@ -1,9 +1,16 @@
 // app/post/page.js
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardBody } from "@nextui-org/card";
 import Heading1 from "../components/Heading-1";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
+
+export const metadata: Metadata = {
+  title: "Blog | Marcel's Portfolio",
+  description:
+    "Read my latest thoughts and insights on web development, including React, Next.js, and full-stack development.",
+};
 
 // Define the types for your data
 interface Post {

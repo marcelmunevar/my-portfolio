@@ -11,7 +11,7 @@ interface ClientBreadcrumbsProps {
 export default function ClientBreadcrumbs({ items }: ClientBreadcrumbsProps) {
   return (
     <Breadcrumbs className="mb-4">
-      {items.map((item, index) => (
+      {items.map((item) => (
         <BreadcrumbItem key={item.href} href={item.href}>
           {item.label}
         </BreadcrumbItem>

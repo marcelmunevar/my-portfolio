@@ -8,6 +8,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Document } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
 import ClientBreadcrumbs from "@/app/components/ClientBreadcrumbs";
+import type { Metadata } from "next";
 
 // Define the types for your data
 interface Post {
@@ -51,6 +52,41 @@ function getImage(posts: PostsResponse, post: Post) {
   const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
   return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  // Get the slug from the dynamic route parameter
+  const { slug } = await params;
+  const data = await fetch(
+    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      next: { revalidate: 60 },
+    }
+  );
+
+  const posts = await data.json();
+  const post = posts.items[0];
+
+  if (!post) {
+    return {
+      title: "Post Not Found | Marcel's Portfolio",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.fields.title} | Marcel's Portfolio`,
+    description: post.fields.shortDescription,
+  };
+}
+
 export default async function BlogPost({
   params,
 }: {
