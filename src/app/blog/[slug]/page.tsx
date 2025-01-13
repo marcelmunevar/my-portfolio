@@ -79,12 +79,6 @@ export default async function BlogPost({
   // Define the custom renderer for the rich text content
   const options = {
     renderNode: {
-      "embedded-entry-block": (node: any) => {
-        return null; // Handle embedded entries here if necessary
-      },
-      "embedded-asset-block": (node: any) => {
-        return null; // Handle embedded assets here if necessary
-      },
       paragraph: (node: any) => {
         return (
           <p className="mb-4">
@@ -102,13 +96,14 @@ export default async function BlogPost({
       },
     },
   };
+
   let renderedContent;
 
   // Check if the content is a rich text Document (it should have nodeType)
   if (content && content.nodeType) {
     const options = {
       renderNode: {
-        [BLOCKS.PARAGRAPH]: (node, children) => (
+        [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
           <p className="mb-4">{children}</p>
         ),
       },
