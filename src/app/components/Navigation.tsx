@@ -33,6 +33,7 @@ export default function App() {
     { text: "About", href: "/" },
     { text: "Resume", href: "/resume" },
     { text: "Samples", href: "/samples" },
+    { text: "Blog", href: "/blog" },
   ];
 
   return (
