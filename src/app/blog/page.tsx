@@ -45,7 +45,7 @@ function Date(dateString: string) {
 
 function getImage(posts: PostsResponse, post: Post) {
   const assetId = post.fields.featuredImage.sys.id;
-  const asset = posts.includes.Asset.find((a: any) => a.sys.id === assetId);
+  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
   return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
 
