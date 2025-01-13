@@ -57,6 +57,7 @@ export default async function BlogHome() {
       headers: {
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
+      next: { revalidate: 60 },
     }
   );
 
