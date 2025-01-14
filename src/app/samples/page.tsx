@@ -30,13 +30,6 @@ export default function Home() {
               imgsrc="/x-home.jpg"
               tech="WordPress, PHP, jQuery, Sass, ACF"
             />
-            <MyCard
-              title="jQuery Slider Plugin"
-              pageHref="https://marcelmunevar.github.io/jquery-slider-plugin-landing-page/"
-              repoHref="https://github.com/marcelmunevar/jquery-slider-plugin-landing-page"
-              imgsrc="/jquery-plugin.png"
-              tech="HTML, CSS, jQuery, Bootstrap"
-            />
           </div>
         </div>
       </main>
