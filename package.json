@@ -27,6 +27,7 @@
     "@nextui-org/image": "^2.2.3",
     "@nextui-org/link": "^2.2.5",
     "@nextui-org/navbar": "^2.2.5",
+    "@nextui-org/skeleton": "^2.2.5",
     "@nextui-org/switch": "^2.2.6",
     "@nextui-org/system": "^2.4.4",
     "@nextui-org/theme": "^2.4.3",
