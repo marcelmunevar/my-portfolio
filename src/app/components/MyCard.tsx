@@ -34,7 +34,8 @@ const Page: React.FC<PageProps> = ({
         <Image
           className="object-cover rounded-xl"
           src={imgsrc}
-          width={796}
+          width={376}
+          height={234}
           alt=""
         />
       </CardBody>

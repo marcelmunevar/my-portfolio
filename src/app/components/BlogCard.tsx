@@ -62,8 +62,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, posts }) => {
           </h3>
           <Image
             src={getImage(posts, post)}
-            width={500}
-            height={0}
+            width={384}
+            height={256}
             alt={post.fields.title}
             className="mb-4"
           />
