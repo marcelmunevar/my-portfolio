@@ -17,18 +17,18 @@ export default function Home() {
             />
 
             <MyCard
-              title="Fujinon.com"
+              title="Fujinon.com theme"
               pageHref="https://www.fujinon.com/"
               repoHref="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
               imgsrc="/fujinon.png"
-              tech="WordPress, PHP, jQuery, ACF"
+              tech="Sass,WordPress, PHP, jQuery, ACF"
             />
             <MyCard
               title="Fujifilm-x.com homepage"
               pageHref="https://fujifilm-x.com/en-us/"
               repoHref="https://github.com/Fujifilm-By-Marcel/fujifilm-x_theme/blob/master/page-home.php"
               imgsrc="/x-home.jpg"
-              tech="WordPress, PHP, jQuery, Sass, ACF"
+              tech="WordPress, PHP, jQuery, ACF"
             />
           </div>
         </div>
