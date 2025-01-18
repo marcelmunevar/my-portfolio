@@ -16,7 +16,7 @@ export default function BlogHome() {
       <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-8">
         <Heading1 text="Blog" />
         <p className="mb-4">
-          I've integrated a streaming feature on my blog page to provide a
+          I&apos;ve integrated a streaming feature on my blog page to provide a
           smoother and more dynamic reading experience. You might notice a brief
           loading animation (skeletons) while the content is being fetched, but
           rest assured, this is just a visual cue to enhance your browsing
