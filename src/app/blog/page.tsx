@@ -12,20 +12,18 @@ export const metadata: Metadata = {
 
 export default function BlogHome() {
   return (
-    <div>
-      <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-8">
-        <Heading1 text="Blog" />
-        <p className="mb-4">
-          I&apos;ve integrated a streaming feature on my blog page to provide a
-          smoother and more dynamic reading experience. You might notice a brief
-          loading animation (skeletons) while the content is being fetched, but
-          rest assured, this is just a visual cue to enhance your browsing
-          experience. Enjoy seamless reading!{" "}
-        </p>
-        <Suspense fallback={<BlogCardSkeleton />}>
-          <PostList />
-        </Suspense>
-      </div>
+    <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-8">
+      <Heading1 text="Blog" />
+      <p className="mb-4">
+        I&apos;ve integrated a streaming feature on my blog page to provide a
+        smoother and more dynamic reading experience. You might notice a brief
+        loading animation (skeletons) while the content is being fetched, but
+        rest assured, this is just a visual cue to enhance your browsing
+        experience. Enjoy seamless reading!{" "}
+      </p>
+      <Suspense fallback={<BlogCardSkeleton />}>
+        <PostList />
+      </Suspense>
     </div>
   );
 }
