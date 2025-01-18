@@ -19,7 +19,7 @@ import { Link } from "@nextui-org/link";
 import { Button } from "@nextui-org/button";
 import { useDisclosure } from "@nextui-org/use-disclosure";
 import { Chip } from "@nextui-org/chip";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 
 export default function Home() {
@@ -36,9 +36,11 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-items-center">
                   <div className="max-w-52 text-center">
                     <Image
-                      alt="Portrait of Marcel"
+                      alt="Picture of the author"
                       className="w-100 mb-1"
-                      src="./marcel.png"
+                      src="/marcel.png"
+                      width={200}
+                      height={0}
                     />
                     <p> Marcel Munevar </p>
                     <p className="text-default-500"> Full-Stack Developer </p>
@@ -174,41 +176,41 @@ export default function Home() {
           <Heading2 text="Clients" />
           <Card>
             <CardBody>
-              <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center">
-                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+              <div className="flex flex-col md:flex-row gap-4 flex-wrap items-stretch ">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center ">
                   <Image
-                    src="./FUJIFILM.jpg"
+                    src="/FUJIFILM.jpg"
                     alt="Fujifilm logo"
-                    className="h-12 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
                   <Image
-                    src="./instax.svg"
+                    src="/instax.svg"
                     alt="Instax logo"
-                    className="h-12 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-6 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
                   <Image
-                    src="./fujifilm-X-GFX.png"
+                    src="/fujifilm-X-GFX.png"
                     alt="Fujifilm X GFX logo"
-                    className="h-12 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-4 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
                   <Image
-                    src="./fujinon_logo.png"
+                    src="/fujinon_logo.png"
                     alt="Fujinon logo"
-                    className="h-16 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
               </div>
@@ -229,58 +231,58 @@ export default function Home() {
           <Card>
             <CardBody>
               <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center ">
-                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow items-stretch">
                   <Image
-                    src="./html.jpg"
+                    src="/html.jpg"
                     alt="HTML5"
-                    className="h-18 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="./css.jpg"
+                    src="/css.jpg"
                     alt="CSS3"
-                    className="h-18 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
                   <Image
-                    src="./js.jpg"
+                    src="/js.jpg"
                     alt="JS5+"
-                    className="h-18 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="./jquery.jpg"
+                    src="/jquery.jpg"
                     alt="jQuery"
-                    className="h-28 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="./php.jpg"
+                    src="/php.jpg"
                     alt="PHP"
-                    className="h-28 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
-                <div className="p-1 bg-white w-full md:w-auto rounded-xl flex-grow">
+                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="./mysql.jpg"
+                    src="/mysql.jpg"
                     alt="MySQL"
-                    className="h-28 m-auto"
-                    radius="none"
-                    removeWrapper={true}
+                    className="m-auto"
+                    width={100}
+                    height={0}
                   />
                 </div>
               </div>
