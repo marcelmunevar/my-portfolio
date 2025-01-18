@@ -21,7 +21,7 @@ export default function Home() {
               pageHref="https://www.fujinon.com/"
               repoHref="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
               imgsrc="/fujinon.png"
-              tech="Sass,WordPress, PHP, jQuery, ACF"
+              tech="Sass, WordPress, PHP, jQuery, ACF"
             />
             <MyCard
               title="Fujifilm-x.com homepage"
