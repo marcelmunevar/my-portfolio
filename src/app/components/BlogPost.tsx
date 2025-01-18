@@ -18,6 +18,7 @@ import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "./ClientBreadcrumbs";
 import { Suspense } from "react";
 import BlogPostSkeleton from "./BlogPostSkeleton";
+import { cache } from "react";
 
 // Define the types for your data
 interface Post {
@@ -62,13 +63,8 @@ function getImage(posts: PostsResponse, post: Post) {
   return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  // Get the slug from the dynamic route parameter
-  const { slug } = params;
+// Add this new function to handle the fetch
+async function getBlogPost(slug: string) {
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
     {
@@ -80,7 +76,16 @@ export async function generateMetadata({
     }
   );
 
-  const posts = await data.json();
+  const posts: PostsResponse = await data.json();
+  return posts;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const posts = await getBlogPost(params.slug);
   const post = posts.items[0];
 
   if (!post) {
@@ -97,24 +102,11 @@ export async function generateMetadata({
 }
 
 async function BlogPostContent({ slug }: { slug: string }) {
-  const data = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      },
-      next: { revalidate: 60 },
-    }
-  );
-
-  const posts: PostsResponse = await data.json();
-
-  // Check if the post exists
+  const posts = await getBlogPost(slug);
   const post = posts.items[0];
 
   if (!post) {
-    notFound(); // This will render the 404 page if the post isn't found
+    notFound();
   }
 
   const content = post.fields.content;
