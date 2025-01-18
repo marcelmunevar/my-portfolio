@@ -45,7 +45,6 @@ export default async function PostList() {
 }
 
 async function Posts() {
-  await new Promise((resolve) => setTimeout(resolve, 1000)); // 2 second delay
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1`,
     {

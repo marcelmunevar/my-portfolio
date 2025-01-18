@@ -97,9 +97,6 @@ export async function generateMetadata({
 }
 
 async function BlogPostContent({ slug }: { slug: string }) {
-  // Add artificial delay to see the loading state
-  await new Promise((resolve) => setTimeout(resolve, 1000)); // 2 second delay
-
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
     {
@@ -180,7 +177,7 @@ async function BlogPostContent({ slug }: { slug: string }) {
           <Image
             src={getImage(posts, post)}
             width={800}
-            height={533}
+            height={0}
             alt={post.fields.title}
             className="mb-4"
           />
