@@ -96,12 +96,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+async function BlogPostContent({ slug }: { slug: string }) {
+  // Add artificial delay to see the loading state
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // 2 second delay
 
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
@@ -166,36 +163,45 @@ export default async function BlogPost({
   }
 
   return (
+    <>
+      <ClientBreadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.fields.title, href: `/blog/${post.fields.slug}` },
+        ]}
+      />
+
+      <Card className="h-full">
+        <CardHeader className="flex flex-col items-start">
+          <Heading1 text={post.fields.title} />
+        </CardHeader>
+        <CardBody className="h-full">
+          <Image
+            src={getImage(posts, post)}
+            width={800}
+            height={533}
+            alt={post.fields.title}
+            className="mb-4"
+          />
+
+          <p className="text-default-500 mb-4">
+            {Date(post.fields.publishedDate)}
+          </p>
+          <Heading2 text={post.fields.shortDescription} />
+          {renderedContent}
+        </CardBody>
+      </Card>
+    </>
+  );
+}
+
+// Simplify the main component
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  return (
     <div>
       <Suspense fallback={<BlogPostSkeleton />}>
-        <ClientBreadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Blog", href: "/blog" },
-            { label: post.fields.title, href: `/blog/${post.fields.slug}` },
-          ]}
-        />
-
-        <Card className="h-full">
-          <CardHeader className="flex flex-col items-start">
-            <Heading1 text={post.fields.title} />
-          </CardHeader>
-          <CardBody className="h-full">
-            <Image
-              src={getImage(posts, post)}
-              width={800}
-              height={533}
-              alt={post.fields.title}
-              className="mb-4"
-            />
-
-            <p className="text-default-500 mb-4">
-              {Date(post.fields.publishedDate)}
-            </p>
-            <Heading2 text={post.fields.shortDescription} />
-            {renderedContent}
-          </CardBody>
-        </Card>
+        <BlogPostContent slug={params.slug} />
       </Suspense>
     </div>
   );

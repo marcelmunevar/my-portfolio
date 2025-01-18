@@ -35,6 +35,17 @@ interface PostsResponse {
 }
 
 export default async function PostList() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <Suspense fallback={<BlogCardSkeleton />}>
+        <Posts />
+      </Suspense>
+    </div>
+  );
+}
+
+async function Posts() {
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // 2 second delay
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1`,
     {
@@ -49,12 +60,10 @@ export default async function PostList() {
   const posts = (await data.json()) as PostsResponse;
 
   return (
-    <Suspense fallback={<BlogCardSkeleton />}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {posts.items.map((post: Post) => (
-          <BlogCard key={post.fields.slug} post={post} posts={posts} />
-        ))}
-      </div>
-    </Suspense>
+    <>
+      {posts.items.map((post: Post) => (
+        <BlogCard key={post.fields.slug} post={post} posts={posts} />
+      ))}
+    </>
   );
 }
