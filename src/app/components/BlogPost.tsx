@@ -193,7 +193,6 @@ async function BlogPostContent({ slug }: { slug: string }) {
   );
 }
 
-// Simplify the main component
 export default function BlogPost({ params }: { params: { slug: string } }) {
   return (
     <div>
