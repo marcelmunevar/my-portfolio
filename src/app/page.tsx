@@ -37,10 +37,10 @@ export default function Home() {
                   <div className="max-w-52 text-center">
                     <Image
                       alt="Picture of the author"
-                      className="w-100 mb-1"
+                      className="w-100 mb-1 rounded-xl"
                       src="/marcel.png"
-                      width={200}
-                      height={0}
+                      width={178}
+                      height={173}
                     />
                     <p> Marcel Munevar </p>
                     <p className="text-default-500"> Full-Stack Developer </p>
@@ -183,7 +183,7 @@ export default function Home() {
                     alt="Fujifilm logo"
                     className="m-auto"
                     width={100}
-                    height={0}
+                    height={27}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
@@ -192,7 +192,7 @@ export default function Home() {
                     alt="Instax logo"
                     className="m-auto"
                     width={100}
-                    height={0}
+                    height={49}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
@@ -201,7 +201,7 @@ export default function Home() {
                     alt="Fujifilm X GFX logo"
                     className="m-auto"
                     width={100}
-                    height={0}
+                    height={44}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
@@ -210,7 +210,7 @@ export default function Home() {
                     alt="Fujinon logo"
                     className="m-auto"
                     width={100}
-                    height={0}
+                    height={44}
                   />
                 </div>
               </div>
@@ -236,8 +236,8 @@ export default function Home() {
                     src="/html.jpg"
                     alt="HTML5"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
@@ -245,8 +245,8 @@ export default function Home() {
                     src="/css.jpg"
                     alt="CSS3"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
@@ -254,8 +254,8 @@ export default function Home() {
                     src="/js.jpg"
                     alt="JS5+"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
@@ -263,8 +263,8 @@ export default function Home() {
                     src="/jquery.jpg"
                     alt="jQuery"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
@@ -272,8 +272,8 @@ export default function Home() {
                     src="/php.jpg"
                     alt="PHP"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
@@ -281,8 +281,8 @@ export default function Home() {
                     src="/mysql.jpg"
                     alt="MySQL"
                     className="m-auto"
-                    width={100}
-                    height={0}
+                    width={75}
+                    height={104}
                   />
                 </div>
               </div>
