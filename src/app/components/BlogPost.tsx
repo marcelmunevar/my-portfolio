@@ -16,6 +16,8 @@ import {
 import type { Metadata } from "next";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "./ClientBreadcrumbs";
+import { Suspense } from "react";
+import BlogPostSkeleton from "./BlogPostSkeleton";
 
 // Define the types for your data
 interface Post {
@@ -164,35 +166,37 @@ export default async function BlogPost({
   }
 
   return (
-    <>
-      <ClientBreadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: post.fields.title, href: `/blog/${post.fields.slug}` },
-        ]}
-      />
+    <div>
+      <Suspense fallback={<BlogPostSkeleton />}>
+        <ClientBreadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Blog", href: "/blog" },
+            { label: post.fields.title, href: `/blog/${post.fields.slug}` },
+          ]}
+        />
 
-      <Card className="h-full">
-        <CardHeader className="flex flex-col items-start">
-          <Heading1 text={post.fields.title} />
-        </CardHeader>
-        <CardBody className="h-full">
-          <Image
-            src={getImage(posts, post)}
-            width={800}
-            height={0}
-            alt={post.fields.title}
-            className="mb-4"
-          />
+        <Card className="h-full">
+          <CardHeader className="flex flex-col items-start">
+            <Heading1 text={post.fields.title} />
+          </CardHeader>
+          <CardBody className="h-full">
+            <Image
+              src={getImage(posts, post)}
+              width={800}
+              height={0}
+              alt={post.fields.title}
+              className="mb-4"
+            />
 
-          <p className="text-default-500 mb-4">
-            {Date(post.fields.publishedDate)}
-          </p>
-          <Heading2 text={post.fields.shortDescription} />
-          {renderedContent}
-        </CardBody>
-      </Card>
-    </>
+            <p className="text-default-500 mb-4">
+              {Date(post.fields.publishedDate)}
+            </p>
+            <Heading2 text={post.fields.shortDescription} />
+            {renderedContent}
+          </CardBody>
+        </Card>
+      </Suspense>
+    </div>
   );
 }

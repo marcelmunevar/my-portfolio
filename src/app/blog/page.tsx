@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Heading1 from "../components/Heading-1";
-import { Suspense } from "react";
-import BlogCardSkeleton from "../components/PostListSkeleton";
 import PostList from "../components/PostList";
 
 export const metadata: Metadata = {
@@ -21,9 +19,7 @@ export default function BlogHome() {
         rest assured, this is just a visual cue to enhance your browsing
         experience. Enjoy seamless reading!{" "}
       </p>
-      <Suspense fallback={<BlogCardSkeleton />}>
-        <PostList />
-      </Suspense>
+      <PostList />
     </div>
   );
 }
