@@ -65,10 +65,10 @@ function getImage(posts: PostsResponse, post: Post) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }): Promise<Metadata> {
   // Get the slug from the dynamic route parameter
-  const { slug } = await params;
+  const { slug } = params;
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
     {
