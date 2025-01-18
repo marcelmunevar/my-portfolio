@@ -2,10 +2,6 @@ import { Suspense } from "react";
 import BlogCard from "./BlogCard";
 import BlogCardSkeleton from "./PostListSkeleton";
 
-export async function sleep(duration = 1_000) {
-  return new Promise((resolve) => setTimeout(resolve, duration));
-}
-
 interface Post {
   fields: {
     slug: string;
@@ -39,7 +35,6 @@ interface PostsResponse {
 }
 
 export default async function PostList() {
-  await sleep(Math.random() * 5_000);
   const data = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1`,
     {
