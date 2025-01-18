@@ -18,7 +18,6 @@ import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "./ClientBreadcrumbs";
 import { Suspense } from "react";
 import BlogPostSkeleton from "./BlogPostSkeleton";
-import { cache } from "react";
 
 // Define the types for your data
 interface Post {
