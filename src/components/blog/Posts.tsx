@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import BlogCard from "./Card";
+import BlogCard from "./BlogCard";
 import BlogCardSkeleton from "./PostsSkeleton";
 
 interface Post {
