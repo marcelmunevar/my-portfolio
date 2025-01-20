@@ -1,6 +1,9 @@
-import { Suspense } from "react";
-import BlogCard from "./BlogCard";
-import BlogCardSkeleton from "./PostsSkeleton";
+import Link from "next/link";
+import { Card, CardBody } from "@nextui-org/card";
+import { Image } from "@nextui-org/image";
+import { Avatar } from "@nextui-org/avatar";
+import { parseISO, format } from "date-fns";
+import { getPosts } from "@/utils/getPosts";
 
 interface Post {
   fields: {
@@ -34,35 +37,58 @@ interface PostsResponse {
   };
 }
 
-export default async function PostList() {
+interface BlogCardProps {
+  post: Post;
+  posts: PostsResponse;
+}
+
+function formatDate(dateString: string) {
+  const date = parseISO(dateString);
+  return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
+}
+
+function getImage(posts: PostsResponse, post: Post) {
+  const assetId = post.fields.featuredImage.sys.id;
+  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
+  return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
+}
+
+function BlogCard({ post, posts }: BlogCardProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <Suspense fallback={<BlogCardSkeleton />}>
-        <Posts />
-      </Suspense>
-    </div>
+    <Link href={`/blog/${post.fields.slug}`}>
+      <Card className="h-full">
+        <CardBody className="h-full justify-between">
+          <h3 className="text-xl lg:text-2xl tracking-tight text-primary mb-4">
+            {post.fields.title}
+          </h3>
+          <Image
+            src={getImage(posts, post)}
+            width={384}
+            height={256}
+            alt={post.fields.title}
+            className="mb-4"
+          />
+          <p className="mb-4">{post.fields.shortDescription}</p>
+          <div className="flex flex-row items-center justify-between">
+            <p className="text-default-500">
+              {formatDate(post.fields.publishedDate)}
+            </p>
+            <Avatar name="Marcel" size="md" src="/marcel.png" />
+          </div>
+        </CardBody>
+      </Card>
+    </Link>
   );
 }
 
-async function Posts() {
-  const data = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      },
-      next: { revalidate: 60 },
-    }
-  );
-
-  const posts = (await data.json()) as PostsResponse;
+export default async function Posts() {
+  const posts = await getPosts();
 
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {posts.items.map((post: Post) => (
         <BlogCard key={post.fields.slug} post={post} posts={posts} />
       ))}
-    </>
+    </div>
   );
 }

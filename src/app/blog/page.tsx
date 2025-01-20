@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Heading1 from "../../components/common/Heading-1";
-import PostList from "../../components/blog/Posts";
+import { Suspense } from "react";
+import Heading1 from "@/components/common/Heading-1";
+import Posts from "@/components/blog/Posts";
+import BlogCardSkeleton from "@/components/blog/PostsSkeleton";
 
 export const metadata: Metadata = {
   title: "Blog | Marcel's Portfolio",
@@ -19,7 +21,10 @@ export default function BlogHome() {
         rest assured, this is just a visual cue to enhance your browsing
         experience. Enjoy seamless reading!{" "}
       </p>
-      <PostList />
+
+      <Suspense fallback={<BlogCardSkeleton />}>
+        <Posts />
+      </Suspense>
     </div>
   );
 }

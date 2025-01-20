@@ -16,10 +16,7 @@ import {
 import type { Metadata } from "next";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
-import { Suspense } from "react";
-import BlogPostSkeleton from "./PostSkeleton";
 
-// Define the types for your data
 interface Post {
   fields: {
     slug: string;
@@ -100,8 +97,12 @@ export async function generateMetadata({
   };
 }
 
-async function BlogPostContent({ slug }: { slug: string }) {
-  const posts = await getBlogPost(slug);
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const posts = await getBlogPost(params.slug);
   const post = posts.items[0];
 
   if (!post) {
@@ -151,7 +152,7 @@ async function BlogPostContent({ slug }: { slug: string }) {
   }
 
   return (
-    <>
+    <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
       <ClientBreadcrumbs
         items={[
           { label: "Home", href: "/" },
@@ -180,16 +181,6 @@ async function BlogPostContent({ slug }: { slug: string }) {
           {renderedContent}
         </CardBody>
       </Card>
-    </>
-  );
-}
-
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  return (
-    <div>
-      <Suspense fallback={<BlogPostSkeleton />}>
-        <BlogPostContent slug={params.slug} />
-      </Suspense>
     </div>
   );
 }
