@@ -1,6 +1,6 @@
-import Heading1 from "../components/Heading-1";
-import Heading3 from "../components/Heading-3";
-import ResumeItem from "../components/ResumeItem";
+import Heading1 from "../../components/common/Heading-1";
+import Heading3 from "../../components/common/Heading-3";
+import ResumeItem from "../../components/resume/Item";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";

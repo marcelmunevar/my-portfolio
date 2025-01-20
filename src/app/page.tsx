@@ -1,8 +1,8 @@
 "use client";
-import Heading1 from "./components/Heading-1";
-import Heading2 from "./components/Heading-2";
-import Heading3 from "./components/Heading-3";
-import Proficiency from "./components/Proficiency";
+import Heading1 from "../components/common/Heading-1";
+import Heading2 from "../components/common/Heading-2";
+import Heading3 from "../components/common/Heading-3";
+import Proficiency from "../components/about/Proficiency";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";

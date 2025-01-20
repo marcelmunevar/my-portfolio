@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Heading1 from "../components/Heading-1";
-import PostList from "../components/PostList";
+import Heading1 from "../../components/common/Heading-1";
+import PostList from "../../components/blog/Posts";
 
 export const metadata: Metadata = {
   title: "Blog | Marcel's Portfolio",

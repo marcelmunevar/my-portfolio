@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import BlogCard from "./BlogCard";
-import BlogCardSkeleton from "./PostListSkeleton";
+import BlogCard from "./Card";
+import BlogCardSkeleton from "./PostsSkeleton";
 
 interface Post {
   fields: {

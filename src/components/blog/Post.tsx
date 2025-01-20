@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import Heading1 from "../components/Heading-1";
-import Heading2 from "../components/Heading-2";
+import Heading1 from "../common/Heading-1";
+import Heading2 from "../common/Heading-2";
 import { parseISO, format } from "date-fns";
 import { Image } from "@nextui-org/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -15,9 +15,9 @@ import {
 } from "@contentful/rich-text-types";
 import type { Metadata } from "next";
 import { Code } from "@nextui-org/code";
-import ClientBreadcrumbs from "./ClientBreadcrumbs";
+import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
 import { Suspense } from "react";
-import BlogPostSkeleton from "./BlogPostSkeleton";
+import BlogPostSkeleton from "./PostSkeleton";
 
 // Define the types for your data
 interface Post {

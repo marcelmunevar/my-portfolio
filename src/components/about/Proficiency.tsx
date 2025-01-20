@@ -1,5 +1,5 @@
 import React from "react";
-import Heading3 from "./Heading-3";
+import Heading3 from "../common/Heading-3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";

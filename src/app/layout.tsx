@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "./components/Navigation";
+import Navigation from "../components/common/Navigation";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Roboto } from "next/font/google";

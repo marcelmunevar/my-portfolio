@@ -1,5 +1,5 @@
-import Heading1 from "../components/Heading-1";
-import MyCard from "../components/MyCard";
+import Heading1 from "../../components/common/Heading-1";
+import MyCard from "../../components/samples/Sample";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export default function Home() {
