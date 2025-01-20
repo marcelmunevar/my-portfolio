@@ -3,7 +3,7 @@ import { Skeleton } from "@nextui-org/skeleton";
 
 export default function PostListSkeleton() {
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {[1, 2, 3, 4].map((i) => (
         <Card key={i} className="h-full">
           <CardBody className="h-full justify-between">
@@ -30,6 +30,6 @@ export default function PostListSkeleton() {
           </CardBody>
         </Card>
       ))}
-    </>
+    </div>
   );
 }

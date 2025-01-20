@@ -3,7 +3,7 @@ import { Skeleton } from "@nextui-org/skeleton";
 
 export default function BlogPostSkeleton() {
   return (
-    <div>
+    <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
       {/* Breadcrumbs skeleton */}
       <div className="flex gap-2 items-center mb-4">
         <Skeleton className="h-4 w-12 rounded-lg" />
