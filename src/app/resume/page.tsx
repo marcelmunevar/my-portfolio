@@ -17,8 +17,13 @@ export default function Home() {
               <div className="mb-8">
                 <Heading3 icon={faBriefcase} text="Experience" />
                 <ResumeItem
-                  date="2018 - Present"
-                  title="Full-Stack Marketing Developer"
+                  date="2025 - Present"
+                  title="Lead Developer"
+                  institution="FUJIFILM Holdings America Corporation"
+                />
+                <ResumeItem
+                  date="2018 - 2025"
+                  title="Marketing Developer"
                   institution="FUJIFILM Holdings America Corporation"
                 />
                 <ResumeItem

@@ -43,33 +43,20 @@ export default function Home() {
                       height={173}
                     />
                     <p> Marcel Munevar </p>
-                    <p className="text-default-500"> Full-Stack Developer </p>
-                    <p className="text-default-500"> Stamford, CT </p>
+                    <p className="text-default-500"> Lead Developer </p>
                   </div>
                   <div className="md:col-span-3">
                     <p className="mb-4">
-                      I have{" "}
-                      <span className="text-success">
-                        over a decade of experience
-                      </span>{" "}
-                      building web applications. I pursued and completed a{" "}
-                      <span className="text-success">
-                        BA in Computer Science
-                      </span>
-                      , graduating{" "}
-                      <span className="text-success">Summa Cum Laude</span> in
-                      2024. I have hands-on experience working with{" "}
-                      <span className="text-success">React and Next.js</span>{" "}
-                      and recently attended a{" "}
-                      <span className="text-success">React conference</span> to
-                      stay current with the latest advancements. I also have an
-                      affinity for{" "}
-                      <span className="text-success">WordPress websites</span>{" "}
-                      with extensive knowledge of{" "}
-                      <span className="text-success">LAMP stack</span>. I&apos;m
-                      comfortable using{" "}
-                      <span className="text-success">Github</span> for version
-                      control and cloud-based deployment.
+                      I bring over a decade of experience in building web
+                      applications, backed by a degree in Computer Science,
+                      which I completed Summa Cum Laude in 2024. I have hands-on
+                      experience with modern frameworks like React and Next.js,
+                      and recently attended React Summit and React Miami to stay
+                      up to date with the latest innovations in front-end
+                      development. In addition, I have a strong affinity for
+                      WordPress and deep expertise in the LAMP stack. I'm
+                      proficient with GitHub for version control and comfortable
+                      with cloud-based deployment workflows.
                     </p>
                   </div>
                 </div>
@@ -306,67 +293,70 @@ export default function Home() {
                 <DrawerBody>
                   <Heading3 text="Overview" />
                   <p className="mb-4">
-                    At Fujifilm, I manage web services for businesses across the
-                    Americas. My role involves processing website management
-                    updates and other stakeholder requests. Specifically, I
-                    oversee 4 regional Drupal sites, around 18 WordPress
-                    subsidiary sites, more than 300 domains, and a WordPress
-                    server.
+                    At Fujifilm, I oversee web services for business units
+                    across the Americas. My role centers on processing website
+                    management updates and handling a wide range of stakeholder
+                    requests to support both corporate and subsidiary web
+                    properties.
                   </p>
                   <Heading3 text="Website Management Updates" />
                   <p className="mb-4">
-                    I handle bi-weekly website management update reports
-                    spanning four regional sites that utilize a headless Drupal
-                    CMS. These updates involve managing content for dozens of
-                    consumer, business, and healthcare products. My
-                    responsibilities include collaborating with stakeholders to
-                    draft, approve, and translate the updates and other
-                    stakeholder requests.
+                    I process website update reports for four regional,
+                    multilingual sites powered by a headless Drupal CMS. These
+                    updates cover content management for dozens of consumer,
+                    business, and healthcare products. I collaborate with
+                    stakeholders and content engineers to draft, review,
+                    approve, and translate updates, ensuring timely and accurate
+                    delivery.
                   </p>
                   <Heading3 text="Subsidiary Sites" />
                   <p className="mb-4">
-                    I also process stakeholder requests from 18 subsidiary sites
-                    built in WordPress. Most of them are managed by external
-                    agencies whom I work with to maintain and improve the sites.
+                    I manage stakeholder requests for more than two dozen
+                    subsidiaries, spanning a wide variety of websites and
+                    landing pages. This involves close coordination with
+                    internal IT teams and multiple external agencies to support
+                    ongoing maintenance and development efforts.
                   </p>
                   <Heading3 text="Project Management" />
                   <p className="mb-4">
-                    I employ{" "}
-                    <span className="text-success">Kanban methodologies</span>{" "}
-                    to track projects and assign content management tasks to our
-                    contractor. Each project progresses through defined phases:
-                    intake, in progress, review, translation, and scheduling.
-                    This approach optimizes efficiency, transparency, and allows
-                    us to quickly respond to emerging projects.
+                    I utilize Kanban methodologies to efficiently track, assign,
+                    and manage projects. This framework enhances transparency,
+                    streamlines workflows, and allows our team to remain
+                    responsive to shifting priorities and new initiatives.
                   </p>
 
                   <Heading3 text="Cross Functional Collaboration" />
                   <p className="mb-4">
-                    My work demands extensive cross-functional coordination.
-                    Some of the teams I collaborate with include:
+                    My role requires ongoing collaboration with a diverse range
+                    of teams, including:
                   </p>
                   <ul className="mb-4 list-disc pl-5 flex flex-col gap-2">
                     <li>
-                      Marketing: to handle product updates and create landing
-                      pages.
+                      Marketing teams across over 24 subsidiaries for product
+                      updates, SEO, reporting, website support, press releases,
+                      and performance tracking.
                     </li>
                     <li>
-                      IT: for server management tasks related to our in-house
-                      WordPress server (such as migrating websites, setting up
-                      redirects, and relaying DNS updates).
+                      IT for tasks such as website migrations, server
+                      management, redirects, and DNS configurations.
                     </li>
                     <li>
-                      Legal: to implement cookie consent solutions and update
-                      legal documents.
+                      Legal for compliance reviews, integrations, and policy
+                      updates.
                     </li>
                     <li>
-                      Press Teams: to draft, review, and schedule press
-                      releases.
+                      Web teams from parent companies and external agencies for
+                      global content updates and subsidiary site maintenance.
+                    </li>
+                    <li>
+                      Designers—both internal and agency-based—for asset
+                      creation and design walkthroughs of new site features or
+                      layouts.
                     </li>
                   </ul>
                   <p className="mb-4">
                     I also play a key role in facilitating application processes
-                    for domain and web application registrations for
+                    for domain purchasing and web application building for
                     stakeholders.
                   </p>
                 </DrawerBody>

@@ -10,6 +10,13 @@ export default function Home() {
           <Heading1 text="Code Samples" />
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard
+              title="Cell Therapy"
+              pageHref="https://lifesciences.fujifilm.com/cell-therapy"
+              imgsrc="/cell-therapy.png"
+              tech="React, Next.js, Tailwind CSS"
+            />
+
+            <MyCard
               title="Portfolio"
               repoHref="https://github.com/marcelmunevar/MY-PORTFOLIO"
               imgsrc="/portfolio.png"
