@@ -11,6 +11,7 @@ export default function Home() {
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard
               title="Cell Therapy"
+              repoHref="https://github.com/marcelmunevar-contractor-fujifilm/cell-therapy"
               pageHref="https://lifesciences.fujifilm.com/cell-therapy"
               imgsrc="/cell-therapy.png"
               tech="React, Next.js, Tailwind CSS"
