@@ -66,7 +66,12 @@ export default function Home() {
               <div className="mb-8">
                 <Heading3 icon={faUsers} text="Conferences" />
                 <ResumeItem
-                  date="2024"
+                  date="April 2025"
+                  title="React Miami"
+                  institution="Miami"
+                />
+                <ResumeItem
+                  date="November 2024"
                   title="React Summit"
                   institution="NYC"
                 />
