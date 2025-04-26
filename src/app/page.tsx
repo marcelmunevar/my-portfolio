@@ -54,7 +54,7 @@ export default function Home() {
                       and recently attended React Summit and React Miami to stay
                       up to date with the latest innovations in front-end
                       development. In addition, I have a strong affinity for
-                      WordPress and deep expertise in the LAMP stack. I'm
+                      WordPress and deep expertise in the LAMP stack. I&apos;m
                       proficient with GitHub for version control and comfortable
                       with cloud-based deployment workflows.
                     </p>
