@@ -2,6 +2,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { ConstellationSwitcher } from "./ConstellationSwitcher";
 import {
   Navbar,
   NavbarBrand,
@@ -71,6 +72,7 @@ export default function App() {
       </NavbarContent>
       <NavbarContent justify="end">
         <ThemeSwitcher />
+        <ConstellationSwitcher />
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (

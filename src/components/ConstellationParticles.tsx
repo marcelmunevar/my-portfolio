@@ -6,10 +6,12 @@ import { loadFull } from "tsparticles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import type { Engine } from "tsparticles-engine";
+import { useConstellation } from "./common/ConstellationProvider";
 
 const ConstellationParticles = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { isVisible } = useConstellation();
 
   useEffect(() => {
     setMounted(true);
@@ -19,7 +21,7 @@ const ConstellationParticles = () => {
     await loadFull(engine);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !isVisible) return null;
 
   const particleColor = theme === "light" ? "#b91c1c" : "#ffffff";
   const backgroundColor = theme === "light" ? "#ffffff" : "#000000";
