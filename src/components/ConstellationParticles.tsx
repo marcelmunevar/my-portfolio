@@ -21,7 +21,7 @@ const ConstellationParticles = () => {
 
   if (!mounted) return null;
 
-  const particleColor = theme === "light" ? "#000000" : "#ffffff";
+  const particleColor = theme === "light" ? "#b91c1c" : "#ffffff";
   const backgroundColor = theme === "light" ? "#ffffff" : "#000000";
 
   return (
