@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "@nextui-org/link";
+import ConstellationParticles from "@/components/ConstellationParticles";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="">
         <Providers>
           <GoogleAnalytics gaId="G-EV253K0KMF" />
+          <ConstellationParticles />
           <Navigation />
           {children}
           <footer className="text-center bg-content1 p-5">
