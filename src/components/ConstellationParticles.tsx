@@ -5,6 +5,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import type { Engine } from "tsparticles-engine";
 
 const ConstellationParticles = () => {
   const { theme } = useTheme();
@@ -14,7 +15,7 @@ const ConstellationParticles = () => {
     setMounted(true);
   }, []);
 
-  const particlesInit = useCallback(async (engine: any) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
 
