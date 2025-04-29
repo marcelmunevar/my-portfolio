@@ -293,71 +293,56 @@ export default function Home() {
                 <DrawerBody>
                   <Heading3 text="Overview" />
                   <p className="mb-4">
-                    At Fujifilm, I oversee web services for business units
-                    across the Americas. My role centers on processing website
-                    management updates and handling a wide range of stakeholder
-                    requests to support both corporate and subsidiary web
-                    properties.
+                    I manage web operations across Fujifilm&apos;s Americas
+                    region—overseeing multilingual site updates, coordinating
+                    with stakeholders, and working with marketing, IT, legal,
+                    and design teams to deliver timely, compliant, and
+                    high-quality web content.
                   </p>
                   <Heading3 text="Website Management Updates" />
                   <p className="mb-4">
-                    I process website update reports for four regional,
-                    multilingual sites powered by a headless Drupal CMS. These
-                    updates cover content management for dozens of consumer,
-                    business, and healthcare products. I collaborate with
-                    stakeholders and content engineers to draft, review,
-                    approve, and translate updates, ensuring timely and accurate
+                    I coordinate multilingual content updates for four regional
+                    sites using a headless Drupal CMS, collaborating with
+                    stakeholders and engineers to ensure accuracy and timely
                     delivery.
                   </p>
                   <Heading3 text="Subsidiary Sites" />
                   <p className="mb-4">
-                    I manage stakeholder requests for more than two dozen
-                    subsidiaries, spanning a wide variety of websites and
-                    landing pages. This involves close coordination with
-                    internal IT teams and multiple external agencies to support
-                    ongoing maintenance and development efforts.
+                    I oversee requests for 25+ subsidiary sites, working closely
+                    with internal IT and external agencies on maintenance and
+                    development.
                   </p>
                   <Heading3 text="Project Management" />
                   <p className="mb-4">
-                    I utilize Kanban methodologies to efficiently track, assign,
-                    and manage projects. This framework enhances transparency,
-                    streamlines workflows, and allows our team to remain
-                    responsive to shifting priorities and new initiatives.
+                    Using Kanban workflows, I track and manage tasks to improve
+                    team efficiency and adaptability.
                   </p>
 
                   <Heading3 text="Cross Functional Collaboration" />
                   <p className="mb-4">
-                    My role requires ongoing collaboration with a diverse range
-                    of teams, including:
+                    I work cross-functionally with marketing, IT, legal,
+                    designers, and global web teams on content updates,
+                    compliance, technical tasks, and digital asset creation. I
+                    also assist with domain purchases and web app requests.
                   </p>
-                  <ul className="mb-4 list-disc pl-5 flex flex-col gap-2">
-                    <li>
-                      Marketing teams across over 24 subsidiaries for product
-                      updates, SEO, reporting, website support, press releases,
-                      and performance tracking.
-                    </li>
-                    <li>
-                      IT for tasks such as website migrations, server
-                      management, redirects, and DNS configurations.
-                    </li>
-                    <li>
-                      Legal for compliance reviews, integrations, and policy
-                      updates.
-                    </li>
-                    <li>
-                      Web teams from parent companies and external agencies for
-                      global content updates and subsidiary site maintenance.
-                    </li>
-                    <li>
-                      Designers—both internal and agency-based—for asset
-                      creation and design walkthroughs of new site features or
-                      layouts.
-                    </li>
-                  </ul>
+                  <Heading3 text="Domain & Application Processes" />
                   <p className="mb-4">
-                    I also play a key role in facilitating application processes
-                    for domain purchasing and web application building for
-                    stakeholders.
+                    I play a key role in facilitating application processes for
+                    domain purchasing and web application development requests
+                    from stakeholders.
+                  </p>
+                  <Heading3 text="Tech & Innovation" />
+                  <p className="mb-4">
+                    As part of our ongoing push toward modern development
+                    practices, I&apos;ve attended React Summit and React Miami,
+                    with plans to attend Vercel Ship. We&apos;re exploring the
+                    integration of React and Next.js into our workflows,
+                    including the potential development of reusable components
+                    within a shared monorepo to improve consistency,
+                    scalability, and efficiency across our web properties. We
+                    are also considering delving into React Native for future
+                    app integrations to enhance our mobile development
+                    capabilities.
                   </p>
                 </DrawerBody>
                 <DrawerFooter>
