@@ -97,6 +97,14 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  const posts = await getBlogPost("");
+
+  return posts.items.map((post) => ({
+    slug: post.fields.slug,
+  }));
+}
+
 export default async function BlogPost({
   params,
 }: {
