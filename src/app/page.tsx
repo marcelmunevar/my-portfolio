@@ -133,22 +133,23 @@ export default function Home() {
             />
             <Card>
               <CardBody>
-                <Heading3 text="Hard Skills" />
+                <Heading3 text="Other Hard Skills" />
                 <div className="flex gap-2 flex-wrap">
+                  <Chip color="primary">Vercel</Chip>
+                  <Chip color="primary">jQuery</Chip>
                   <Chip color="primary">Node</Chip>
                   <Chip color="primary">Express</Chip>
-                  <Chip color="primary">PHP</Chip>
-                  <Chip color="primary">PostgreSQL</Chip>
-                  <Chip color="primary">APIs</Chip>
-                  <Chip color="primary">Integrations</Chip>
                   <Chip color="primary">Sass</Chip>
                   <Chip color="primary">Less</Chip>
                   <Chip color="primary">Bootstrap</Chip>
-                  <Chip color="primary">Page Speed</Chip>
-                  <Chip color="primary">SEO</Chip>
                   <Chip color="primary">Tag Manager</Chip>
                   <Chip color="primary">Analytics</Chip>
                   <Chip color="primary">LAMP</Chip>
+                  <Chip color="primary">Linux</Chip>
+                  <Chip color="primary">Apache</Chip>
+                  <Chip color="primary">MySQL</Chip>
+                  <Chip color="primary">PostgreSQL</Chip>
+                  <Chip color="primary">PHP</Chip>
                 </div>
               </CardBody>
             </Card>
@@ -162,20 +163,28 @@ export default function Home() {
                   <Chip color="primary">Communication</Chip>
                   <Chip color="primary">Attention to Detail</Chip>
                   <Chip color="primary">Problem Solving</Chip>
+                  <Chip color="primary">Collaborative</Chip>
+                  <Chip color="primary">Cross-Functional</Chip>
                 </div>
               </CardBody>
             </Card>
-            <Card>
+            <Card className=" col-span-2">
               <CardBody>
-                <Heading3 text="More" />
+                <Heading3 text="Best Practices" />
                 <div className="flex gap-2 flex-wrap">
-                  <ul className="list-disc pl-6">
-                    <li>Responsive web applications.</li>
-                    <li>Object Oriented Programming concepts.</li>
-                    <li>Event-based software design.</li>
-                    <li>Software Engineering Principles</li>
-                    <li>Human Computer Interaction</li>
-                  </ul>
+                  <Chip color="primary">Responsive Web Design</Chip>
+                  <Chip color="primary">Object Oriented Programming</Chip>
+                  <Chip color="primary">Event-Based Software Design</Chip>
+                  <Chip color="primary">Software Engineering Principles</Chip>
+                  <Chip color="primary">Human Computer Interaction</Chip>
+                  <Chip color="primary">Search Engine Optimization</Chip>
+                  <Chip color="primary">Page Speed Optimization</Chip>
+                  <Chip color="primary">CMS Integrations</Chip>
+                  <Chip color="primary">
+                    Marketing and Compliance Tool Integration
+                  </Chip>
+                  <Chip color="primary">Accessibility Review</Chip>
+                  <Chip color="primary">API Integrations</Chip>
                 </div>
               </CardBody>
             </Card>
@@ -227,10 +236,10 @@ export default function Home() {
             <hr />
             <CardFooter>
               <p>
-                I&apos;m currently serving Fujifilm Holdings America Corporation
-                which oversees over two dozen businesses in the Americas. These
-                are just a few of the businesses I support. We also support
-                businesses in healthcare, manufacturing, printing, and more.
+                I currently support Fujifilm Holdings America Corporation, which
+                oversees more than two dozen businesses across the Americas. My
+                work spans a diverse range of industries, including healthcare,
+                manufacturing, printing, and more.
               </p>
             </CardFooter>
           </Card>
@@ -261,7 +270,7 @@ export default function Home() {
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
                   <Image
                     src="/js.jpg"
-                    alt="JS5+"
+                    alt="JavaScript ES5+"
                     className="m-auto"
                     width={75}
                     height={104}
@@ -299,8 +308,8 @@ export default function Home() {
             <hr />
             <CardFooter>
               <p>
-                These components are foundational to the tech stacks which I
-                support.
+                These technologies form the foundation of the legacy and modern
+                systems I support.
               </p>
             </CardFooter>
           </Card>
