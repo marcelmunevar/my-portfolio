@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card, CardBody } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { Avatar } from "@nextui-org/avatar";
 import { parseISO, format } from "date-fns";
 import { getPosts } from "@/utils/getPosts";
