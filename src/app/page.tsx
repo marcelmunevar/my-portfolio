@@ -52,15 +52,16 @@ export default function Home() {
                   <div className="md:col-span-3">
                     <p className="mb-4">
                       I&apos;m a lead web developer with over 10 years of
-                      experience. I have a solid foundation in front-end
-                      development, which has enabled me to ship numerous
-                      responsive websites. My experience has helped me maintain
-                      a strong focus on SEO, page speed, and the seamless
-                      integration of marketing and compliance tools, as well as
-                      CMS platforms. My team is actively exploring the
-                      integration of React and Next.js into our workflows,
-                      including reusable components in a shared monorepo to
-                      improve consistency, scalability, and efficiency.
+                      experience in full stack development. I have a solid
+                      foundation in front-end development, which has enabled me
+                      to ship numerous responsive websites. My experience has
+                      helped me maintain a strong focus on SEO, page speed, and
+                      the seamless integration of marketing and compliance
+                      tools, as well as CMS platforms. My team is actively
+                      exploring the integration of React and Next.js into our
+                      workflows, including reusable components in a shared
+                      monorepo to improve consistency, scalability, and
+                      efficiency.
                     </p>
                   </div>
                 </div>
