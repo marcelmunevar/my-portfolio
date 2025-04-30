@@ -6,7 +6,11 @@ import Proficiency from "../components/about/Proficiency";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChalkboardUser,
+  faDatabase,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   Drawer,
@@ -47,16 +51,16 @@ export default function Home() {
                   </div>
                   <div className="md:col-span-3">
                     <p className="mb-4">
-                      I bring over a decade of experience in building web
-                      applications, backed by a degree in Computer Science,
-                      which I completed Summa Cum Laude in 2024. I have hands-on
-                      experience with modern frameworks like React and Next.js,
-                      and recently attended React Summit and React Miami to stay
-                      up to date with the latest innovations in front-end
-                      development. In addition, I have a strong affinity for
-                      WordPress and deep expertise in the LAMP stack. I&apos;m
-                      proficient with GitHub for version control and comfortable
-                      with cloud-based deployment workflows.
+                      I&apos;m a lead web developer with over 10 years of
+                      experience. I have a solid foundation in front-end
+                      development, which has enabled me to ship numerous
+                      responsive websites. My experience has helped me maintain
+                      a strong focus on SEO, page speed, and the seamless
+                      integration of marketing and compliance tools, as well as
+                      CMS platforms. My team is actively exploring the
+                      integration of React and Next.js into our workflows,
+                      including reusable components in a shared monorepo to
+                      improve consistency, scalability, and efficiency.
                     </p>
                   </div>
                 </div>
@@ -73,6 +77,22 @@ export default function Home() {
                 </Link>
               </CardFooter>
             </Card>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
+          <Heading2 text="Education" />
+          <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Proficiency
+              heading="Computer Science Grad"
+              text="I earned my Bachelor's degree in Computer Science, graduating summa cum laude in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering."
+              icon={faGraduationCap}
+            />
+            <Proficiency
+              heading="Conferences"
+              text="I’ve attended React Summit and React Miami to stay current with the latest in front-end development, and I plan to attend Vercel Ship to deepen my expertise in modern web workflows."
+              icon={faChalkboardUser}
+            />
           </div>
         </div>
 
@@ -127,6 +147,7 @@ export default function Home() {
                   <Chip color="primary">SEO</Chip>
                   <Chip color="primary">Tag Manager</Chip>
                   <Chip color="primary">Analytics</Chip>
+                  <Chip color="primary">LAMP</Chip>
                 </div>
               </CardBody>
             </Card>
@@ -339,10 +360,7 @@ export default function Home() {
                     integration of React and Next.js into our workflows,
                     including the potential development of reusable components
                     within a shared monorepo to improve consistency,
-                    scalability, and efficiency across our web properties. We
-                    are also considering delving into React Native for future
-                    app integrations to enhance our mobile development
-                    capabilities.
+                    scalability, and efficiency across our web properties.
                   </p>
                 </DrawerBody>
                 <DrawerFooter>
