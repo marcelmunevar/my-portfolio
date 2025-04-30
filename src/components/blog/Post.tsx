@@ -3,7 +3,7 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../common/Heading-1";
 import Heading2 from "../common/Heading-2";
 import { parseISO, format } from "date-fns";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import {
   Document,
@@ -169,7 +169,7 @@ export default async function BlogPost({
           <Image
             src={getImage(posts, post)}
             width={800}
-            height={0}
+            height={533}
             alt={post.fields.title}
             className="mb-4"
           />
