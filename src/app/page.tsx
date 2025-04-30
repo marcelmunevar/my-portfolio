@@ -136,20 +136,20 @@ export default function Home() {
                 <Heading3 text="Other Hard Skills" />
                 <div className="flex gap-2 flex-wrap">
                   <Chip color="primary">Vercel</Chip>
-                  <Chip color="primary">jQuery</Chip>
+                  <Chip color="primary">Bootstrap</Chip>
                   <Chip color="primary">Node</Chip>
-                  <Chip color="primary">Express</Chip>
+                  <Chip color="primary">jQuery</Chip>
+                  <Chip color="primary">Vanilla JS</Chip>
                   <Chip color="primary">Sass</Chip>
                   <Chip color="primary">Less</Chip>
-                  <Chip color="primary">Bootstrap</Chip>
-                  <Chip color="primary">Tag Manager</Chip>
-                  <Chip color="primary">Analytics</Chip>
                   <Chip color="primary">LAMP</Chip>
                   <Chip color="primary">Linux</Chip>
                   <Chip color="primary">Apache</Chip>
                   <Chip color="primary">MySQL</Chip>
                   <Chip color="primary">PostgreSQL</Chip>
                   <Chip color="primary">PHP</Chip>
+                  <Chip color="primary">Tag Manager</Chip>
+                  <Chip color="primary">Analytics</Chip>
                 </div>
               </CardBody>
             </Card>
