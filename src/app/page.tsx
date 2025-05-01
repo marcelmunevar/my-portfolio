@@ -99,7 +99,7 @@ export default function Home() {
 
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <Heading2 text="Proficiencies" />
-          <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
             <Proficiency
               heading="React + Next.js"
               text="I build scalable web applications with React, leveraging Tailwind
