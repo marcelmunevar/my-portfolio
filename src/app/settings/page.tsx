@@ -12,7 +12,7 @@ export default function Home() {
           <Heading2 text="Theme" />
           <div className=" grid grid-cols-1 gap-8">
             <div className="flex gap-5 align-middle items-center">
-              <span>Light/Dark</span>
+              <span>Dark/Light</span>
               <ThemeSwitcher />
             </div>
             <div className="flex gap-5 align-middle items-center">
