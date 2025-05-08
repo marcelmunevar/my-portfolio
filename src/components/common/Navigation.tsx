@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import { ConstellationSwitcher } from "./ConstellationSwitcher";
 import {
   Navbar,
   NavbarBrand,
@@ -13,6 +11,8 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 export const AcmeLogo = () => {
   return (
@@ -71,8 +71,13 @@ export default function App() {
         })}
       </NavbarContent>
       <NavbarContent justify="end">
-        <ThemeSwitcher />
-        <ConstellationSwitcher />
+        <Link
+          color={currentPath === "/settings" ? "primary" : "foreground"}
+          href="/settings"
+          size="lg"
+        >
+          <FontAwesomeIcon icon={faCog} className="" />
+        </Link>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
