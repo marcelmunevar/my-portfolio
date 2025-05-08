@@ -152,7 +152,7 @@ export default async function BlogPost({
   }
 
   return (
-    <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
+    <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-4">
       <ClientBreadcrumbs
         items={[
           { label: "Home", href: "/" },

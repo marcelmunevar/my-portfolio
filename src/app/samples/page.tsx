@@ -1,12 +1,19 @@
 import Heading1 from "../../components/common/Heading-1";
 import MyCard from "../../components/samples/Sample";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 
 export default function Home() {
   return (
     <div className="">
       <main className="my-4 ">
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-12">
+          <ClientBreadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Samples", href: "/samples" },
+            ]}
+          />
           <Heading1 text="Code Samples" />
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard

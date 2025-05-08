@@ -25,13 +25,15 @@ import { useDisclosure } from "@nextui-org/use-disclosure";
 import { Chip } from "@nextui-org/chip";
 import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="">
-      <main className="mb-4 ">
+      <main className="my-4 ">
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-8">
+          <ClientBreadcrumbs items={[{ label: "Home", href: "/" }]} />
           <Heading1 text="About" />
           <Heading2 text="Introduction" />
           <div className="flex flex-col md:flex-row gap-8 items-center mb-4">
