@@ -37,6 +37,7 @@ const Page: React.FC<PageProps> = ({
           width={376}
           height={234}
           alt=""
+          loading="eager"
         />
       </CardBody>
       <Divider />
