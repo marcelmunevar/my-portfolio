@@ -67,6 +67,7 @@ function BlogCard({ post, posts }: BlogCardProps) {
             height={256}
             alt={post.fields.title}
             className="mb-4"
+            priority={true}
           />
           <p className="mb-4">{post.fields.shortDescription}</p>
           <div className="flex flex-row items-center justify-between">

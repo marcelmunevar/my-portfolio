@@ -47,6 +47,7 @@ export default function Home() {
                       src="/marcel.png"
                       width={178}
                       height={173}
+                      priority={true}
                     />
                     <p> Marcel Munevar </p>
                     <p className="text-default-500"> Lead Web Developer </p>

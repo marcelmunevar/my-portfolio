@@ -172,6 +172,7 @@ export default async function BlogPost({
             height={533}
             alt={post.fields.title}
             className="mb-4"
+            priority={true}
           />
 
           <p className="text-default-500 mb-4">
