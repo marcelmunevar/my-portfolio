@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { Link } from "@nextui-org/link";
 
 interface PageProps {
@@ -32,7 +32,7 @@ const Page: React.FC<PageProps> = ({
       <Divider />
       <CardBody className="justify-center">
         <Image
-          className="object-cover rounded-xl"
+          className="object-cover"
           src={imgsrc}
           width={376}
           height={234}
