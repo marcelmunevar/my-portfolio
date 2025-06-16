@@ -39,20 +39,19 @@ export default function Home() {
                       priority={true}
                     />
                     <p> Marcel Munevar </p>
-                    <p className="text-default-500"> Lead Web Developer </p>
+                    <p className="text-default-500"> Lead Developer </p>
                   </div>
                   <div className="md:col-span-3">
                     <p className="mb-4">
-                      I am a Lead Web Developer with nearly 12 years of
-                      experience in web development. My strong front-end
-                      expertise has empowered me to design, launch, and maintain
-                      numerous responsive websites focused on excellent user
-                      experience. I prioritize SEO, page speed, and the smooth
-                      integration of marketing, compliance tools, and CMS
-                      platforms. Currently, my team is advancing our workflows
-                      by adopting React and Next.js, building reusable
-                      components to boost consistency, scalability, and
-                      development efficiency.
+                      I am a Lead Developer with nearly 12 years of experience
+                      in web development. My strong front-end expertise has
+                      empowered me to design, launch, and maintain numerous
+                      responsive websites focused on excellent user experience.
+                      I prioritize SEO, page speed, and the smooth integration
+                      of marketing, compliance tools, and CMS platforms.
+                      Currently, my team is advancing our workflows by adopting
+                      React and Next.js, building reusable components to boost
+                      consistency, scalability, and development efficiency.
                     </p>
                   </div>
                 </div>

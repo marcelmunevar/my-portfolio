@@ -18,7 +18,7 @@ export default {
         dark: {
           layout: {},
           colors: {
-            background: "#111111",
+            background: "#000000",
             foreground: "#ffffff",
             secondary: colors.red[700],
           }, 

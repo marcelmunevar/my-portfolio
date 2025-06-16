@@ -24,32 +24,42 @@ export default function Home() {
               <div className="mb-8">
                 <Heading3 icon={faBriefcase} text="Experience" />
                 <ResumeItem
-                  date="2025 - Present"
+                  date="March 2025 - Present"
                   title="Lead Developer"
                   institution="FUJIFILM Holdings America Corporation"
                 />
                 <ResumeItem
-                  date="2018 - 2025"
+                  date="November 2022 - March 2025"
                   title="Marketing Developer"
                   institution="FUJIFILM Holdings America Corporation"
                 />
                 <ResumeItem
-                  date="2016 - 2018"
-                  title="Full-Stack Developer"
-                  institution="BMG Creative & Brandstar"
+                  date="October 2018 - November 2022"
+                  title="Full-Stack Developer (Contract)"
+                  institution="FUJIFILM Holdings America Corporation"
                 />
                 <ResumeItem
-                  date="2015"
-                  title="Front-End Developer"
+                  date="September 2017 - April 2018"
+                  title="Full-Stack Developer"
+                  institution="BMG Creative"
+                />
+                <ResumeItem
+                  date="June 2016 - June 2017"
+                  title="Full-Stack Developer (Contract→Hire)"
+                  institution="Brandstar"
+                />
+                <ResumeItem
+                  date="May 2015 - September 2015"
+                  title="Front-End Developer (Contract)"
                   institution="Nova Southeastern University"
                 />
                 <ResumeItem
-                  date="2013 - 2014"
+                  date="December 2013 - October 2014"
                   title="Front-End Developer"
                   institution="Morris4x4Center"
                 />
                 <ResumeItem
-                  date="2011 - 2013"
+                  date="November 2011 - November 2013"
                   title="Front-End Developer"
                   institution="plantANT"
                 />
