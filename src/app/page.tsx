@@ -12,23 +12,12 @@ import {
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter,
-} from "@nextui-org/drawer";
-import { Link } from "@nextui-org/link";
-import { Button } from "@nextui-org/button";
-import { useDisclosure } from "@nextui-org/use-disclosure";
 import { Chip } from "@nextui-org/chip";
 import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 
 export default function Home() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="">
       <main className="my-4 ">
@@ -54,31 +43,24 @@ export default function Home() {
                   </div>
                   <div className="md:col-span-3">
                     <p className="mb-4">
-                      I&apos;m a lead web developer with over 10 years of
-                      experience in full stack development. I have a solid
-                      foundation in front-end development, which has enabled me
-                      to ship and maintain numerous responsive websites. My
-                      experience has helped me maintain a strong focus on SEO,
-                      page speed, and the seamless integration of marketing and
-                      compliance tools, as well as CMS platforms. My team is
-                      actively exploring the integration of React and Next.js
-                      into our workflows, including reusable components in a
-                      shared monorepo to improve consistency, scalability, and
-                      efficiency.
+                      I am a Lead Web Developer with nearly 12 years of
+                      experience in web development. My strong front-end
+                      expertise has empowered me to design, launch, and maintain
+                      numerous responsive websites focused on excellent user
+                      experience. I prioritize SEO, page speed, and the smooth
+                      integration of marketing, compliance tools, and CMS
+                      platforms. Currently, my team is advancing our workflows
+                      by adopting React and Next.js, building reusable
+                      components to boost consistency, scalability, and
+                      development efficiency.
                     </p>
                   </div>
                 </div>
               </CardBody>
               <hr />
               <CardFooter>
-                <Link
-                  className="cursor-pointer"
-                  onPress={onOpen}
-                  showAnchorIcon
-                  color="primary"
-                >
-                  Learn more about my current role at Fujifilm{" "}
-                </Link>
+                Continue reading to learn more about my educational background
+                and specialized skills.
               </CardFooter>
             </Card>
           </div>
@@ -89,12 +71,12 @@ export default function Home() {
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Proficiency
               heading="Computer Science Grad"
-              text="I earned my Bachelor's degree in Computer Science, graduating summa cum laude in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering."
+              text={`I earned my Bachelor&apos;s degree in Computer Science, graduating <span class="text-default-500">summa cum laude</span> in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering.`}
               icon={faGraduationCap}
             />
             <Proficiency
               heading="Conferences"
-              text="I’ve attended React Summit and React Miami to stay current with the latest in front-end development, and I plan to attend Vercel Ship to deepen my expertise in modern web workflows."
+              text={`I've attended React Summit (2025) and React Miami (2024) to stay current with the latest in front-end development, and I plan to attend Vercel Ship (2025) to deepen my expertise in modern web workflows.`}
               icon={faChalkboardUser}
             />
           </div>
@@ -254,7 +236,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center ">
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow items-stretch">
                   <Image
-                    src="/html.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg"
                     alt="HTML5"
                     className="m-auto"
                     width={75}
@@ -263,7 +245,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="/css.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg"
                     alt="CSS3"
                     className="m-auto"
                     width={75}
@@ -272,7 +254,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl  flex-grow">
                   <Image
-                    src="/js.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                     alt="JavaScript ES5+"
                     className="m-auto"
                     width={75}
@@ -281,7 +263,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="/jquery.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg"
                     alt="jQuery"
                     className="m-auto"
                     width={75}
@@ -290,7 +272,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="/php.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
                     alt="PHP"
                     className="m-auto"
                     width={75}
@@ -299,7 +281,7 @@ export default function Home() {
                 </div>
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow">
                   <Image
-                    src="/mysql.jpg"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg"
                     alt="MySQL"
                     className="m-auto"
                     width={75}
@@ -317,74 +299,6 @@ export default function Home() {
             </CardFooter>
           </Card>
         </div>
-        <Drawer isOpen={isOpen} onOpenChange={onOpenChange}>
-          <DrawerContent>
-            {(onClose) => (
-              <>
-                <DrawerHeader className="flex flex-col gap-1">
-                  Fujifilm Holdings America Corporation
-                </DrawerHeader>
-                <DrawerBody>
-                  <Heading3 text="Overview" />
-                  <p className="mb-4">
-                    I manage web operations across Fujifilm&apos;s Americas
-                    region—overseeing multilingual site updates, coordinating
-                    with stakeholders, and working with marketing, IT, legal,
-                    and design teams to deliver timely, compliant, and
-                    high-quality web content.
-                  </p>
-                  <Heading3 text="Website Management Updates" />
-                  <p className="mb-4">
-                    I coordinate multilingual content updates for four regional
-                    sites using a headless Drupal CMS, collaborating with
-                    stakeholders and engineers to ensure accuracy and timely
-                    delivery.
-                  </p>
-                  <Heading3 text="Subsidiary Sites" />
-                  <p className="mb-4">
-                    I oversee requests for 25+ subsidiary sites, working closely
-                    with internal IT and external agencies on maintenance and
-                    development.
-                  </p>
-                  <Heading3 text="Project Management" />
-                  <p className="mb-4">
-                    Using Kanban workflows, I track and manage tasks to improve
-                    team efficiency and adaptability.
-                  </p>
-
-                  <Heading3 text="Cross Functional Collaboration" />
-                  <p className="mb-4">
-                    I work cross-functionally with marketing, IT, legal,
-                    designers, and global web teams on content updates,
-                    compliance, technical tasks, and digital asset creation. I
-                    also assist with domain purchases and web app requests.
-                  </p>
-                  <Heading3 text="Domain & Application Processes" />
-                  <p className="mb-4">
-                    I play a key role in facilitating application processes for
-                    domain purchasing and web application development requests
-                    from stakeholders.
-                  </p>
-                  <Heading3 text="Tech & Innovation" />
-                  <p className="mb-4">
-                    As part of our ongoing push toward modern development
-                    practices, I&apos;ve attended React Summit and React Miami,
-                    with plans to attend Vercel Ship. We&apos;re exploring the
-                    integration of React and Next.js into our workflows,
-                    including the potential development of reusable components
-                    within a shared monorepo to improve consistency,
-                    scalability, and efficiency across our web properties.
-                  </p>
-                </DrawerBody>
-                <DrawerFooter>
-                  <Button color="primary" onPress={onClose}>
-                    Close
-                  </Button>
-                </DrawerFooter>
-              </>
-            )}
-          </DrawerContent>
-        </Drawer>
       </main>
     </div>
   );

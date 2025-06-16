@@ -29,7 +29,7 @@ const Proficiency: React.FC<ProficiencyProps> = ({
           </div>
           <div>
             <Heading3 text={heading} />
-            <p>{text}</p>
+            <p dangerouslySetInnerHTML={{ __html: text }} />
           </div>
         </div>
       </CardBody>
