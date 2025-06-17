@@ -137,7 +137,7 @@ export default function Home() {
             />
             <Proficiency
               heading="API Integration"
-              text="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST, and third-party integrations like Contentful and inriver PIM."
+              text="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST and third-party integrations like Contentful and inriver PIM, with experience using Express for building backend services."
               icon={faPlug}
             />
             <Proficiency
