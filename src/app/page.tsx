@@ -3,13 +3,21 @@ import Heading1 from "../components/common/Heading-1";
 import Heading2 from "../components/common/Heading-2";
 import Heading3 from "../components/common/Heading-3";
 import Proficiency from "../components/about/Proficiency";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
-import { faWordpress } from "@fortawesome/free-brands-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faReact,
+  faWordpress,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faUniversalAccess,
+  faUserShield,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faChalkboardUser,
   faDatabase,
   faGraduationCap,
+  faPlug,
+  faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Chip } from "@nextui-org/chip";
@@ -101,19 +109,41 @@ export default function Home() {
               footerText="Visit a code sample on Github."
               footerLink="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
             />
-            <Proficiency
-              heading="MySQL Databases"
-              text="Skilled in designing and managing relational databases with MySQL and other SQL-based systems. Focused on optimizing queries, ensuring data integrity, and managing migrations."
-              icon={faDatabase}
-              footerText="Visit a code sample on Github."
-              footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
-            />
+
             <Proficiency
               heading="Github Repositories"
               text="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
               icon={faGithub}
               footerText="Visit my Github."
               footerLink="https://github.com/marcelmunevar"
+            />
+
+            <Proficiency
+              heading="Database Design"
+              text={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries and exposure to GraphQL.`}
+              icon={faDatabase}
+              footerText="Visit a code sample on Github."
+              footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
+            />
+            <Proficiency
+              heading="Accessibility"
+              text="I build interfaces that are inclusive and usable by everyone. I use tools like Lighthouse and screen readers to identify and resolve accessibility issues throughout development."
+              icon={faUniversalAccess}
+            />
+            <Proficiency
+              heading="Privacy Compliance"
+              text="I ensure websites respect user privacy by implementing consent management, minimizing tracking, and supporting GDPR and CCPA standards. My work integrates tools like OneTrust CookiePro."
+              icon={faUserShield}
+            />
+            <Proficiency
+              heading="API Integration"
+              text="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST, and third-party integrations like Contentful and inriver PIM."
+              icon={faPlug}
+            />
+            <Proficiency
+              heading="Analytics"
+              text={`I leverage tools like Google Analytics and custom tracking solutions to measure user behavior and drive data-informed decisions. Skilled in setting up events, dashboards, and performance monitoring.`}
+              icon={faChartLine}
             />
             <Card>
               <CardBody>
