@@ -13,7 +13,7 @@ import {
 } from "@contentful/rich-text-types";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
-import { formatDate, getImage, PostSingle } from "@/utils/getPosts";
+import { formatDate, PostSingle } from "@/utils/getPosts";
 
 interface PostProps {
   post: PostSingle;
