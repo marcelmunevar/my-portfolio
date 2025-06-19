@@ -5,6 +5,10 @@ import { getPosts, getPost, getImage } from "@/utils/getPosts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
+interface BlogPageParams {
+  slug: string;
+}
+
 export async function generateStaticParams() {
   const posts = await getPosts();
 
@@ -16,9 +20,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<BlogPageParams>;
 }): Promise<Metadata> {
-  const posts = await getPost(params.slug);
+  const { slug } = await params;
+  const posts = await getPost(slug);
   const post = posts.items[0];
 
   if (!post) {
@@ -37,9 +42,10 @@ export async function generateMetadata({
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<BlogPageParams>;
 }) {
-  const posts = await getPost(params.slug);
+  const { slug } = await params;
+  const posts = await getPost(slug);
   const post = posts.items[0];
   const image = getImage(posts, post);
 
