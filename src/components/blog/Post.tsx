@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../common/Heading-1";
 import Heading2 from "../common/Heading-2";
-import { parseISO, format } from "date-fns";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import {
@@ -16,6 +15,7 @@ import {
 import type { Metadata } from "next";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
+import { getPost, formatDate, getImage } from "@/utils/getPosts";
 
 interface Post {
   fields: {
@@ -32,48 +32,22 @@ interface Post {
   };
 }
 
-interface PostsResponse {
-  items: Post[];
-  includes: {
-    Asset: {
-      sys: {
-        id: string;
-      };
-      fields: {
-        file: {
-          url: string;
-        };
-      };
-    }[];
+interface Asset {
+  sys: {
+    id: string;
+  };
+  fields: {
+    file: {
+      url: string;
+    };
   };
 }
 
-function Date(dateString: string) {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
-}
-
-function getImage(posts: PostsResponse, post: Post) {
-  const assetId = post.fields.featuredImage.sys.id;
-  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
-  return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
-}
-
-// Add this new function to handle the fetch
-async function getBlogPost(slug: string) {
-  const data = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&fields.slug=${slug}`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      },
-      next: { revalidate: 60 },
-    }
-  );
-
-  const posts: PostsResponse = await data.json();
-  return posts;
+interface PostsResponse {
+  items: Post[];
+  includes: {
+    Asset: Asset[];
+  };
 }
 
 export async function generateMetadata({
@@ -81,7 +55,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const posts = await getBlogPost(params.slug);
+  const posts = await getPost(params.slug);
   const post = posts.items[0];
 
   if (!post) {
@@ -102,7 +76,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  const posts = await getBlogPost(params.slug);
+  const posts = await getPost(params.slug);
   const post = posts.items[0];
 
   if (!post) {
@@ -176,7 +150,7 @@ export default async function BlogPost({
           />
 
           <p className="text-default-500 mb-4">
-            {Date(post.fields.publishedDate)}
+            {formatDate(post.fields.publishedDate)}
           </p>
           <Heading2 text={post.fields.shortDescription} />
           {renderedContent}

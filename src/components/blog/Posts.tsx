@@ -2,15 +2,15 @@ import Link from "next/link";
 import { Card, CardBody } from "@nextui-org/card";
 import Image from "next/image";
 import { Avatar } from "@nextui-org/avatar";
-import { parseISO, format } from "date-fns";
-import { getPosts } from "@/utils/getPosts";
+import { getPosts, formatDate, getImage } from "@/utils/getPosts";
 
 interface Post {
   fields: {
     slug: string;
     title: string;
-    shortDescription: string;
+    content: Document;
     publishedDate: string;
+    shortDescription: string;
     featuredImage: {
       sys: {
         id: string;
@@ -18,7 +18,6 @@ interface Post {
     };
   };
 }
-
 interface Asset {
   sys: {
     id: string;
@@ -40,17 +39,6 @@ interface PostsResponse {
 interface BlogCardProps {
   post: Post;
   posts: PostsResponse;
-}
-
-function formatDate(dateString: string) {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
-}
-
-function getImage(posts: PostsResponse, post: Post) {
-  const assetId = post.fields.featuredImage.sys.id;
-  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
-  return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
 
 function BlogCard({ post, posts }: BlogCardProps) {
