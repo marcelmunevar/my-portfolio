@@ -17,39 +17,6 @@ import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
 import { getPost, formatDate, getImage } from "@/utils/getPosts";
 
-interface Post {
-  fields: {
-    slug: string;
-    title: string;
-    content: Document;
-    publishedDate: string;
-    shortDescription: string;
-    featuredImage: {
-      sys: {
-        id: string;
-      };
-    };
-  };
-}
-
-interface Asset {
-  sys: {
-    id: string;
-  };
-  fields: {
-    file: {
-      url: string;
-    };
-  };
-}
-
-interface PostsResponse {
-  items: Post[];
-  includes: {
-    Asset: Asset[];
-  };
-}
-
 export async function generateMetadata({
   params,
 }: {
