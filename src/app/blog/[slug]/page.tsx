@@ -5,9 +5,12 @@ import { getPosts, getPost } from "@/utils/getPosts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-interface PageProps {
-  params: { slug: string };
-}
+type PageProps = {
+  params: {
+    slug: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 export async function generateStaticParams() {
   const posts = await getPosts();
