@@ -1,16 +1,9 @@
 import { Suspense } from "react";
 import Post from "@/components/blog/Post";
 import BlogPostSkeleton from "@/components/blog/PostSkeleton";
-import { getPosts, getPost } from "@/utils/getPosts";
+import { getPosts, getPost, getImage } from "@/utils/getPosts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-
-type PageProps = {
-  params: {
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -41,9 +34,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPage({ params }: PageProps) {
+export default async function BlogPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const posts = await getPost(params.slug);
   const post = posts.items[0];
+  const image = getImage(posts, post);
 
   if (!post) {
     notFound();
@@ -51,7 +49,7 @@ export default async function BlogPage({ params }: PageProps) {
 
   return (
     <Suspense fallback={<BlogPostSkeleton />}>
-      <Post post={post} posts={posts} />
+      <Post post={post} image={image} />
     </Suspense>
   );
 }

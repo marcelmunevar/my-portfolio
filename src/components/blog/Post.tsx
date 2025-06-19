@@ -13,19 +13,14 @@ import {
 } from "@contentful/rich-text-types";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
-import {
-  formatDate,
-  getImage,
-  PostSingle,
-  PostsResponse,
-} from "@/utils/getPosts";
+import { formatDate, getImage, PostSingle } from "@/utils/getPosts";
 
 interface PostProps {
   post: PostSingle;
-  posts: PostsResponse;
+  image: string;
 }
 
-export default function Post({ post, posts }: PostProps) {
+export default function Post({ post, image }: PostProps) {
   const content = post.fields.content;
   console.log(content);
 
@@ -86,7 +81,7 @@ export default function Post({ post, posts }: PostProps) {
         </CardHeader>
         <CardBody className="h-full">
           <Image
-            src={getImage(posts, post)}
+            src={image}
             width={800}
             height={533}
             alt={post.fields.title}
