@@ -1,6 +1,6 @@
 import { parseISO, format } from "date-fns";
 
-interface Post {
+export interface PostSingle {
   fields: {
     slug: string;
     title: string;
@@ -15,7 +15,7 @@ interface Post {
   };
 }
 
-interface Asset {
+export interface Asset {
   sys: {
     id: string;
   };
@@ -26,8 +26,8 @@ interface Asset {
   };
 }
 
-interface PostsResponse {
-  items: Post[];
+export interface PostsResponse {
+  items: PostSingle[];
   includes: {
     Asset: Asset[];
   };
@@ -71,7 +71,7 @@ export function formatDate(dateString: string) {
   return <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>;
 }
 
-export function getImage(posts: PostsResponse, post: Post) {
+export function getImage(posts: PostsResponse, post: PostSingle) {
   const assetId = post.fields.featuredImage.sys.id;
   const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
   return asset ? `https:${asset.fields.file.url}` : "/marcel.png";

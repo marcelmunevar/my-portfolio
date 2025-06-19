@@ -1,10 +1,12 @@
 import { Suspense } from "react";
 import Post from "@/components/blog/Post";
 import BlogPostSkeleton from "@/components/blog/PostSkeleton";
-import { getPosts } from "@/utils/getPosts";
+import { getPosts, getPost } from "@/utils/getPosts";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export async function generateStaticParams() {
@@ -15,12 +17,38 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const posts = await getPost(params.slug);
+  const post = posts.items[0];
+
+  if (!post) {
+    return {
+      title: "Post Not Found | Marcel's Portfolio",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.fields.title} | Marcel's Portfolio`,
+    description: post.fields.shortDescription,
+  };
+}
+
 export default async function BlogPage({ params }: PageProps) {
-  const resolvedParams = await params;
+  const posts = await getPost(params.slug);
+  const post = posts.items[0];
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <Suspense fallback={<BlogPostSkeleton />}>
-      <Post params={resolvedParams} />
+      <Post post={post} posts={posts} />
     </Suspense>
   );
 }

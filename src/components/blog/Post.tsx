@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import Heading1 from "../common/Heading-1";
 import Heading2 from "../common/Heading-2";
@@ -12,49 +11,26 @@ import {
   Block,
   Inline,
 } from "@contentful/rich-text-types";
-import type { Metadata } from "next";
 import { Code } from "@nextui-org/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
-import { getPost, formatDate, getImage } from "@/utils/getPosts";
+import {
+  formatDate,
+  getImage,
+  PostSingle,
+  PostsResponse,
+} from "@/utils/getPosts";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const posts = await getPost(params.slug);
-  const post = posts.items[0];
-
-  if (!post) {
-    return {
-      title: "Post Not Found | Marcel's Portfolio",
-      description: "The requested blog post could not be found.",
-    };
-  }
-
-  return {
-    title: `${post.fields.title} | Marcel's Portfolio`,
-    description: post.fields.shortDescription,
-  };
+interface PostProps {
+  post: PostSingle;
+  posts: PostsResponse;
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const posts = await getPost(params.slug);
-  const post = posts.items[0];
-
-  if (!post) {
-    notFound();
-  }
-
+export default function Post({ post, posts }: PostProps) {
   const content = post.fields.content;
+  console.log(content);
 
   let renderedContent;
 
-  // Check if the content is a rich text Document (it should have nodeType)
   if (content && content.nodeType) {
     const options = {
       renderNode: {
@@ -86,9 +62,11 @@ export default async function BlogPost({
         [MARKS.CODE]: (text: React.ReactNode) => <Code>{text}</Code>,
       },
     };
-    renderedContent = documentToReactComponents(content as Document, options);
+    renderedContent = documentToReactComponents(
+      content as unknown as Document,
+      options
+    );
   } else if (typeof content === "string") {
-    // If it's a string (HTML content), render it directly
     renderedContent = <div dangerouslySetInnerHTML={{ __html: content }} />;
   }
 
