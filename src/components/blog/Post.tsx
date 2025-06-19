@@ -22,7 +22,6 @@ interface PostProps {
 
 export default function Post({ post, image }: PostProps) {
   const content = post.fields.content;
-  console.log(content);
 
   let renderedContent;
 
