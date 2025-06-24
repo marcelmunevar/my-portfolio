@@ -120,7 +120,7 @@ export default function Home() {
 
             <Proficiency
               heading="Database Design"
-              text={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries and exposure to GraphQL.`}
+              text={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries.`}
               icon={faDatabase}
               footerText="Visit a code sample on Github."
               footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
