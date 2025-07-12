@@ -20,9 +20,9 @@ import {
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@heroui/chip";
 import Image from "next/image";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 
 export default function Home() {

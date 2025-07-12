@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Card, CardBody, CardHeader } from "@heroui/card";
 import Heading1 from "../common/Heading-1";
 import Heading2 from "../common/Heading-2";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import {
   Block,
   Inline,
 } from "@contentful/rich-text-types";
-import { Code } from "@nextui-org/code";
+import { Code } from "@heroui/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
 import { formatDate, PostSingle } from "@/utils/getPosts";
 

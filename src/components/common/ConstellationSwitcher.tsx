@@ -1,6 +1,6 @@
 "use client";
 
-import { Switch } from "@nextui-org/switch";
+import { Switch } from "@heroui/switch";
 import { useConstellation } from "./ConstellationProvider";
 
 export function ConstellationSwitcher() {

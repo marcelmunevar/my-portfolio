@@ -1,5 +1,5 @@
 "use client";
-import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/breadcrumbs";
+import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs";
 
 interface ClientBreadcrumbsProps {
   items: {

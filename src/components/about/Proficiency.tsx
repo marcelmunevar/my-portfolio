@@ -2,8 +2,8 @@ import React from "react";
 import Heading3 from "../common/Heading-3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Link } from "@nextui-org/link";
+import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Link } from "@heroui/link";
 
 interface ProficiencyProps {
   heading: string;

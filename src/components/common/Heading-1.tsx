@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@nextui-org/card";
+import { Card } from "@heroui/card";
 
 interface HeadingProps {
   text: string;

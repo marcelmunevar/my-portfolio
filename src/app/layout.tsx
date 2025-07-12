@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 import ConstellationParticles from "@/components/ConstellationParticles";
 import { ConstellationProvider } from "@/components/common/ConstellationProvider";
 

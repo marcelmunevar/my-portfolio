@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Divider } from "@nextui-org/divider";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import { Divider } from "@heroui/divider";
 import Image from "next/image";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 
 interface PageProps {
   title: string;

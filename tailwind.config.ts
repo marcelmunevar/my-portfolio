@@ -1,4 +1,4 @@
-import {nextui} from '@nextui-org/theme';
+import {heroui} from "@heroui/theme";
 import type { Config } from "tailwindcss";
 const colors = require("tailwindcss/colors");
 
@@ -7,10 +7,10 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|card|divider|drawer|image|link|navbar|toggle|ripple|spinner|modal|breadcrumbs).js"
+    "./node_modules/@heroui/theme/dist/components/(button|card|divider|drawer|image|link|navbar|toggle|ripple|spinner|modal|breadcrumbs).js"
   ],
   plugins: [
-    nextui({
+    heroui({
       prefix: "nextui",
       addCommonColors: false, 
       layout: {}, 
