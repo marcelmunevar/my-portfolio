@@ -39,8 +39,8 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-items-center">
                   <div className="max-w-52 text-center">
                     <Image
-                      alt="Picture of the author"
-                      className="w-100 mb-1 rounded-xl"
+                      alt="Marcel's picture"
+                      className="w-100 mb-1 rounded-full"
                       src="/marcel.png"
                       width={178}
                       height={173}
