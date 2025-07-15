@@ -10,7 +10,8 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { Link } from "@heroui/link";
+import NextLink from "next/link";
+import { Link as HeroLink } from "@heroui/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,12 +49,14 @@ export default function App() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <Link color="foreground" href="/" size="lg">
-          <NavbarBrand>
-            <AcmeLogo />
-            <p className="font-bold text-inherit">Marcel&apos;s Portfolio</p>
-          </NavbarBrand>
-        </Link>
+        <NextLink href="/" passHref legacyBehavior>
+          <HeroLink as="a" color="foreground" size="lg">
+            <NavbarBrand>
+              <AcmeLogo />
+              <p className="font-bold text-inherit">Marcel&apos;s Portfolio</p>
+            </NavbarBrand>
+          </HeroLink>
+        </NextLink>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -61,25 +64,28 @@ export default function App() {
           const isActive = currentPath === item.href;
           return (
             <NavbarItem key={`${item.text}-${index}`} isActive={isActive}>
-              <Link
-                color={isActive ? "primary" : "foreground"}
-                href={item.href}
-                size="lg"
-              >
-                {item.text}
-              </Link>
+              <NextLink href={item.href} passHref legacyBehavior>
+                <HeroLink
+                  as="a"
+                  color={isActive ? "primary" : "foreground"}
+                  size="lg"
+                >
+                  {item.text}
+                </HeroLink>
+              </NextLink>
             </NavbarItem>
           );
         })}
       </NavbarContent>
       <NavbarContent justify="end">
-        <Link
-          color={currentPath === "/settings" ? "primary" : "foreground"}
-          href="/settings"
-          size="lg"
-        >
-          <FontAwesomeIcon icon={faCog} className="" />
-        </Link>
+        <NextLink href="/settings" passHref legacyBehavior>
+          <HeroLink
+            color={currentPath === "/settings" ? "primary" : "foreground"}
+            size="lg"
+          >
+            <FontAwesomeIcon icon={faCog} className="" />
+          </HeroLink>
+        </NextLink>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
@@ -87,15 +93,16 @@ export default function App() {
             key={`${item.text}-${index}`}
             isActive={currentPath === item.href}
           >
-            <Link
-              onPress={() => setIsMenuOpen(!isMenuOpen)}
-              color={currentPath === item.href ? "primary" : "foreground"}
-              className="w-full"
-              href={item.href}
-              size="lg"
-            >
-              {item.text}
-            </Link>
+            <NextLink href={item.href} passHref legacyBehavior>
+              <HeroLink
+                onPress={() => setIsMenuOpen(!isMenuOpen)}
+                color={currentPath === item.href ? "primary" : "foreground"}
+                className="w-full"
+                size="lg"
+              >
+                {item.text}
+              </HeroLink>
+            </NextLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
