@@ -35,7 +35,7 @@ export interface PostsResponse {
 
 export async function getPosts(): Promise<PostsResponse> {
   const data = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1`,
+    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=pageBlogPost&include=1&order=-fields.publishedDate`,
     {
       method: "GET",
       headers: {
