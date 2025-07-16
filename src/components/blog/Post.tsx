@@ -53,9 +53,11 @@ export default function Post({ post, image }: PostProps) {
           </h3>
         ),
         [BLOCKS.QUOTE]: (node: Block | Inline, children: React.ReactNode) => (
-          <Snippet symbol="">
-            <div className="whitespace-pre-wrap mt-4">{children}</div>
-          </Snippet>
+          <div className="mb-4">
+            <Snippet symbol="">
+              <div className="whitespace-pre-wrap mt-4">{children}</div>
+            </Snippet>
+          </div>
         ),
       },
       renderMark: {
