@@ -1,4 +1,5 @@
 import { Card, CardBody, CardHeader } from "@heroui/card";
+import { Snippet } from "@heroui/snippet";
 import Heading1 from "../common/Heading-1";
 import Heading2 from "../common/Heading-2";
 import Image from "next/image";
@@ -51,9 +52,21 @@ export default function Post({ post, image }: PostProps) {
             {children}
           </h3>
         ),
+        [BLOCKS.QUOTE]: (node: Block | Inline, children: React.ReactNode) => (
+          <Snippet symbol="">
+            <div className="whitespace-pre-wrap mt-4">{children}</div>
+          </Snippet>
+        ),
       },
       renderMark: {
         [MARKS.CODE]: (text: React.ReactNode) => <Code>{text}</Code>,
+      },
+      renderText: (text: string) => {
+        // Split on \n and insert <br /> for soft breaks
+        return text.split("\n").reduce((acc, segment, i) => {
+          if (i === 0) return [segment];
+          return [...acc, <br key={i} />, segment];
+        }, [] as React.ReactNode[]);
       },
     };
     renderedContent = documentToReactComponents(

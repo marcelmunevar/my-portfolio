@@ -7,7 +7,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/components/(button|card|divider|drawer|image|link|navbar|toggle|ripple|spinner|modal|breadcrumbs).js"
+    "./node_modules/@heroui/theme/dist/components/(avatar|breadcrumbs|button|card|chip|code|divider|drawer|image|link|navbar|skeleton|snippet|toggle|ripple|spinner|modal|popover).js"
   ],
   plugins: [
     heroui({
