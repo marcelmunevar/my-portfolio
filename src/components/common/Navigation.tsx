@@ -14,6 +14,17 @@ import NextLink from "next/link";
 import { Link as HeroLink } from "@heroui/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "@heroui/modal";
+import { useDisclosure } from "@heroui/use-disclosure";
+import { ThemeSwitcher } from "@/components/common/ThemeSwitcher";
+import { ConstellationSwitcher } from "@/components/common/ConstellationSwitcher";
+import Heading3 from "@/components/common/Heading-3";
 
 export const AcmeLogo = () => {
   return (
@@ -29,6 +40,7 @@ export const AcmeLogo = () => {
 };
 
 export default function App() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const currentPath = usePathname();
   const menuItems = [
@@ -39,73 +51,106 @@ export default function App() {
   ];
 
   return (
-    <Navbar
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      className="bg-content1"
-    >
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
-        <NextLink href="/" passHref legacyBehavior>
-          <HeroLink as="a" color="foreground" size="lg">
-            <NavbarBrand>
-              <AcmeLogo />
-              <p className="font-bold text-inherit">Marcel&apos;s Portfolio</p>
-            </NavbarBrand>
-          </HeroLink>
-        </NextLink>
-      </NavbarContent>
+    <>
+      <Navbar
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        className="bg-content1"
+      >
+        <NavbarContent>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden"
+          />
+          <NextLink href="/" passHref legacyBehavior>
+            <HeroLink as="a" color="foreground" size="lg">
+              <NavbarBrand>
+                <AcmeLogo />
+                <p className="font-bold text-inherit">
+                  Marcel&apos;s Portfolio
+                </p>
+              </NavbarBrand>
+            </HeroLink>
+          </NextLink>
+        </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {menuItems.map((item, index) => {
-          const isActive = currentPath === item.href;
-          return (
-            <NavbarItem key={`${item.text}-${index}`} isActive={isActive}>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          {menuItems.map((item, index) => {
+            const isActive = currentPath === item.href;
+            return (
+              <NavbarItem key={`${item.text}-${index}`} isActive={isActive}>
+                <NextLink href={item.href} passHref legacyBehavior>
+                  <HeroLink
+                    as="a"
+                    color={isActive ? "primary" : "foreground"}
+                    size="lg"
+                  >
+                    {item.text}
+                  </HeroLink>
+                </NextLink>
+              </NavbarItem>
+            );
+          })}
+        </NavbarContent>
+        <NavbarContent justify="end">
+          <HeroLink
+            onPress={onOpen}
+            color="foreground"
+            size="lg"
+            className="cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faCog} className="" />
+          </HeroLink>
+        </NavbarContent>
+        <NavbarMenu>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem
+              key={`${item.text}-${index}`}
+              isActive={currentPath === item.href}
+            >
               <NextLink href={item.href} passHref legacyBehavior>
                 <HeroLink
-                  as="a"
-                  color={isActive ? "primary" : "foreground"}
+                  onPress={() => setIsMenuOpen(!isMenuOpen)}
+                  color={currentPath === item.href ? "primary" : "foreground"}
+                  className="w-full"
                   size="lg"
                 >
                   {item.text}
                 </HeroLink>
               </NextLink>
-            </NavbarItem>
-          );
-        })}
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NextLink href="/settings" passHref legacyBehavior>
-          <HeroLink
-            color={currentPath === "/settings" ? "primary" : "foreground"}
-            size="lg"
-          >
-            <FontAwesomeIcon icon={faCog} className="" />
-          </HeroLink>
-        </NextLink>
-      </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem
-            key={`${item.text}-${index}`}
-            isActive={currentPath === item.href}
-          >
-            <NextLink href={item.href} passHref legacyBehavior>
-              <HeroLink
-                onPress={() => setIsMenuOpen(!isMenuOpen)}
-                color={currentPath === item.href ? "primary" : "foreground"}
-                className="w-full"
-                size="lg"
-              >
-                {item.text}
-              </HeroLink>
-            </NextLink>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          <>
+            <ModalHeader className="flex flex-col gap-1">Settings</ModalHeader>
+            <ModalBody>
+              <div className="">
+                <main className="my-4 ">
+                  <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl mb-12">
+                    <div className="mb-8">
+                      <Heading3 text="Theme Options" />
+                    </div>
+                    <div className=" grid grid-cols-1 gap-8">
+                      <div className="flex gap-5 align-middle items-center">
+                        <span>Dark/Light</span>
+                        <ThemeSwitcher />
+                      </div>
+                      <div className="flex gap-5 align-middle items-center">
+                        <span>Particles</span>
+                        <ConstellationSwitcher />
+                      </div>
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </ModalBody>
+            <ModalFooter></ModalFooter>
+          </>
+        </ModalContent>
+      </Modal>
+    </>
   );
 }
