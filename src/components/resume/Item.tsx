@@ -15,12 +15,16 @@ const ResumeItem: React.FC<ResumeItemProps> = ({
   distinction,
 }) => {
   return (
-    <Card className="mb-4">
-      <CardBody>
-        <p className="text-default-500">{date}</p>
-        <p className="">{title} </p>
-        <p className="">{distinction} </p>
-        <p className="text-default-500">{institution}</p>
+    <Card className="mb-6">
+      <CardBody className="flex flex-col gap-1">
+        <p className="text-xl font-bold text-default-900 mb-1">{institution}</p>
+        <p className="text-xs text-default-400 mb-1">{date}</p>
+        <p className="text-base font-medium text-default-800 leading-tight">
+          {title}
+        </p>
+        {distinction && (
+          <p className="italic text-primary-600 text-sm mb-1">{distinction}</p>
+        )}
       </CardBody>
     </Card>
   );

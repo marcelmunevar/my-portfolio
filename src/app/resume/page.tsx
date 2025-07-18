@@ -6,6 +6,7 @@ import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
+import ResumeMultiItem from "@/components/resume/MultiItem";
 
 export default function Home() {
   return (
@@ -23,20 +24,22 @@ export default function Home() {
             <div>
               <div className="mb-8">
                 <Heading3 icon={faBriefcase} text="Experience" />
-                <ResumeItem
-                  date="March 2025 - Present"
-                  title="Lead Developer"
+                <ResumeMultiItem
                   institution="FUJIFILM Holdings America Corporation"
-                />
-                <ResumeItem
-                  date="November 2022 - March 2025"
-                  title="Marketing Developer"
-                  institution="FUJIFILM Holdings America Corporation"
-                />
-                <ResumeItem
-                  date="October 2018 - November 2022"
-                  title="Full-Stack Developer (Contract)"
-                  institution="FUJIFILM Holdings America Corporation"
+                  items={[
+                    {
+                      date: "March 2025 - Present",
+                      title: "Lead Developer",
+                    },
+                    {
+                      date: "November 2022 - March 2025",
+                      title: "Marketing Developer",
+                    },
+                    {
+                      date: "October 2018 - November 2022",
+                      title: "Full-Stack Developer (Contract)",
+                    },
+                  ]}
                 />
                 <ResumeItem
                   date="September 2017 - April 2018"
@@ -69,13 +72,13 @@ export default function Home() {
               <div className="mb-8">
                 <Heading3 icon={faGraduationCap} text="Education" />
                 <ResumeItem
-                  date="2024"
+                  date="May 2024"
                   title="BA in Computer Science"
                   distinction="Summa Cum Laude"
                   institution="Florida International University"
                 />
                 <ResumeItem
-                  date="2007"
+                  date="May 2007"
                   title="Associate of Arts (AA)"
                   institution="College Academy at Broward College"
                 />
@@ -84,13 +87,13 @@ export default function Home() {
                 <Heading3 icon={faUsers} text="Conferences" />
                 <ResumeItem
                   date="April 2025"
-                  title="React Miami"
-                  institution="Miami"
+                  institution="React Miami"
+                  title="Miami"
                 />
                 <ResumeItem
                   date="November 2024"
-                  title="React Summit"
-                  institution="NYC"
+                  institution="React Summit"
+                  title="NYC"
                 />
               </div>
             </div>
