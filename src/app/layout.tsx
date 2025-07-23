@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "@heroui/link";
+import BackToTopButton from "../components/common/BackToTopButton";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -33,6 +34,7 @@ export default function RootLayout({
 
           <Navigation />
           {children}
+          <BackToTopButton />
           <footer className="text-center bg-content1 p-5">
             <div className="container max-w-4xl m-auto flex flex-row justify-between items-center">
               <div>
