@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import Heading1 from "@/components/common/Heading-1";
 import Posts from "@/components/blog/Posts";
-import BlogCardSkeleton from "@/components/blog/PostsSkeleton";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 import { getPosts } from "@/utils/getPosts";
 
@@ -25,9 +23,7 @@ export default async function BlogHome() {
           ]}
         />
         <Heading1 text="Blog" />
-        <Suspense fallback={<BlogCardSkeleton />}>
-          <Posts posts={posts} />
-        </Suspense>
+        <Posts posts={posts} />
       </div>
     </main>
   );

@@ -1,6 +1,4 @@
-import { Suspense } from "react";
 import Post from "@/components/blog/Post";
-import BlogPostSkeleton from "@/components/blog/PostSkeleton";
 import { getPosts, getPost, getImage } from "@/utils/getPosts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -53,9 +51,5 @@ export default async function BlogPage({
     notFound();
   }
 
-  return (
-    <Suspense fallback={<BlogPostSkeleton />}>
-      <Post post={post} image={image} />
-    </Suspense>
-  );
+  return <Post post={post} image={image} />;
 }
