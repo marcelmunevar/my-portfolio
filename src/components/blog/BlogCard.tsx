@@ -50,8 +50,8 @@ export default function BlogCard({ post, posts }: BlogCardProps) {
           </h3>
           <Image
             src={getImage(posts, post)}
-            width={384}
-            height={256}
+            width={584}
+            height={389}
             alt={post.fields.title}
             className="mb-4"
             priority={true}
