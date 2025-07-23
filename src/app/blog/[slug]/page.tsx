@@ -2,6 +2,8 @@ import Post from "@/components/blog/Post";
 import { getPosts, getPost, getImage } from "@/utils/getPosts";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Posts from "@/components/blog/Posts";
+import Heading2 from "@/components/common/Heading-2";
 
 interface BlogPageParams {
   slug: string;
@@ -51,5 +53,21 @@ export default async function BlogPage({
     notFound();
   }
 
-  return <Post post={post} image={image} />;
+  // Fetch all posts for related posts
+  const allPosts = await getPosts();
+  // Filter out the current post
+  const relatedPosts = {
+    ...allPosts,
+    items: allPosts.items.filter((p) => p.fields.slug !== slug),
+  };
+
+  return (
+    <>
+      <Post post={post} image={image} />
+      <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
+        <Heading2 text="Related Posts" />
+        <Posts posts={relatedPosts} />
+      </div>
+    </>
+  );
 }
