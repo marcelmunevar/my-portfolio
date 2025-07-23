@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Card, CardBody } from "@heroui/card";
 import Image from "next/image";
-import { Avatar } from "@heroui/avatar";
 import { formatDate, getImage } from "@/utils/getPosts";
 
 interface Post {
@@ -62,7 +61,16 @@ export default function BlogCard({ post, posts }: BlogCardProps) {
             <p className="text-default-500">
               {formatDate(post.fields.publishedDate)}
             </p>
-            <Avatar name="Marcel" size="md" src="/marcel.png" />
+            <div className="w-12 h-12 rounded-full overflow-hidden inline-block">
+              <Image
+                src="/marcel.png"
+                alt="Marcel"
+                width={40}
+                height={40}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
           </div>
         </CardBody>
       </Card>
