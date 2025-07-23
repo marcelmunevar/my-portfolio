@@ -23,7 +23,6 @@ import {
 } from "@heroui/modal";
 import { useDisclosure } from "@heroui/use-disclosure";
 import { ThemeSwitcher } from "@/components/common/ThemeSwitcher";
-import { ConstellationSwitcher } from "@/components/common/ConstellationSwitcher";
 import Heading3 from "@/components/common/Heading-3";
 
 export const AcmeLogo = () => {
@@ -137,10 +136,6 @@ export default function App() {
                       <div className="flex gap-5 align-middle items-center">
                         <span>Dark/Light</span>
                         <ThemeSwitcher />
-                      </div>
-                      <div className="flex gap-5 align-middle items-center">
-                        <span>Particles</span>
-                        <ConstellationSwitcher />
                       </div>
                     </div>
                   </div>
