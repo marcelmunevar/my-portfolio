@@ -2,41 +2,10 @@ import Link from "next/link";
 import { Card, CardBody } from "@heroui/card";
 import Image from "next/image";
 import { formatDate, getImage } from "@/utils/getPosts";
-
-interface Post {
-  fields: {
-    slug: string;
-    title: string;
-    content: Document;
-    publishedDate: string;
-    shortDescription: string;
-    featuredImage: {
-      sys: {
-        id: string;
-      };
-    };
-  };
-}
-interface Asset {
-  sys: {
-    id: string;
-  };
-  fields: {
-    file: {
-      url: string;
-    };
-  };
-}
-
-interface PostsResponse {
-  items: Post[];
-  includes: {
-    Asset: Asset[];
-  };
-}
+import { PostSingle, PostsResponse } from "@/utils/getPosts";
 
 interface BlogCardProps {
-  post: Post;
+  post: PostSingle;
   posts: PostsResponse;
 }
 
