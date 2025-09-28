@@ -7,7 +7,7 @@ import { getPosts } from "@/utils/getPosts";
 export const metadata: Metadata = {
   title: "Blog | Marcel's Portfolio",
   description:
-    "Read my latest thoughts and insights on web development, including React, Next.js, and full-stack development.",
+    "Read my latest thoughts and insights on web development.",
 };
 
 export default async function BlogHome() {

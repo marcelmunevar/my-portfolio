@@ -45,7 +45,7 @@ export default function App() {
   const menuItems = [
     { text: "About", href: "/" },
     { text: "Resume", href: "/resume" },
-    { text: "Samples", href: "/samples" },
+    { text: "Projects", href: "/projects" },
     { text: "Blog", href: "/blog" },
   ];
 

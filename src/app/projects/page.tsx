@@ -11,10 +11,10 @@ export default function Home() {
           <ClientBreadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Samples", href: "/samples" },
+              { label: "Projects", href: "/projects" },
             ]}
           />
-          <Heading1 text="Code Samples" />
+          <Heading1 text="Projects" />
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard
               title="Cell Therapy"
