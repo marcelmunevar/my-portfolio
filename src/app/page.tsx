@@ -1,4 +1,3 @@
-"use client";
 import Heading1 from "../components/common/Heading-1";
 import Heading2 from "../components/common/Heading-2";
 import Heading3 from "../components/common/Heading-3";
@@ -24,11 +23,8 @@ import { Chip } from "@heroui/chip";
 import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
-import { getHomepagePosts } from "@/utils/getHomepagePosts";
 
-export default async function Home() {
-  const homepagePosts = await getHomepagePosts();
-  console.log("home " + JSON.stringify(homepagePosts));
+export default function Home() {
   return (
     <div className="">
       <main className="my-4 ">
