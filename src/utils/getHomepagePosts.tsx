@@ -1,5 +1,3 @@
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-
 export interface Proficiency {
   sys: {
     id: string;

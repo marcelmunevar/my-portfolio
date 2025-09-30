@@ -4,6 +4,7 @@ import Heading2 from "../common/Heading-2";
 import Proficiency from "./Proficiency";
 import * as BrandIcons from "@fortawesome/free-brands-svg-icons";
 import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface ProficiencyListProps {
   proficiencies: proficiencyType[];
@@ -15,10 +16,13 @@ const ProficiencyList: React.FC<ProficiencyListProps> = ({ proficiencies }) => {
       <Heading2 text="Education" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {proficiencies.map((proficiency) => {
-          const solidIcon = (SolidIcons as any)[proficiency.fields.icon];
-          const brandIcon = (BrandIcons as any)[proficiency.fields.icon];
+          const solidIcon = SolidIcons[
+            proficiency.fields.icon as keyof typeof SolidIcons
+          ] as IconDefinition;
+          const brandIcon = BrandIcons[
+            proficiency.fields.icon as keyof typeof BrandIcons
+          ] as IconDefinition;
           const icon = solidIcon ?? brandIcon;
-          console.log(proficiency.fields);
           return (
             <Proficiency
               key={proficiency.fields.heading}
