@@ -25,7 +25,7 @@ const Proficiency: React.FC<ProficiencyProps> = ({
       <CardBody>
         <div className="flex flex-col lg:flex-row gap-8">
           <div>
-            <FontAwesomeIcon icon={icon} className="text-6xl text-cyan-600" />
+            <FontAwesomeIcon icon={icon} className="text-6xl text-primary" />
           </div>
           <div>
             <Heading3 text={heading} />
