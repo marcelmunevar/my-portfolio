@@ -7,7 +7,7 @@ export interface Proficiency {
   fields: {
     heading: string;
     description: string;
-    icon: IconDefinition;
+    icon: string;
     footerText?: string;
     footerLink?: string;
   };
@@ -50,7 +50,7 @@ export interface HomepagePostsResponse {
 
 export async function getHomepagePosts(): Promise<HomepagePostsResponse> {
   const data = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=homepage&include=2&order=-fields.publishedDate`,
+    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?content_type=homepage&include=2&order=fields.order`,
     {
       method: "GET",
       headers: {
@@ -62,15 +62,6 @@ export async function getHomepagePosts(): Promise<HomepagePostsResponse> {
 
   const posts: HomepagePostsResponse = await data.json();
   return posts;
-}
-
-export function getHomepageImage(
-  posts: HomepagePostsResponse,
-  post: HomepagePost
-) {
-  const assetId = post.fields.featuredImage.sys.id;
-  const asset = posts.includes.Asset.find((asset) => asset.sys.id === assetId);
-  return asset ? `https:${asset.fields.file.url}` : "/marcel.png";
 }
 
 // Get referenced proficiencies for a homepage post

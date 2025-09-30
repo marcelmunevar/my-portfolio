@@ -24,8 +24,11 @@ import { Chip } from "@heroui/chip";
 import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
+import { getHomepagePosts } from "@/utils/getHomepagePosts";
 
-export default function Home() {
+export default async function Home() {
+  const homepagePosts = await getHomepagePosts();
+  console.log("home " + JSON.stringify(homepagePosts));
   return (
     <div className="">
       <main className="my-4 ">
