@@ -1,30 +1,15 @@
 import Heading1 from "../components/common/Heading-1";
 import Heading2 from "../components/common/Heading-2";
-import Heading3 from "../components/common/Heading-3";
-import Proficiency from "../components/about/Card";
-import {
-  faReact,
-  faWordpress,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faUniversalAccess,
-  faUserShield,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faChalkboardUser,
-  faDatabase,
-  faGraduationCap,
-  faPlug,
-  faChartLine,
-} from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Chip } from "@heroui/chip";
 import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
+import CardSection from "@/components/about/CardSection";
+import { getHomepagePosts } from "@/utils/getHomepagePosts";
 
-export default function Home() {
+export default async function Home() {
+  const homepagePostsResponse = await getHomepagePosts();
+
   return (
     <div className="">
       <main className="my-4 ">
@@ -71,138 +56,7 @@ export default function Home() {
             </Card>
           </div>
         </div>
-
-        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
-          <Heading2 text="Education" />
-          <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Proficiency
-              heading="Computer Science Grad"
-              description={`I earned my Bachelor&apos;s degree in Computer Science, graduating <span class="text-default-500">summa cum laude</span> in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering.`}
-              icon={faGraduationCap}
-            />
-            <Proficiency
-              heading="Conferences"
-              description={`I've attended React Summit (2025) and React Miami (2024) to stay current with the latest in front-end development, and I plan to attend Vercel Ship (2025) to deepen my expertise in modern web workflows.`}
-              icon={faChalkboardUser}
-            />
-          </div>
-        </div>
-
-        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
-          <Heading2 text="Proficiencies" />
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
-            <Proficiency
-              heading="React + Next.js"
-              description="I build scalable web applications with React, leveraging Tailwind
-            CSS for responsive, efficient styling and TypeScript for enhanced
-            code quality and scalability."
-              icon={faReact}
-              footerText="Visit a code sample on Github."
-              footerLink="https://github.com/marcelmunevar/MY-PORTFOLIO"
-            />
-            <Proficiency
-              heading="WordPress Sites"
-              description="Experienced in building and maintaining custom WordPress websites. I focus on theme development, performance 
-              optimization, and SEO best practices."
-              icon={faWordpress}
-              footerText="Visit a code sample on Github."
-              footerLink="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
-            />
-
-            <Proficiency
-              heading="Github Repositories"
-              description="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
-              icon={faGithub}
-              footerText="Visit my Github."
-              footerLink="https://github.com/marcelmunevar"
-            />
-
-            <Proficiency
-              heading="Database Design"
-              description={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries.`}
-              icon={faDatabase}
-              footerText="Visit a code sample on Github."
-              footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
-            />
-            <Proficiency
-              heading="Accessibility"
-              description="I build interfaces that are inclusive and usable by everyone. I use tools like Lighthouse and screen readers to identify and resolve accessibility issues throughout development."
-              icon={faUniversalAccess}
-            />
-            <Proficiency
-              heading="Privacy Compliance"
-              description="I ensure websites respect user privacy by implementing consent management, minimizing tracking, and supporting GDPR and CCPA standards. My work integrates tools like OneTrust CookiePro."
-              icon={faUserShield}
-            />
-            <Proficiency
-              heading="API Integration"
-              description="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST and third-party integrations like Contentful and inriver PIM, with experience using Express for building backend services."
-              icon={faPlug}
-            />
-            <Proficiency
-              heading="Analytics"
-              description={`I leverage tools like Google Analytics and custom tracking solutions to measure user behavior and drive data-informed decisions. Skilled in setting up events, dashboards, and performance monitoring.`}
-              icon={faChartLine}
-            />
-            <Card>
-              <CardBody>
-                <Heading3 text="Other Hard Skills" />
-                <div className="flex gap-2 flex-wrap">
-                  <Chip color="primary">Vercel</Chip>
-                  <Chip color="primary">Bootstrap</Chip>
-                  <Chip color="primary">Node</Chip>
-                  <Chip color="primary">jQuery</Chip>
-                  <Chip color="primary">Vanilla JS</Chip>
-                  <Chip color="primary">Sass</Chip>
-                  <Chip color="primary">Less</Chip>
-                  <Chip color="primary">LAMP</Chip>
-                  <Chip color="primary">Linux</Chip>
-                  <Chip color="primary">Apache</Chip>
-                  <Chip color="primary">MySQL</Chip>
-                  <Chip color="primary">PostgreSQL</Chip>
-                  <Chip color="primary">PHP</Chip>
-                  <Chip color="primary">Tag Manager</Chip>
-                  <Chip color="primary">Analytics</Chip>
-                </div>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <Heading3 text="Soft Skills" />
-                <div className="flex gap-2 flex-wrap">
-                  <Chip color="primary">Agile</Chip>
-                  <Chip color="primary">Kanban</Chip>
-                  <Chip color="primary">Adaptable</Chip>
-                  <Chip color="primary">Communication</Chip>
-                  <Chip color="primary">Attention to Detail</Chip>
-                  <Chip color="primary">Problem Solving</Chip>
-                  <Chip color="primary">Collaborative</Chip>
-                  <Chip color="primary">Cross-Functional</Chip>
-                </div>
-              </CardBody>
-            </Card>
-            <Card className=" col-span-2">
-              <CardBody>
-                <Heading3 text="Best Practices" />
-                <div className="flex gap-2 flex-wrap">
-                  <Chip color="primary">Responsive Web Design</Chip>
-                  <Chip color="primary">Object Oriented Programming</Chip>
-                  <Chip color="primary">Event-Based Software Design</Chip>
-                  <Chip color="primary">Software Engineering Principles</Chip>
-                  <Chip color="primary">Human Computer Interaction</Chip>
-                  <Chip color="primary">Search Engine Optimization</Chip>
-                  <Chip color="primary">Page Speed Optimization</Chip>
-                  <Chip color="primary">CMS Integrations</Chip>
-                  <Chip color="primary">
-                    Marketing and Compliance Tool Integration
-                  </Chip>
-                  <Chip color="primary">Accessibility Review</Chip>
-                  <Chip color="primary">API Integrations</Chip>
-                </div>
-              </CardBody>
-            </Card>
-          </div>
-        </div>
+        <CardSection homepagePostsResponse={homepagePostsResponse} />
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <Heading2 text="Clients" />
           <Card>
