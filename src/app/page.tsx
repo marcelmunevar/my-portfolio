@@ -77,12 +77,12 @@ export default function Home() {
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Proficiency
               heading="Computer Science Grad"
-              text={`I earned my Bachelor&apos;s degree in Computer Science, graduating <span class="text-default-500">summa cum laude</span> in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering.`}
+              description={`I earned my Bachelor&apos;s degree in Computer Science, graduating <span class="text-default-500">summa cum laude</span> in 2024. The program strengthened my problem-solving skills and gave me a solid foundation in software engineering.`}
               icon={faGraduationCap}
             />
             <Proficiency
               heading="Conferences"
-              text={`I've attended React Summit (2025) and React Miami (2024) to stay current with the latest in front-end development, and I plan to attend Vercel Ship (2025) to deepen my expertise in modern web workflows.`}
+              description={`I've attended React Summit (2025) and React Miami (2024) to stay current with the latest in front-end development, and I plan to attend Vercel Ship (2025) to deepen my expertise in modern web workflows.`}
               icon={faChalkboardUser}
             />
           </div>
@@ -93,7 +93,7 @@ export default function Home() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
             <Proficiency
               heading="React + Next.js"
-              text="I build scalable web applications with React, leveraging Tailwind
+              description="I build scalable web applications with React, leveraging Tailwind
             CSS for responsive, efficient styling and TypeScript for enhanced
             code quality and scalability."
               icon={faReact}
@@ -102,7 +102,7 @@ export default function Home() {
             />
             <Proficiency
               heading="WordPress Sites"
-              text="Experienced in building and maintaining custom WordPress websites. I focus on theme development, performance 
+              description="Experienced in building and maintaining custom WordPress websites. I focus on theme development, performance 
               optimization, and SEO best practices."
               icon={faWordpress}
               footerText="Visit a code sample on Github."
@@ -111,7 +111,7 @@ export default function Home() {
 
             <Proficiency
               heading="Github Repositories"
-              text="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
+              description="Adept in using GitHub for version control and managing code repositories. Proficient in branching, merging, and pull requests to streamline development workflows."
               icon={faGithub}
               footerText="Visit my Github."
               footerLink="https://github.com/marcelmunevar"
@@ -119,29 +119,29 @@ export default function Home() {
 
             <Proficiency
               heading="Database Design"
-              text={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries.`}
+              description={`Completed coursework in data modeling, normalization, and query design, with professional experience building complex SQL queries.`}
               icon={faDatabase}
               footerText="Visit a code sample on Github."
               footerLink="https://github.com/FIU-By-Marcel/RESTAPI"
             />
             <Proficiency
               heading="Accessibility"
-              text="I build interfaces that are inclusive and usable by everyone. I use tools like Lighthouse and screen readers to identify and resolve accessibility issues throughout development."
+              description="I build interfaces that are inclusive and usable by everyone. I use tools like Lighthouse and screen readers to identify and resolve accessibility issues throughout development."
               icon={faUniversalAccess}
             />
             <Proficiency
               heading="Privacy Compliance"
-              text="I ensure websites respect user privacy by implementing consent management, minimizing tracking, and supporting GDPR and CCPA standards. My work integrates tools like OneTrust CookiePro."
+              description="I ensure websites respect user privacy by implementing consent management, minimizing tracking, and supporting GDPR and CCPA standards. My work integrates tools like OneTrust CookiePro."
               icon={faUserShield}
             />
             <Proficiency
               heading="API Integration"
-              text="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST and third-party integrations like Contentful and inriver PIM, with experience using Express for building backend services."
+              description="I connect front-end applications to external APIs to deliver dynamic, data-driven experiences. Skilled in REST and third-party integrations like Contentful and inriver PIM, with experience using Express for building backend services."
               icon={faPlug}
             />
             <Proficiency
               heading="Analytics"
-              text={`I leverage tools like Google Analytics and custom tracking solutions to measure user behavior and drive data-informed decisions. Skilled in setting up events, dashboards, and performance monitoring.`}
+              description={`I leverage tools like Google Analytics and custom tracking solutions to measure user behavior and drive data-informed decisions. Skilled in setting up events, dashboards, and performance monitoring.`}
               icon={faChartLine}
             />
             <Card>
