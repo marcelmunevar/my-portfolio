@@ -61,7 +61,9 @@ export function getReferencedCards(
 ): Card[] {
   if (!post.fields.cards || !posts.includes.Entry) return [];
   const cardIds = post.fields.cards.map((ref) => ref.sys.id);
-  return posts.includes.Entry.filter((entry: Card) =>
-    cardIds.includes(entry.sys.id)
-  );
+  // Preserve order from reference field
+  const entries = posts.includes.Entry ?? [];
+  return cardIds
+    .map((id) => entries.find((entry: Card) => entry.sys.id === id))
+    .filter((entry): entry is Card => !!entry);
 }
