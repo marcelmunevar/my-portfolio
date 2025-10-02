@@ -1,7 +1,7 @@
 import Heading1 from "../components/common/Heading-1";
 import Heading2 from "../components/common/Heading-2";
 import Heading3 from "../components/common/Heading-3";
-import Proficiency from "../components/about/Proficiency";
+import Proficiency from "../components/about/Card";
 import {
   faReact,
   faWordpress,

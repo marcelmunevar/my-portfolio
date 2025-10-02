@@ -1,4 +1,4 @@
-export interface Proficiency {
+export interface Card {
   sys: {
     id: string;
   };
@@ -23,7 +23,7 @@ export interface HomepagePost {
         id: string;
       };
     };
-    proficiencies?: { sys: { id: string } }[];
+    cards?: { sys: { id: string } }[];
   };
 }
 
@@ -42,7 +42,7 @@ export interface HomepagePostsResponse {
   items: HomepagePost[];
   includes: {
     Asset: Asset[];
-    Entry?: Proficiency[];
+    Entry?: Card[];
   };
 }
 
@@ -62,14 +62,14 @@ export async function getHomepagePosts(): Promise<HomepagePostsResponse> {
   return posts;
 }
 
-// Get referenced proficiencies for a homepage post
-export function getReferencedProficiencies(
+// Get referenced cards for a homepage post
+export function getReferencedCards(
   posts: HomepagePostsResponse,
   post: HomepagePost
-): Proficiency[] {
-  if (!post.fields.proficiencies || !posts.includes.Entry) return [];
-  const proficiencyIds = post.fields.proficiencies.map((ref) => ref.sys.id);
-  return posts.includes.Entry.filter((entry: Proficiency) =>
-    proficiencyIds.includes(entry.sys.id)
+): Card[] {
+  if (!post.fields.cards || !posts.includes.Entry) return [];
+  const cardIds = post.fields.cards.map((ref) => ref.sys.id);
+  return posts.includes.Entry.filter((entry: Card) =>
+    cardIds.includes(entry.sys.id)
   );
 }

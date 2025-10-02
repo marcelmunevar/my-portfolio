@@ -2,34 +2,48 @@ import React from "react";
 import Heading3 from "../common/Heading-3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Card as HeroCard, CardBody, CardFooter } from "@heroui/card";
 import { Link } from "@heroui/link";
+import { Chip } from "@heroui/chip";
 
-interface ProficiencyProps {
+interface CardProps {
   heading: string;
-  text: string;
-  icon: IconDefinition;
+  description?: string;
+  icon?: IconDefinition;
+  chips?: Array<string>;
   footerText?: string;
   footerLink?: string;
 }
 
-const Proficiency: React.FC<ProficiencyProps> = ({
-  text,
+const Card: React.FC<CardProps> = ({
+  description,
   heading,
   icon,
+  chips,
   footerText,
   footerLink,
 }) => {
   return (
-    <Card>
+    <HeroCard>
       <CardBody>
         <div className="flex flex-col lg:flex-row gap-8">
-          <div>
-            <FontAwesomeIcon icon={icon} className="text-6xl text-primary" />
-          </div>
+          {icon ? (
+            <div>
+              <FontAwesomeIcon icon={icon} className="text-6xl text-primary" />
+            </div>
+          ) : (
+            false
+          )}
           <div>
             <Heading3 text={heading} />
-            <p dangerouslySetInnerHTML={{ __html: text }} />
+            {description ? (
+              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            ) : (
+              false
+            )}
+            {chips
+              ? chips.map((chip, idx) => <Chip key={idx}>{chip}</Chip>)
+              : false}
           </div>
         </div>
       </CardBody>
@@ -51,8 +65,8 @@ const Proficiency: React.FC<ProficiencyProps> = ({
       ) : (
         false
       )}
-    </Card>
+    </HeroCard>
   );
 };
 
-export default Proficiency;
+export default Card;
