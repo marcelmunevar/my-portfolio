@@ -13,17 +13,9 @@ export interface Card {
 
 export interface HomepagePost {
   fields: {
-    slug: string;
     title: string;
-    content: Document;
-    publishedDate: string;
-    shortDescription: string;
-    featuredImage: {
-      sys: {
-        id: string;
-      };
-    };
-    cards?: { sys: { id: string } }[];
+    cards: { sys: { id: string } }[];
+    order: number;
   };
 }
 
