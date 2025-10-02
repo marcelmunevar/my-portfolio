@@ -15,8 +15,7 @@ export default async function Page() {
         const cards = getReferencedCards(homepagePostsResponse, item);
         return (
           <section key={item.fields.title} className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">{item.fields.title}</h2>
-            <CardList cards={cards} />
+            <CardList title={item.fields.title} cards={cards} />
           </section>
         );
       })}

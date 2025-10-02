@@ -7,13 +7,14 @@ import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface CardListProps {
+  title: string;
   cards: CardType[];
 }
 
-const CardList: React.FC<CardListProps> = ({ cards }) => {
+const CardList: React.FC<CardListProps> = ({ cards, title }) => {
   return (
     <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
-      <Heading2 text="Education" />
+      <Heading2 text={title} />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {cards.map((card) => {
           const solidIcon = SolidIcons[
