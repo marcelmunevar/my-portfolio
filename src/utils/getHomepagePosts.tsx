@@ -8,6 +8,8 @@ export interface Card {
     icon: string;
     footerText?: string;
     footerLink?: string;
+    chips?: string;
+    twoColumnSpan?: boolean;
   };
 }
 

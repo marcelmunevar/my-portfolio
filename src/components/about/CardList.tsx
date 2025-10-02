@@ -32,6 +32,8 @@ const CardList: React.FC<CardListProps> = ({ cards, title }) => {
               icon={icon}
               footerLink={card.fields.footerLink}
               footerText={card.fields.footerText}
+              chips={card.fields.chips ? card.fields.chips.split(/\r?\n/) : []}
+              twoColumnSpan={card.fields.twoColumnSpan}
             />
           );
         })}

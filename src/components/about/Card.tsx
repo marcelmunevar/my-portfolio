@@ -13,6 +13,7 @@ interface CardProps {
   chips?: Array<string>;
   footerText?: string;
   footerLink?: string;
+  twoColumnSpan?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -22,9 +23,10 @@ const Card: React.FC<CardProps> = ({
   chips,
   footerText,
   footerLink,
+  twoColumnSpan,
 }) => {
   return (
-    <HeroCard>
+    <HeroCard className={twoColumnSpan ? "col-span-2" : ""}>
       <CardBody>
         <div className="flex flex-col lg:flex-row gap-8">
           {icon ? (
@@ -41,9 +43,17 @@ const Card: React.FC<CardProps> = ({
             ) : (
               false
             )}
-            {chips
-              ? chips.map((chip, idx) => <Chip key={idx}>{chip}</Chip>)
-              : false}
+            {chips ? (
+              <div className="flex gap-2 flex-wrap">
+                {chips.map((chip, idx) => (
+                  <Chip color="primary" key={idx}>
+                    {chip}
+                  </Chip>
+                ))}
+              </div>
+            ) : (
+              false
+            )}
           </div>
         </div>
       </CardBody>
