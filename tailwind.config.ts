@@ -20,6 +20,7 @@ export default {
           colors: {
             background: "#000000",
             foreground: "#ffffff",
+            primary: colors.cyan[600],
             secondary: colors.red[700],
           }, 
         },
