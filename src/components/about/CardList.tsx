@@ -16,7 +16,7 @@ const CardList: React.FC<CardListProps> = ({ cards, title }) => {
     <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
       <Heading2 text={title} />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {cards.map((card) => {
+        {cards.map((card, idx) => {
           const solidIcon = SolidIcons[
             card.fields.icon as keyof typeof SolidIcons
           ] as IconDefinition;
@@ -26,7 +26,7 @@ const CardList: React.FC<CardListProps> = ({ cards, title }) => {
           const icon = solidIcon ?? brandIcon;
           return (
             <Card
-              key={card.fields.heading}
+              key={idx}
               heading={card.fields.heading}
               description={card.fields.description}
               icon={icon}
@@ -34,6 +34,9 @@ const CardList: React.FC<CardListProps> = ({ cards, title }) => {
               footerText={card.fields.footerText}
               chips={card.fields.chips ? card.fields.chips.split(/\r?\n/) : []}
               twoColumnSpan={card.fields.twoColumnSpan}
+              imagesrc={card.fields.imagesrc}
+              name={card.fields.name}
+              title={card.fields.title}
             />
           );
         })}

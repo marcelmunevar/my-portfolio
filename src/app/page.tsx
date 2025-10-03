@@ -13,48 +13,9 @@ export default async function Home() {
   return (
     <div className="">
       <main className="my-4 ">
-        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-8">
+        <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <ClientBreadcrumbs items={[{ label: "Home", href: "/" }]} />
           <Heading1 text="About" />
-          <Heading2 text="Introduction" />
-          <div className="flex flex-col md:flex-row gap-8 items-center mb-4">
-            <Card isFooterBlurred>
-              <CardBody>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center justify-items-center">
-                  <div className="max-w-52 text-center">
-                    <Image
-                      alt="Marcel's picture"
-                      className="w-100 mb-1 rounded-full"
-                      src="/marcel.png"
-                      width={178}
-                      height={173}
-                      priority={true}
-                    />
-                    <p> Marcel Munevar </p>
-                    <p className="text-default-500"> Lead Developer </p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <p className="mb-4">
-                      I am a Lead Developer with nearly 12 years of experience
-                      in web development. My strong front-end expertise has
-                      empowered me to design, launch, and maintain numerous
-                      responsive websites focused on excellent user experience.
-                      I prioritize SEO, page speed, and the smooth integration
-                      of marketing, compliance tools, and CMS platforms.
-                      Currently, my team is advancing our workflows by adopting
-                      React and Next.js, building reusable components to boost
-                      consistency, scalability, and development efficiency.
-                    </p>
-                  </div>
-                </div>
-              </CardBody>
-              <hr />
-              <CardFooter>
-                Continue reading to learn more about my educational background
-                and specialized skills.
-              </CardFooter>
-            </Card>
-          </div>
         </div>
         <CardSection homepagePostsResponse={homepagePostsResponse} />
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">

@@ -10,6 +10,14 @@ export interface Card {
     footerLink?: string;
     chips?: string;
     twoColumnSpan?: boolean;
+    image?: {
+      sys: {
+        id: string;
+      };
+    };
+    imagesrc?: string;
+    name?: string;
+    title?: string;
   };
 }
 
@@ -65,7 +73,32 @@ export function getReferencedCards(
   const cardIds = post.fields.cards.map((ref) => ref.sys.id);
   // Preserve order from reference field
   const entries = posts.includes.Entry ?? [];
-  return cardIds
+  const foundEntries = cardIds.map((id) => {
+    return entries.find((entry: Card) => entry.sys.id === id);
+  });
+  //  console.log(foundEntries);
+  // filter out undefined entries
+  const filteredEntries = foundEntries.filter(
+    (entry): entry is Card => !!entry
+  );
+  const cardsWithImageSrc = filteredEntries.map(function (card) {
+    card.fields.imagesrc = getImageSrc(posts, card);
+    return card;
+  });
+
+  return cardsWithImageSrc;
+
+  //getImageSrc(posts, post.fields.cards);
+  /*return cardIds
     .map((id) => entries.find((entry: Card) => entry.sys.id === id))
-    .filter((entry): entry is Card => !!entry);
+    .filter((entry): entry is Card => !!entry);*/
+}
+
+// Utility to get image URL and alt from Contentful Asset reference
+function getImageSrc(post: HomepagePostsResponse, card: Card) {
+  if (card.fields.image === undefined) return undefined;
+  const assetId = card.fields.image.sys.id;
+  const asset = post.includes.Asset.find((asset) => asset.sys.id === assetId);
+  //console.log(asset?.fields.file.url);
+  return asset ? `https:${asset.fields.file.url}` : undefined;
 }
