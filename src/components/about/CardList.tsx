@@ -15,7 +15,7 @@ const CardList: React.FC<CardListProps> = ({ cards, title }) => {
   return (
     <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
       <Heading2 text={title} />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="flex flex-col lg:flex-none lg:grid lg:grid-cols-2 gap-6">
         {cards.map((card, idx) => {
           const solidIcon = SolidIcons[
             card.fields.icon as keyof typeof SolidIcons
