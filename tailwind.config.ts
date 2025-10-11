@@ -9,11 +9,20 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@heroui/theme/dist/components/(avatar|breadcrumbs|button|card|chip|code|divider|drawer|image|link|navbar|skeleton|snippet|toggle|ripple|spinner|modal|popover).js"
   ],
+  theme: {
+    extend: {
+      colors: {
+        chipBG: colors.cyan[700], // Add your custom color here
+        // You can add more colors as needed
+      },
+    },
+  },
   plugins: [
     heroui({
       prefix: "nextui",
       addCommonColors: false, 
       layout: {}, 
+      
       themes: {
         dark: {
           layout: {},
@@ -29,6 +38,7 @@ export default {
           colors: {
             background: "#f1f1f1",
             foreground: "#111111",
+            primary: colors.cyan[700],
             secondary: colors.red[700],
           },
         },

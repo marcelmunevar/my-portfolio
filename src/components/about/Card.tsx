@@ -76,7 +76,7 @@ const Card: React.FC<CardProps> = ({
             {chips ? (
               <div className="flex gap-2 flex-wrap">
                 {chips.map((chip, idx) => (
-                  <Chip color="primary" key={idx}>
+                  <Chip className="bg-chipBG text-white" key={idx}>
                     {chip}
                   </Chip>
                 ))}
