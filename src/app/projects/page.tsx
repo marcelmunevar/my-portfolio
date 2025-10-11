@@ -18,7 +18,6 @@ export default function Home() {
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
             <MyCard
               title="Cell Therapy"
-              repoHref="https://github.com/marcelmunevar-contractor-fujifilm/cell-therapy"
               pageHref="https://lifesciences.fujifilm.com/cell-therapy"
               imgsrc="/cell-therapy.png"
               tech="React, Next.js, Tailwind CSS"
@@ -34,14 +33,12 @@ export default function Home() {
             <MyCard
               title="Fujinon.com theme"
               pageHref="https://www.fujinon.com/"
-              repoHref="https://github.com/Fujifilm-By-Marcel/fujinon_theme"
               imgsrc="/fujinon.png"
               tech="Sass, WordPress, PHP, jQuery, ACF"
             />
             <MyCard
               title="Fujifilm-x.com homepage"
               pageHref="https://fujifilm-x.com/en-us/"
-              repoHref="https://github.com/Fujifilm-By-Marcel/fujifilm-x_theme/blob/master/page-home.php"
               imgsrc="/x-home.jpg"
               tech="WordPress, PHP, jQuery, ACF"
             />
