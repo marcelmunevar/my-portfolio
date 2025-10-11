@@ -23,7 +23,7 @@ const ResumeItem: React.FC<ResumeItemProps> = ({
           {title}
         </p>
         {distinction && (
-          <p className="italic text-primary-600 text-sm mb-1">{distinction}</p>
+          <p className="italic text-primary text-sm mb-1">{distinction}</p>
         )}
       </CardBody>
     </Card>
