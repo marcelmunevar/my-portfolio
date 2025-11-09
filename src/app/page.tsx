@@ -6,6 +6,7 @@ import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 import CardSection from "@/components/about/CardSection";
 import { getHomepagePosts } from "@/utils/getHomepagePosts";
+import Hero from "@/components/common/Hero";
 
 export default async function Home() {
   const homepagePostsResponse = await getHomepagePosts();
@@ -15,8 +16,10 @@ export default async function Home() {
       <main className="my-4 ">
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <ClientBreadcrumbs items={[{ label: "Home", href: "/" }]} />
+          <Hero />
           <Heading1 text="About" />
         </div>
+
         <CardSection homepagePostsResponse={homepagePostsResponse} />
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <Heading2 text="Clients" />

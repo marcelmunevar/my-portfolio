@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typewriter cursor animation used by the Typewriter component */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursor-anim {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  /* small upward nudge so the '|' matches the text baseline better */
+  transform: translateY(-0.2em);
+}
