@@ -60,7 +60,10 @@ export default function Typewriter({
   return (
     <span className={`inline-block ${className}`}>
       <span>{text}</span>
-      <span className="ml-2 inline-block align-middle cursor-anim">|</span>
+      {/* remove ml-2 margin so cursor sits directly after text */}
+      <span className="inline-block align-middle cursor-anim" aria-hidden>
+        |
+      </span>
     </span>
   );
 }
