@@ -15,7 +15,7 @@ const ResumeItem: React.FC<ResumeItemProps> = ({
   distinction,
 }) => {
   return (
-    <Card className="mb-6">
+    <Card className="mb-6 fade-in-right">
       <CardBody className="flex flex-col gap-1">
         <p className="text-xl font-bold text-default-900 mb-1">{institution}</p>
         <p className="text-xs text-default-400 mb-1">{date}</p>

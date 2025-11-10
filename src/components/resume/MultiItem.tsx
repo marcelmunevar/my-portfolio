@@ -15,7 +15,7 @@ const ResumeMultiItem: React.FC<ResumeMultiItemProps> = ({
   items,
 }) => {
   return (
-    <Card className="mb-6">
+    <Card className="mb-6 fade-in-right">
       <CardBody className="flex flex-col gap-2">
         <p className="text-xl font-bold text-default-900 mb-1">{institution}</p>
         <div className="flex flex-col gap-3">

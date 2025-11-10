@@ -12,7 +12,7 @@ interface BlogCardProps {
 export default function BlogCard({ post, posts }: BlogCardProps) {
   return (
     <Link href={`/blog/${post.fields.slug}`}>
-      <Card className="h-full">
+      <Card className="h-full fade-in-right">
         <CardBody className="h-full justify-between">
           <h3 className="text-xl lg:text-2xl tracking-tight text-primary mb-4">
             {post.fields.title}

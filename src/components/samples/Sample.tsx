@@ -21,7 +21,7 @@ const Page: React.FC<PageProps> = ({
   tech,
 }) => {
   return (
-    <Card className="max-w-[400px]">
+    <Card className="max-w-[400px] fade-in-right">
       <CardHeader>
         <div className="flex flex-col">
           <h4 className="font-bold text-large">{title}</h4>

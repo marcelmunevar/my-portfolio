@@ -32,7 +32,7 @@ export default function Post({ post, image }: PostProps) {
         [BLOCKS.PARAGRAPH]: (
           node: Block | Inline,
           children: React.ReactNode
-        ) => <p className="mb-4">{children}</p>,
+        ) => <p className="mb-4 fade-in-right">{children}</p>,
         [INLINES.HYPERLINK]: (
           node: Block | Inline,
           children: React.ReactNode
@@ -42,13 +42,13 @@ export default function Post({ post, image }: PostProps) {
           </a>
         ),
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
-          <ul className="list-disc pl-4">{children}</ul>
+          <ul className="list-disc pl-4 fade-in-right">{children}</ul>
         ),
         [BLOCKS.HEADING_3]: (
           node: Block | Inline,
           children: React.ReactNode
         ) => (
-          <h3 className="text-xl lg:text-2xl leading-none tracking-tight mb-4">
+          <h3 className="text-xl lg:text-2xl leading-none tracking-tight mb-4 fade-in-right">
             {children}
           </h3>
         ),
@@ -104,11 +104,11 @@ export default function Post({ post, image }: PostProps) {
             width={800}
             height={533}
             alt={post.fields.title}
-            className="mb-4"
+            className="mb-4 fade-in-right"
             priority={true}
           />
 
-          <p className="text-default-500 mb-4">
+          <p className="text-default-500 mb-4 fade-in-right">
             {formatDate(post.fields.publishedDate)}
           </p>
           <Heading2 text={post.fields.shortDescription} />

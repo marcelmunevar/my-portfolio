@@ -33,7 +33,9 @@ const Card: React.FC<CardProps> = ({
   title,
 }) => {
   return (
-    <HeroCard className={twoColumnSpan ? "col-span-2" : ""}>
+    <HeroCard
+      className={twoColumnSpan ? "col-span-2 fade-in-right" : " fade-in-right"}
+    >
       <CardBody>
         <div
           className={

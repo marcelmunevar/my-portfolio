@@ -6,7 +6,7 @@ interface HeadingProps {
 
 const Heading2: React.FC<HeadingProps> = ({ text }) => {
   return (
-    <div className="flex flex-col lg:flex-row mb-8">
+    <div className="flex flex-col lg:flex-row mb-8 fade-in-right">
       <h2 className="text-2xl lg:text-4xl font-bold leading-none tracking-tight mr-16 mb-4 lg:mb-0">
         {text}
       </h2>

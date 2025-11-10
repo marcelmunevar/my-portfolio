@@ -23,7 +23,7 @@ export default async function Home() {
         <CardSection homepagePostsResponse={homepagePostsResponse} />
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-12">
           <Heading2 text="Clients" />
-          <Card>
+          <Card className="fade-in-right">
             <CardBody>
               <div className="flex flex-col md:flex-row gap-4 flex-wrap items-stretch ">
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center ">
@@ -77,7 +77,7 @@ export default async function Home() {
         </div>
         <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl lg:max-w-4xl mb-24">
           <Heading2 text="Tech Stack" />
-          <Card>
+          <Card className="fade-in-right">
             <CardBody>
               <div className="flex flex-col md:flex-row gap-4 flex-wrap items-center ">
                 <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow items-stretch">

@@ -9,7 +9,7 @@ interface HeadingProps {
 
 const Heading3: React.FC<HeadingProps> = ({ text, icon }) => {
   return (
-    <div className="flex flex-row mb-4 items-center">
+    <div className="flex flex-row mb-4 items-center fade-in-right">
       {icon && (
         <FontAwesomeIcon
           icon={icon}
