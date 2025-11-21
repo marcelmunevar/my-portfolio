@@ -5,11 +5,21 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 interface HeadingProps {
   text: string;
   icon?: IconDefinition;
+  disableFade?: boolean;
 }
 
-const Heading3: React.FC<HeadingProps> = ({ text, icon }) => {
+const Heading3: React.FC<HeadingProps> = ({
+  text,
+  icon,
+  disableFade = false,
+}) => {
+  console.log(disableFade);
   return (
-    <div className="flex flex-row mb-4 items-center fade-in-right">
+    <div
+      className={`flex flex-row mb-4 items-center ${
+        disableFade ? "" : "fade-in-right"
+      }`}
+    >
       {icon && (
         <FontAwesomeIcon
           icon={icon}
