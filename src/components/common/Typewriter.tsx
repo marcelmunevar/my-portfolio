@@ -21,8 +21,23 @@ export default function Typewriter({
   const [wordIndex, setWordIndex] = useState(0);
   const timeoutRef = useRef<number | null>(null);
   const pauseRef = useRef<number | null>(null);
+  const containerRef = useRef<HTMLSpanElement | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    // If not visible, pause typing and clear any pending timers
+    if (!isVisible) {
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      if (pauseRef.current) {
+        window.clearTimeout(pauseRef.current);
+        pauseRef.current = null;
+      }
+      return;
+    }
+
     const current = words[wordIndex % words.length];
 
     // compute next text
@@ -55,10 +70,29 @@ export default function Typewriter({
       if (pauseRef.current) window.clearTimeout(pauseRef.current);
     };
     // Intentionally include text/isDeleting/wordIndex/words so effect reacts to those
-  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pause]);
+  }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pause, isVisible]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const el = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <span className={`inline-block ${className}`}>
+    <span ref={containerRef} className={`inline-block ${className}`}>
       <span>{text}</span>
       {/* remove ml-2 margin so cursor sits directly after text */}
       <span className="inline-block align-middle cursor-anim" aria-hidden>
