@@ -11,12 +11,11 @@ export default function Hero() {
           <span className="block text-primary mt-4">
             <Typewriter
               words={[
-                "Lead Developer.",
-                "Senior Developer.",
-                "Code Whisperer.",
-                "Tech Lead.",
-                "Engineering Manager.",
-                "Software Architect.",
+                "Lead Developer",
+                "Senior Developer",
+                "Tech Lead",
+                "Engineering Manager",
+                "Software Architect",
               ]}
               typingSpeed={90}
               deletingSpeed={40}
