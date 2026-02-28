@@ -10,16 +10,8 @@ export default function Hero() {
           Meet your new
           <span className="block text-primary mt-4">
             <Typewriter
-              words={[
-                "Lead Developer",
-                "Senior Developer",
-                "Tech Lead",
-                "Engineering Manager",
-                "Software Architect",
-              ]}
+              words={["Full-Stack Developer"]}
               typingSpeed={90}
-              deletingSpeed={40}
-              pause={1400}
               className="text-4xl md:text-6xl"
             />
           </span>
