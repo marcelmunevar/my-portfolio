@@ -45,7 +45,6 @@ export default function App() {
   const menuItems = [
     { text: "About", href: "/" },
     { text: "Resume", href: "/resume" },
-    { text: "Projects", href: "/projects" },
     { text: "Blog", href: "/blog" },
   ];
 
@@ -61,16 +60,13 @@ export default function App() {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
           />
-          <NextLink href="/" passHref legacyBehavior>
-            <HeroLink as="a" color="foreground" size="lg">
-              <NavbarBrand>
-                <AcmeLogo />
-                <p className="font-bold text-inherit">
-                  Marcel&apos;s Portfolio
-                </p>
-              </NavbarBrand>
-            </HeroLink>
-          </NextLink>
+
+          <HeroLink href="/" as={NextLink} color="foreground" size="lg">
+            <NavbarBrand>
+              <AcmeLogo />
+              <p className="font-bold text-inherit">Marcel&apos;s Portfolio</p>
+            </NavbarBrand>
+          </HeroLink>
         </NavbarContent>
 
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -78,15 +74,14 @@ export default function App() {
             const isActive = currentPath === item.href;
             return (
               <NavbarItem key={`${item.text}-${index}`} isActive={isActive}>
-                <NextLink href={item.href} passHref legacyBehavior>
-                  <HeroLink
-                    as="a"
-                    color={isActive ? "primary" : "foreground"}
-                    size="lg"
-                  >
-                    {item.text}
-                  </HeroLink>
-                </NextLink>
+                <HeroLink
+                  href={item.href}
+                  as={NextLink}
+                  color={isActive ? "primary" : "foreground"}
+                  size="lg"
+                >
+                  {item.text}
+                </HeroLink>
               </NavbarItem>
             );
           })}
@@ -107,16 +102,16 @@ export default function App() {
               key={`${item.text}-${index}`}
               isActive={currentPath === item.href}
             >
-              <NextLink href={item.href} passHref legacyBehavior>
-                <HeroLink
-                  onPress={() => setIsMenuOpen(!isMenuOpen)}
-                  color={currentPath === item.href ? "primary" : "foreground"}
-                  className="w-full"
-                  size="lg"
-                >
-                  {item.text}
-                </HeroLink>
-              </NextLink>
+              <HeroLink
+                href={item.href}
+                as={NextLink}
+                onPress={() => setIsMenuOpen(!isMenuOpen)}
+                color={currentPath === item.href ? "primary" : "foreground"}
+                className="w-full"
+                size="lg"
+              >
+                {item.text}
+              </HeroLink>
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
