@@ -53,7 +53,7 @@ export default function RootLayout({
                 </Link>
                 <Link
                   isExternal
-                  href="https://github.com/marcelmunevar?tab=repositories"
+                  href="https://github.com/marcelmunevar"
                   target="_blank"
                 >
                   <FontAwesomeIcon
