@@ -25,54 +25,13 @@ export default async function Home() {
           <Heading2 text="Clients" />
           <Card className="fade-in-right">
             <CardBody>
-              <div className="flex flex-col md:flex-row gap-4 flex-wrap items-stretch ">
-                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center ">
-                  <Image
-                    src="/FUJIFILM.jpg"
-                    alt="Fujifilm logo"
-                    className="m-auto"
-                    width={100}
-                    height={27}
-                  />
-                </div>
-                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
-                  <Image
-                    src="/instax.svg"
-                    alt="Instax logo"
-                    className="m-auto"
-                    width={100}
-                    height={49}
-                  />
-                </div>
-                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
-                  <Image
-                    src="/fujifilm-X-GFX.png"
-                    alt="Fujifilm X GFX logo"
-                    className="m-auto"
-                    width={100}
-                    height={44}
-                  />
-                </div>
-                <div className="p-2 bg-white w-full md:w-auto rounded-xl flex-grow flex items-center">
-                  <Image
-                    src="/fujinon_logo.png"
-                    alt="Fujinon logo"
-                    className="m-auto"
-                    width={100}
-                    height={44}
-                  />
-                </div>
-              </div>
-            </CardBody>
-            <hr />
-            <CardFooter>
               <p>
                 I currently support Fujifilm Holdings America Corporation, which
                 oversees more than two dozen businesses across the Americas. My
                 work spans a diverse range of industries, including healthcare,
                 manufacturing, printing, and more.
               </p>
-            </CardFooter>
+            </CardBody>
           </Card>
         </div>
       </main>
