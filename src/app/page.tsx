@@ -1,7 +1,6 @@
 import Heading1 from "../components/common/Heading-1";
 import Heading2 from "../components/common/Heading-2";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 import CardSection from "@/components/about/CardSection";
