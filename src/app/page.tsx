@@ -1,5 +1,4 @@
 import Heading1 from "../components/common/Heading-1";
-import Heading2 from "../components/common/Heading-2";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 import CardSection from "@/components/about/CardSection";
@@ -17,9 +16,7 @@ export default async function Home() {
           <Hero />
           <Heading1 text="About" />
         </div>
-
         <CardSection homepagePostsResponse={homepagePostsResponse} />
-        
       </main>
     </div>
   );
