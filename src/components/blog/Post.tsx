@@ -1,7 +1,6 @@
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Snippet } from "@heroui/snippet";
 import Heading1 from "../common/Heading-1";
-import Heading2 from "../common/Heading-2";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import {
@@ -31,11 +30,11 @@ export default function Post({ post, image }: PostProps) {
       renderNode: {
         [BLOCKS.PARAGRAPH]: (
           node: Block | Inline,
-          children: React.ReactNode
+          children: React.ReactNode,
         ) => <p className="mb-4 fade-in-right">{children}</p>,
         [INLINES.HYPERLINK]: (
           node: Block | Inline,
-          children: React.ReactNode
+          children: React.ReactNode,
         ) => (
           <a href={node.data.uri} target="_blank" className="text-primary">
             {children}
@@ -44,9 +43,17 @@ export default function Post({ post, image }: PostProps) {
         [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
           <ul className="list-disc pl-4 fade-in-right">{children}</ul>
         ),
+        [BLOCKS.HEADING_2]: (
+          node: Block | Inline,
+          children: React.ReactNode,
+        ) => (
+          <h2 className="text-xl lg:text-2xl leading-none tracking-tight mb-4 fade-in-right">
+            {children}
+          </h2>
+        ),
         [BLOCKS.HEADING_3]: (
           node: Block | Inline,
-          children: React.ReactNode
+          children: React.ReactNode,
         ) => (
           <h3 className="text-xl lg:text-2xl leading-none tracking-tight mb-4 fade-in-right">
             {children}
@@ -78,7 +85,7 @@ export default function Post({ post, image }: PostProps) {
     };
     renderedContent = documentToReactComponents(
       content as unknown as Document,
-      options
+      options,
     );
   } else if (typeof content === "string") {
     renderedContent = <div dangerouslySetInnerHTML={{ __html: content }} />;
@@ -111,7 +118,6 @@ export default function Post({ post, image }: PostProps) {
           <p className="text-default-500 mb-4 fade-in-right">
             {formatDate(post.fields.publishedDate)}
           </p>
-          <Heading2 text={post.fields.shortDescription} />
           {renderedContent}
         </CardBody>
       </Card>
