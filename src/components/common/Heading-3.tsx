@@ -13,7 +13,6 @@ const Heading3: React.FC<HeadingProps> = ({
   icon,
   disableFade = false,
 }) => {
-  console.log(disableFade);
   return (
     <div
       className={`flex flex-row mb-4 items-center ${
