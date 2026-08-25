@@ -14,7 +14,7 @@ export default function BlogCard({ post, posts }: BlogCardProps) {
     <Link href={`/blog/${post.fields.slug}`}>
       <Card className="h-full fade-in-right">
         <CardBody className="h-full justify-between">
-          <h3 className="text-xl lg:text-2xl tracking-tight text-primary mb-4">
+          <h3 className="text-xl lg:text-2xl tracking-tight mb-4">
             {post.fields.title}
           </h3>
           <Image
