@@ -30,16 +30,6 @@ export default function BlogCard({ post, posts }: BlogCardProps) {
             <p className="text-default-500">
               {formatDate(post.fields.publishedDate)}
             </p>
-            <div className="w-12 h-12 rounded-full overflow-hidden inline-block">
-              <Image
-                src="/marcel.png"
-                alt="Marcel"
-                width={40}
-                height={40}
-                className="object-cover w-full h-full"
-                priority
-              />
-            </div>
           </div>
         </CardBody>
       </Card>
