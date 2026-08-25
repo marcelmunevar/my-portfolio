@@ -96,7 +96,7 @@ export default function Post({ post, image }: PostProps) {
       <ClientBreadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
+          { label: "Projects", href: "/blog" },
           { label: post.fields.title, href: `/blog/${post.fields.slug}` },
         ]}
       />
