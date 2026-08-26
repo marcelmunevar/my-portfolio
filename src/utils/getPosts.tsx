@@ -20,15 +20,40 @@ export interface Asset {
     id: string;
   };
   fields: {
+    title?: string;
+    description?: string;
     file: {
       url: string;
+      details?: {
+        image?: {
+          width: number;
+          height: number;
+        };
+      };
     };
+  };
+}
+
+export interface EmbeddedImage {
+  sys: {
+    id: string;
+  };
+  fields: {
+    internalName: string;
+    image: {
+      sys: {
+        id: string;
+      };
+    };
+    caption?: string;
+    fullWidth?: boolean;
   };
 }
 
 export interface PostsResponse {
   items: PostSingle[];
   includes: {
+    Entry: EmbeddedImage[];
     Asset: Asset[];
   };
 }
@@ -42,7 +67,7 @@ export async function getPosts(): Promise<PostsResponse> {
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
       next: { revalidate: 60 },
-    }
+    },
   );
 
   const posts: PostsResponse = await data.json();
@@ -59,7 +84,7 @@ export async function getPost(slug: string) {
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
       next: { revalidate: 60 },
-    }
+    },
   );
 
   const posts = await data.json();

@@ -65,7 +65,12 @@ export default async function BlogPage({
 
   return (
     <>
-      <Post post={post} image={image} />
+      <Post
+        post={post}
+        image={image}
+        assets={posts.includes?.Asset ?? []}
+        entries={posts.includes?.Entry ?? []}
+      />
       <div className="container mx-auto px-8 max-w-2xl md:max-w-4xl my-8">
         <Heading2 text="Related Posts" />
         <Posts posts={relatedPosts} />

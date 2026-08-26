@@ -13,14 +13,15 @@ import {
 } from "@contentful/rich-text-types";
 import { Code } from "@heroui/code";
 import ClientBreadcrumbs from "../common/ClientBreadcrumbs";
-import { formatDate, PostSingle } from "@/utils/getPosts";
+import { Asset, EmbeddedImage, formatDate, PostSingle } from "@/utils/getPosts";
 
 interface PostProps {
   post: PostSingle;
   image: string;
+  assets: Asset[];
+  entries: EmbeddedImage[];
 }
-
-export default function Post({ post, image }: PostProps) {
+export default function Post({ post, image, assets, entries }: PostProps) {
   const content = post.fields.content;
 
   let renderedContent;
@@ -28,6 +29,47 @@ export default function Post({ post, image }: PostProps) {
   if (content && content.nodeType) {
     const options = {
       renderNode: {
+        [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
+          const entryId = node.data.target.sys.id;
+
+          const entry = entries.find((entry) => entry.sys.id === entryId);
+
+          if (!entry) {
+            return null;
+          }
+
+          const assetId = entry.fields.image.sys.id;
+
+          const asset = assets.find((asset) => asset.sys.id === assetId);
+
+          if (!asset) {
+            return null;
+          }
+
+          const imageUrl = `https:${asset.fields.file.url}`;
+
+          return (
+            <figure
+              className={`mb-4 fade-in-right ${
+                entry.fields.fullWidth ? "w-full" : ""
+              }`}
+            >
+              <Image
+                src={imageUrl}
+                width={asset.fields.file.details?.image?.width ?? 800}
+                height={asset.fields.file.details?.image?.height ?? 533}
+                alt={entry.fields.caption || entry.fields.internalName}
+                className="rounded-lg w-full h-auto"
+              />
+
+              {entry.fields.caption && (
+                <figcaption className="text-sm text-default-500 mt-2">
+                  {entry.fields.caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        },
         [BLOCKS.PARAGRAPH]: (
           node: Block | Inline,
           children: React.ReactNode,
