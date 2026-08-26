@@ -71,7 +71,7 @@ const Card: React.FC<CardProps> = ({
           <div className="md:col-span-3">
             <Heading3 text={heading} disableFade={true} />
             {description ? (
-              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+              <div dangerouslySetInnerHTML={{ __html: description }}></div>
             ) : (
               false
             )}
