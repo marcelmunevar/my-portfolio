@@ -13,13 +13,15 @@ export default function Typewriter({
   className = "",
 }: TypewriterProps) {
   const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
   const timeoutRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLSpanElement | null>(null);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // If not visible, pause typing and clear any pending timers
-    if (!isVisible) {
+    if (!isVisible || words.length === 0) {
       if (timeoutRef.current) {
         window.clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
@@ -27,45 +29,60 @@ export default function Typewriter({
       return;
     }
 
-    const current = words[0]; // Only use the first word
-    const nextText = current.slice(0, text.length + 1);
-    const delta = typingSpeed;
+    const current = words[wordIndex];
 
-    if (text !== current) {
-      timeoutRef.current = window.setTimeout(() => {
-        setText(nextText);
-      }, delta);
+    if (!isDeleting) {
+      // Type the word
+      if (text.length < current.length) {
+        timeoutRef.current = window.setTimeout(() => {
+          setText(current.slice(0, text.length + 1));
+        }, typingSpeed);
+      } else {
+        // Finished typing — wait before deleting
+        timeoutRef.current = window.setTimeout(() => {
+          setIsDeleting(true);
+        }, 1500);
+      }
+    } else {
+      // Delete the word
+      if (text.length > 0) {
+        timeoutRef.current = window.setTimeout(() => {
+          setText(text.slice(0, -1));
+        }, typingSpeed / 2);
+      } else {
+        // Move to the next word
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
     }
 
     return () => {
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
     };
-    // Intentionally include text/words so effect reacts to those
-  }, [text, words, typingSpeed, isVisible]);
+  }, [text, wordIndex, isDeleting, words, typingSpeed, isVisible]);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     const el = containerRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const entry = entries[0];
-        setIsVisible(entry.isIntersecting);
+        setIsVisible(entries[0].isIntersecting);
       },
       { threshold: 0 },
     );
 
     observer.observe(el);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
     <span ref={containerRef} className={`inline-block ${className}`}>
       <span>{text}</span>
-      {/* remove ml-2 margin so cursor sits directly after text */}
       <span className="inline-block align-middle cursor-anim" aria-hidden>
         |
       </span>
