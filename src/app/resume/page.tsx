@@ -7,6 +7,12 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import ClientBreadcrumbs from "@/components/common/ClientBreadcrumbs";
 import ResumeMultiItem from "@/components/resume/MultiItem";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resume | Marcel's Portfolio",
+  description: "Work experience, education, and community involvement.",
+};
 
 export default function Home() {
   return (

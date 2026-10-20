@@ -16,6 +16,12 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio.marcelm.org"),
+  alternates: { canonical: "./" },
+  openGraph: {
+    siteName: "Marcel's Portfolio",
+    type: "website",
+  },
   title: "Marcel's Portfolio",
   description:
     "Explore my portfolio showcasing responsive designs, cutting-edge web development techniques, and seamless user experiences.",
